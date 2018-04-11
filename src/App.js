@@ -19,6 +19,7 @@ class TransactionHistoryApp extends Component {
       data: this.props.data
     };
   }
+  
 
   handleCheckedTrans(event) {
 
