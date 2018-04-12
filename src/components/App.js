@@ -1,61 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
-import { addDispute } from './actions/actions'
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { addDispute } from './../actions/actions'
+import logo from './../logo.svg';
 import './App.css';
 
-import SelectBar from './components/SelectBar'
-import ProductTable from './components/ProductTable'
-
-class TransactionHistoryApp extends Component {
-  constructor(props) {
-    super(props);
-    this.handleCheckedTrans = this.handleCheckedTrans.bind(this);
-    this.state = {
-      transactionSelectValue: [],
-      transactionList: this.props.transactionList,
-      data: this.props.data
-    };
-  }
-  
-
-  handleCheckedTrans(event) {
-
-    var selectedValueArray = this.state.transactionSelectValue;
-    const target = event.target;
-    const value = target.value;
-
-    if ((target.checked) && !(selectedValueArray.includes(value))) {
-      selectedValueArray.push(value);
-      this.setState({ transactionSelectValue: selectedValueArray });
-
-    } else if (!(target.checked)) {
-
-      selectedValueArray = selectedValueArray.filter(e => e !== value);
-      this.setState({ transactionSelectValue: selectedValueArray });
-    }
-  }
-
-  render() {
-    const { dispatch, visibleTodos } = this.props
-    return (
-      <div class="container">
-        <SelectBar transactionList={this.state.transactionList} transactionSelectValue={this.state.transactionSelectValue} />
-        <div class="row">
-          <div class="col-sm-12">
-            <button type="button" class="btn btn-primary btn-sm" onClick={() => this.props.handleDisputebt(this.state.transactionSelectValue)} >Dispute</button>
-          </div>
-        </div>
-        <ProductTable data={this.state.data} handleCheckedTrans={this.handleCheckedTrans} />
+import TransactionHistoryApp from './TransactionHistoryApp'
+import DisputeCreditTransaction from './DisputeCreditTransaction'
 
 
-
-      </div>
-    );
-  }
-}
 
 
 class App extends Component {
@@ -71,8 +25,8 @@ class App extends Component {
             "recentActivity": "18/03/2018",
             "type": "Payment",
             "Description": "Simple",
-            "Amount": "+$24",
-            "Balance": "+36",
+            "Amount": 24,
+            "Balance": 36,
             "extraDescriptions": "extraDescriptions"
           },
           {
@@ -80,8 +34,8 @@ class App extends Component {
             "recentActivity": "18/03/2018",
             "type": "Payment",
             "Description": "Good",
-            "Amount": "+$24",
-            "Balance": "+36",
+            "Amount": 24,
+            "Balance": 36,
             "extraDescriptions": "extraDescriptions"
           },
           {
@@ -89,8 +43,8 @@ class App extends Component {
             "recentActivity": "18/03/2018",
             "type": "Payment",
             "Description": "Bad",
-            "Amount": "+$25",
-            "Balance": "+36",
+            "Amount": 25,
+            "Balance": 36,
             "extraDescriptions": "extraDescriptions"
           }
         ]
@@ -98,14 +52,23 @@ class App extends Component {
   }
 
   handleDisputebt(data) {
+    const stateData = this.state.data;
+
+    var storeData = [];
+    for (var i in stateData) {
+      let j = stateData[i];
+
+      if (data.includes(j.id)) {
+        storeData.push(j);
+      }
+    }
     this.props.dispatch(addDispute(data));
+    this.props.history.push('/DisputeCreditTransaction');
   }
   render() {
-    const { dispatch, visibleTodos } = this.props
     return (
       <div class="container">
         <TransactionHistoryApp transactionList={this.state.transactionList} data={this.state.data} handleDisputebt={this.handleDisputebt} />
-        {console.log(this.props.transactionDisputes)}
       </div>
     );
   }
@@ -122,14 +85,7 @@ export default connect(select)(App);
 // <button type="button" class="btn btn-primary btn-sm" onClick={() => this.props.dispatch(addDispute(this.state.transactionSelectValue))} >Dispute</button>
 // onClick={() => this.props.dispatch(addDispute(this.state.transactionSelectValue)) }
 
-// <Router>
-// <div>
-//   <Switch>
-//     <Route exact path='/' component={App} />
-//     <Route exact path='/confirm' component={TransactionDispute} />
-//   </Switch>
-// </div>
-// </Router>
+
 // componentDidMount() {
 //   fetch(`http://localhost:8088/`)
 //     .then(result => {

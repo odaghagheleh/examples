@@ -19,9 +19,9 @@ export default function SelectBar(props) {
             <div class="row">
                 <div class="col-sm-12">
                     <form class="form-inline">
-                        <label>SHOW</label>
                         <div class="form-group col-sm-4">
-                            <select class="form-control col-sm-12" value={props.transactionSelectValue}>
+                            <label>SHOW</label>
+                            <select class="form-control" value={props.transactionSelectValue}>
                                 {selectItem}
                             </select>
                         </div>

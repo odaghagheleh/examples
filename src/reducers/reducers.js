@@ -5,9 +5,8 @@ import { ADD_DISPUTE } from '../actions/actions'
 function transactionDispute(state, action) {
     switch (action.type) {
         case ADD_DISPUTE:
-            return {
-                transactionList: action.transactionList
-            }
+            return action.transactionList;
+            
         default:
             return state
     }
@@ -16,7 +15,7 @@ function transactionDispute(state, action) {
 function transactionDisputes(state = [], action) {
     switch (action.type) {
         case ADD_DISPUTE:
-            return [ transactionDispute(undefined, action) ]
+            return  transactionDispute(undefined, action) 
         default:
             return state
     }
