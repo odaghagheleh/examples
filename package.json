@@ -13,6 +13,7 @@
     "metismenu": "^2.7.4",
     "react": "^16.3.1",
     "react-bootstrap": "^0.32.1",
+    "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.3.1",
     "react-pace": "^1.0.0",
     "react-redux": "^5.0.7",
