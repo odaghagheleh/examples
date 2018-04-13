@@ -66,9 +66,13 @@ class App extends Component {
     this.props.history.push('/DisputeCreditTransaction');
   }
   render() {
+    let wrapperClass = "gray-bg " + this.props.location.pathname;
     return (
-      <div class="container">
-        <TransactionHistoryApp transactionList={this.state.transactionList} data={this.state.data} handleDisputebt={this.handleDisputebt} />
+
+      <div id="wrapper">
+        <div id="page-wrapper" className={wrapperClass}>
+          <TransactionHistoryApp transactionList={this.state.transactionList} data={this.state.data} handleDisputebt={this.handleDisputebt} />
+        </div>
       </div>
     );
   }

@@ -92,10 +92,13 @@ class DisputeCreditTransaction extends Component {
     }
 
     render() {
+        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div class="container">
-                <ConfirmTransaction data={this.state.data} handleConfirmbt={this.handleConfirmbt} />
+            <div id="wrapper">
+                <div id="page-wrapper" className={wrapperClass}>
+                    <ConfirmTransaction data={this.state.data} handleConfirmbt={this.handleConfirmbt} />
 
+                </div>
             </div>
         );
     }
