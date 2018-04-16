@@ -9,6 +9,8 @@ import './App.css';
 import TransactionHistoryApp from './TransactionHistoryApp'
 import DisputeCreditTransaction from './DisputeCreditTransaction'
 
+import { getTransactionList, getTransactionHistory } from './../actions/actions';
+
 
 
 
@@ -50,6 +52,10 @@ class App extends Component {
         ]
     };
   }
+  componentWillMount() {
+    this.props.dispatch(getTransactionList());
+    this.props.dispatch(getTransactionHistory());
+  }
 
   handleDisputebt(data) {
     const stateData = this.state.data;
@@ -72,6 +78,8 @@ class App extends Component {
       <div id="wrapper">
         <div id="page-wrapper" className={wrapperClass}>
           <TransactionHistoryApp transactionList={this.state.transactionList} data={this.state.data} handleDisputebt={this.handleDisputebt} />
+          {console.log(this.props.transactionLists)}
+          {console.log(this.props.transactionHistories)}
         </div>
       </div>
     );
@@ -80,6 +88,8 @@ class App extends Component {
 
 function select(store) {
   return {
+    transactionLists: store.transactionLists,
+    transactionHistories: store.transactionHistories,
     transactionDisputes: store.transactionDisputes
   }
 }

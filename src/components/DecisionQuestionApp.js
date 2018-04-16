@@ -9,11 +9,36 @@ function QuestionsApp(props) {
     )
     return (
         <div>
-            <label>1. Why are you disputing these transactions?</label>
-            <div class="form-group col-sm-4">
-                <select class="form-control col-sm-12" >
-                    {selectItem}
-                </select>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group col-sm-4">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>1. Why are you disputing these transactions?</label>
+                        <select class="form-control col-sm-12" >
+                            {selectItem}
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-4">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <br />
+                <br />
+                <br />
+                <div class="col-lg-12">
+                    <div class="form-group col-sm-4">
+                    </div>
+                    <div class="form-group col-sm-4">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <button name="next" type="button" class="btn btn-primary btn-sm" onClick={props.handleNext}>Next</button>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -40,6 +65,10 @@ class DecisionQuestionApp extends Component {
             ],
             answer: ""
         }
+        this.handleNext = this.handleNext.bind(this);
+    }
+    handleNext() {
+        this.props.history.push('/CreditCardQuestionnaire');
     }
 
     render() {
@@ -47,7 +76,7 @@ class DecisionQuestionApp extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <QuestionsApp questions={this.state.questions} />
+                    <QuestionsApp questions={this.state.questions} handleNext={this.handleNext} />
                 </div>
             </div>
         );
