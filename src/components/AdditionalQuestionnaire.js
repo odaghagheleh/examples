@@ -7,52 +7,50 @@ import { setAdditionalQuestionsAnswer } from './../actions/actions';
 function AdditionalQuestions(props) {
 
     const propsQuestions = props.questions;
+    const currentValues = props.currentValues;
 
-    if (propsQuestions.length > 0) {
 
-        const questions = propsQuestions.map((question) =>
-
-            <div class="row" key={question.id} >
-                <div class="col-lg-12">
-                    <p> {question.question} </p>
-                </div>
-                <div class="col-lg-12">
-                    <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} />
-                </div>
-                <br />
-            </div>
-        );
-
-        return (
-            <div class="container">
-                <br />
-                <br />
-                <br />
-                <div class="row">
+    const questions = propsQuestions.map((question) => {
+        if (Object.keys(currentValues).length > 0) {
+            return (
+                <div class="row" key={question.id} >
                     <div class="col-lg-12">
-                        <label> Additional Questions: </label>
+                        <p> {question.question} </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} value={currentValues[question.id]} />
                     </div>
                     <br />
                 </div>
-                {questions}
-                <div class="row">
-                    <div class="col-lg-4">
+            );
+        } else {
+            return (
+                <div class="row" key={question.id} >
+                    <div class="col-lg-12">
+                        <p> {question.question} </p>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
+                        <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} />
                     </div>
-                    <div class="col-lg-4">
-                        <button name="next" type="submit" class="btn btn-primary btn-sm" onClick={props.handleSubmit} >Next</button>
-                    </div>
+                    <br />
                 </div>
-            </div>
-        );
+            );
 
-    } else {
-        return (
-            <div class="container">
+        }
+
+    });
+
+    return (
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label> Additional Questions: </label>
+                </div>
+                <br />
             </div>
-        );
-    }
+            {questions}
+        </div>
+    );
 }
 
 class AdditionalQuestionnaire extends Component {
@@ -60,7 +58,8 @@ class AdditionalQuestionnaire extends Component {
         super(props);
 
         this.state = {
-            answers: {}
+            additionalQuestions: this.props.additionalQuestions,
+            answers: this.props.additionalQuestionAnswers
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -69,12 +68,18 @@ class AdditionalQuestionnaire extends Component {
     componentWillMount() {
         this.props.dispatch(getAdditionalQuestions());
     }
+    componentDidUpdate() {
+        if (!(this.state.additionalQuestions == this.props.additionalQuestions)) {
+            this.setState({
+                additionalQuestions: this.props.additionalQuestions
+            });
+        }
+    }
 
     handleAnswer(questionId, e) {
         const target = e.target;
         const value = target.value;
 
-        // console.log(questionId+" "+value);
         var currentAnswer = this.state.answers;
         currentAnswer[questionId] = value;
         this.setState({
@@ -83,9 +88,16 @@ class AdditionalQuestionnaire extends Component {
 
     }
     handleSubmit(e) {
-        e.preventDefault();
-        this.props.dispatch(setAdditionalQuestionsAnswer(this.state.answers));
-        this.props.history.push('/ExtraInfoInput');
+        const target = e.target;
+        const name = target.name;
+
+        if (name == "next") {
+            this.props.dispatch(setAdditionalQuestionsAnswer(this.state.answers));
+            this.props.history.push('/ExtraInfoInput');
+
+        } else if (name == "back") {
+            this.props.history.push('/CreditCardQuestionnaire');
+        }
     }
 
     render() {
@@ -93,9 +105,26 @@ class AdditionalQuestionnaire extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <AdditionalQuestions questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} handleSubmit={this.handleSubmit} />
+                    <div class="container">
+                        <br />
+                        <br />
+                        <br />
+                        <AdditionalQuestions questions={this.state.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.state.answers} />
+                        <div class="row">
+                            <br />
+                            <br />
+                            <br />
+                            <div class="col-lg-4">
+                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <button name="next" type="submit" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {console.log(this.props.additionalQuestionAnswers)}
             </div>
         );
     }

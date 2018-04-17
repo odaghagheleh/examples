@@ -4,9 +4,14 @@ import { connect } from 'react-redux';
 // import { setExtraInfo } from './../actions/actions';
 
 function Confirmation(props) {
+    const creditCardQAs = props.creditCardQAs;
+    const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
+        "" :
+        creditCardQAs.creditCardwithCustomer;
 
     return (
         <div>
+            <br />
             <br />
             <br />
             <br />
@@ -18,29 +23,22 @@ function Confirmation(props) {
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <p>1. Why are you disputing these transactions?</p>
-                    <select class="form-control col-sm-12" ></select>
+                    <label>1. Why are you disputing these transactions?</label>
+                    <p>{props.transactionDisputeReasonAnswers}</p>
                 </div>
                 <br />
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>2. Has your credit card been with you the entire time?</p>
-                    <div class="form-inline">
-                        <div class="form-group col-sm-1">
-                            <button name="yes" type="button" class="btn btn-primary btn-sm" >Yes</button>
-                        </div>
-                        <div class="form-group">
-                            <button name="no" type="button" class="btn btn-primary btn-sm" >No</button>
-                        </div>
-                    </div>
+                    <label>2. Has your credit card been with you the entire time?</label>
+                    <p>{creditCardwithCustomer}</p>
                 </div>
                 <br />
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <p>3. Is there anything else you'd like to tell us about this dispute? </p>
-                    <textarea class="form-control" rows="3" name="usertext" placeholder="Type here..."></textarea>
+                    <label>3. Is there anything else you'd like to tell us about this dispute? </label>
+                    <p>{props.extraInfos}</p>
                 </div>
                 <br />
             </div>
@@ -93,15 +91,23 @@ class DisputeConfirmation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: this.props.transactionDisputes
+            data: this.props.transactionDisputes,
+            transactionDisputeReasonAnswers: this.props.transactionDisputeReasonAnswers,
+            creditCardQAs: this.props.creditCardQAs,
+            extraInfos: this.props.extraInfos
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        // this.props.dispatch(setExtraInfo(this.state.answers));
-        this.props.history.push('/Confirmed');
+        const target = e.target;
+        const name = target.name;
+
+        if (name == "next") {
+            this.props.history.push('/Confirmed');
+        } else if (name == "back") {
+            this.props.history.push('/ExtraInfoInput');
+        }
     }
 
     render() {
@@ -112,7 +118,11 @@ class DisputeConfirmation extends Component {
                     <div class="container" >
                         <div class="row" >
                             <div class="col-lg-6">
-                                <Confirmation/>
+                                <Confirmation
+                                    transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
+                                    creditCardQAs={this.state.creditCardQAs}
+                                    extraInfos={this.state.extraInfos}
+                                />
                             </div>
                             <div class="col-lg-6">
                                 <br />
@@ -122,16 +132,16 @@ class DisputeConfirmation extends Component {
                             </div>
                         </div>
                         <div class="row">
-                                <br />
-                                <br />
-                                <br />
+                            <br />
+                            <br />
+                            <br />
                             <div class="col-lg-4">
-                                <button name="next" type="submit" class="btn btn-primary btn-sm">Edit</button>
+                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
                             </div>
                             <div class="col-lg-4">
                             </div>
                             <div class="col-lg-4">
-                                <button name="next" type="submit" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit}>Submit</button>
+                                <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit}>Submit</button>
                             </div>
                         </div>
                     </div>
@@ -143,7 +153,10 @@ class DisputeConfirmation extends Component {
 
 function select(store) {
     return {
-        transactionDisputes: store.transactionDisputes
+        transactionDisputes: store.transactionDisputes,
+        transactionDisputeReasonAnswers: store.transactionDisputeReasonAnswers,
+        creditCardQAs: store.creditCardQAs,
+        extraInfos: store.extraInfos
     }
 }
 

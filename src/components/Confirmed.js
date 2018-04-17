@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { setExtraInfo } from './../actions/actions';
 
+
+
 function FinalConfirmation(props) {
 
     return (

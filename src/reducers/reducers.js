@@ -136,7 +136,7 @@ function additionalQuestion(state, action) {
     }
 }
 
-function additionalQuestions(state = {}, action) {
+function additionalQuestions(state = [], action) {
     switch (action.type) {
         case GET_ADDITIONAL_QUESTIONS:
             return additionalQuestion(undefined, action)
@@ -176,7 +176,7 @@ function extraInfo(state, action) {
     }
 }
 
-function extraInfos(state = {}, action) {
+function extraInfos(state = "", action) {
     switch (action.type) {
         case SET_EXTRA_INFO:
             return extraInfo(undefined, action)

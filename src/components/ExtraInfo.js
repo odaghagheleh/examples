@@ -6,12 +6,10 @@ import { setExtraInfo } from './../actions/actions';
 function ExtraInfoInput(props) {
 
     const propsQuestions = props.questions;
+    const currentValue = props.currentValue;
 
     return (
-        <div class="container">
-            <br />
-            <br />
-            <br />
+        <div>
             <div class="row">
                 <div class="col-lg-12">
                     <label> Extra Info: </label>
@@ -21,18 +19,9 @@ function ExtraInfoInput(props) {
             <div class="row">
                 <div class="col-lg-5">
                     <p>3. Is there anything else you'd like to tell us about this dispute? </p>
-                    <textarea class="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} ></textarea>
+                    <textarea class="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} value={currentValue} ></textarea>
                 </div>
                 <br />
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                    <button name="next" type="submit" class="btn btn-primary btn-sm" onClick={props.handleSubmit} >Next</button>
-                </div>
             </div>
         </div>
     );
@@ -44,7 +33,7 @@ class ExtraInfo extends Component {
         super(props);
 
         this.state = {
-            answers: ""
+            answers: this.props.extraInfos
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,9 +50,15 @@ class ExtraInfo extends Component {
 
     }
     handleSubmit(e) {
-        e.preventDefault();
-        this.props.dispatch(setExtraInfo(this.state.answers));
-        this.props.history.push('/DisputeConfirmation');
+        const target = e.target;
+        const name = target.name;
+
+        if (name == "next") {
+            this.props.dispatch(setExtraInfo(this.state.answers));
+            this.props.history.push('/DisputeConfirmation');
+        } else if (name == "back") {
+            this.props.history.push('/AdditionalQuestionnaire');
+        }
     }
 
     render() {
@@ -71,8 +66,28 @@ class ExtraInfo extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <ExtraInfoInput handleAnswer={this.handleAnswer} handleSubmit={this.handleSubmit} />
+                    <div class="container">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <ExtraInfoInput handleAnswer={this.handleAnswer} currentValue={this.state.answers} />
+                        <div class="row">
+                            <br />
+                            <br />
+                            <br />
+                            <div class="col-lg-4">
+                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <button name="next" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit} >Next</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {console.log(this.props.extraInfos)}
             </div>
         );
     }
