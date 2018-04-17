@@ -19,6 +19,8 @@ function TransactionList(props) {
     return (
         <div class="row" >
             <div class="col-sm-12">
+                <h4>Please confirm the following transactions in question</h4>
+                <p>Transaction selected:</p>
                 <table class="grid table table-borderless table-hover" id="myTable" >
                     <tr>
                         <th>Recent Activity</th>
@@ -43,32 +45,10 @@ function TransactionList(props) {
     );
 }
 
-function ConfirmTransaction(props) {
-
-    return (
-        <div>
-            <h4>Please confirm the following transactions in question</h4>
-            <p>Transaction selected:</p>
-            <TransactionList data={props.data} />
-            <div class="form-inline">
-                <div class="form-group col-sm-2">
-                    <button name="confirm" type="button" class="btn btn-primary btn-sm" onClick={props.handleConfirmbt} >Yes - This is correct</button>
-                </div>
-                <div class="form-group col-sm-2">
-                    <button name="cancel" type="button" class="btn btn-primary btn-sm" onClick={props.handleConfirmbt} >No -Cancel</button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 class DisputeCreditTransaction extends Component {
     constructor(props) {
         super(props);
         this.handleConfirmbt = this.handleConfirmbt.bind(this);
-        this.state = {
-            data: this.props.transactionDisputes
-        }
     }
 
     handleConfirmbt(e) {
@@ -88,7 +68,22 @@ class DisputeCreditTransaction extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <ConfirmTransaction data={this.state.data} handleConfirmbt={this.handleConfirmbt} />
+                    <div class="container">
+                        <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
+                        <div class="row">
+                            <br />
+                            <br />
+                            <br />
+                            <div class="col-lg-4">
+                                <button name="cancel" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <button name="confirm" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleConfirmbt} >Yes - This is correct</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

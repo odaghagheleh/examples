@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import { setExtraInfo } from './../actions/actions';
 
-function ExtraInfoInput(props) {
-
-    const propsQuestions = props.questions;
+function FinalConfirmation(props) {
 
     return (
         <div class="container">
@@ -14,24 +12,31 @@ function ExtraInfoInput(props) {
             <br />
             <div class="row">
                 <div class="col-lg-12">
-                    <label> Extra Info: </label>
+                    <h3> Confirmed</h3>
                 </div>
                 <br />
             </div>
             <div class="row">
-                <div class="col-lg-5">
-                    <p>3. Is there anything else you'd like to tell us about this dispute? </p>
-                    <textarea class="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} ></textarea>
+                <div class="col-lg-12">
+                    <label>Your Dispute Request ID is: </label>
+                    <p>Thanks you for your submission. Your dispute request has been successfully logged. You can review your request at any time in your notification list in the menu bar. </p>
+                    <p>You should recieve an email shortly indicating next steps.</p>
+                    <p>If you want, you can use the ID Number to check or ask more information about the process of your request.</p>
+                    <p>Regards,</p>
                 </div>
                 <br />
             </div>
+
             <div class="row">
+                <br />
+                <br />
+                <br />
                 <div class="col-lg-4">
                 </div>
                 <div class="col-lg-4">
                 </div>
                 <div class="col-lg-4">
-                    <button name="next" type="submit" class="btn btn-primary btn-sm" onClick={props.handleSubmit} >Next</button>
+                    <button name="next" type="submit" class="btn btn-primary btn-sm pull-right">Submit</button>
                 </div>
             </div>
         </div>
@@ -39,31 +44,16 @@ function ExtraInfoInput(props) {
 
 }
 
-class ExtraInfo extends Component {
+class Confirmed extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            answers: ""
-        }
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleAnswer = this.handleAnswer.bind(this);
     }
 
-    handleAnswer(e) {
-        const target = e.target;
-        const value = target.value;
-
-        this.setState({
-            answers: value
-        });
-
-    }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.dispatch(setExtraInfo(this.state.answers));
-        this.props.history.push('/DisputeConfirmation');
+        // this.props.history.push('/');
     }
 
     render() {
@@ -71,7 +61,7 @@ class ExtraInfo extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <ExtraInfoInput handleAnswer={this.handleAnswer} handleSubmit={this.handleSubmit} />
+                    <FinalConfirmation handleSubmit={this.handleSubmit} />
                 </div>
             </div>
         );
@@ -84,4 +74,4 @@ function select(store) {
     }
 }
 
-export default connect(select)(ExtraInfo);
+export default connect(select)(Confirmed);

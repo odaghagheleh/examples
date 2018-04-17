@@ -19,7 +19,7 @@ class App extends Component {
     super(props);
     this.handleDisputebt = this.handleDisputebt.bind(this);
     this.state = {
-      transactionList: ["Transaction1", "Transaction2", "Transaction3"],
+      transactionList: this.props.transactionLists,
       data:
         [
           {
@@ -52,10 +52,6 @@ class App extends Component {
         ]
     };
   }
-  componentWillMount() {
-    this.props.dispatch(getTransactionList());
-    this.props.dispatch(getTransactionHistory());
-  }
 
   handleDisputebt(data) {
     const stateData = this.state.data;
@@ -77,9 +73,7 @@ class App extends Component {
 
       <div id="wrapper">
         <div id="page-wrapper" className={wrapperClass}>
-          <TransactionHistoryApp transactionList={this.state.transactionList} data={this.state.data} handleDisputebt={this.handleDisputebt} />
-          {console.log(this.props.transactionLists)}
-          {console.log(this.props.transactionHistories)}
+          <TransactionHistoryApp key="1" transactionList={this.props.transactionLists} data={this.state.data} handleDisputebt={this.handleDisputebt} />
         </div>
       </div>
     );

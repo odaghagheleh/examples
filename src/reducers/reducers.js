@@ -3,9 +3,9 @@ import { combineReducers } from 'redux';
 import { GET_TRANSACTION_LIST } from '../actions/actions';
 import { GET_TRANSACTION_HISTORY } from '../actions/actions';
 import { ADD_DISPUTE } from '../actions/actions';
+import { GET_DISPUTE_REASON_QUESTIONS, SET_DISPUTE_REASON_ANSWER } from '../actions/actions';
 import { ADD_CREDIT_CARD_QUESTION_ANSWER } from '../actions/actions';
-import { GET_ADDITIONAL_QUESTIONS } from '../actions/actions';
-import { SET_ADDITIONAL_QUESTIONS_ANSWER } from '../actions/actions';
+import { GET_ADDITIONAL_QUESTIONS, SET_ADDITIONAL_QUESTIONS_ANSWER } from '../actions/actions';
 import { SET_EXTRA_INFO } from '../actions/actions';
 
 
@@ -20,7 +20,7 @@ function transactionList(state, action) {
     }
 }
 
-function transactionLists(state = {}, action) {
+function transactionLists(state = [], action) {
     switch (action.type) {
         case GET_TRANSACTION_LIST:
             return transactionList(undefined, action)
@@ -39,7 +39,7 @@ function transactionHistory(state, action) {
     }
 }
 
-function transactionHistories(state = {}, action) {
+function transactionHistories(state = [], action) {
     switch (action.type) {
         case GET_TRANSACTION_HISTORY:
             return transactionHistory(undefined, action)
@@ -51,7 +51,7 @@ function transactionHistories(state = {}, action) {
 function transactionDispute(state, action) {
     switch (action.type) {
         case ADD_DISPUTE:
-            return action.transactionList;
+            return action.payload;
 
         default:
             return state
@@ -66,12 +66,50 @@ function transactionDisputes(state = [], action) {
             return state
     }
 }
+//Transaction Dispute Reason Questions reducer
+function transactionDisputeReasonQuestion(state, action) {
+    switch (action.type) {
+        case GET_DISPUTE_REASON_QUESTIONS:
+            return action.payload;
 
+        default:
+            return state
+    }
+}
+
+function transactionDisputeReasonQuestions(state = [], action) {
+    switch (action.type) {
+        case GET_DISPUTE_REASON_QUESTIONS:
+            return transactionDisputeReasonQuestion(undefined, action)
+        default:
+            return state
+    }
+}
+
+//Transaction Dispute Reason answer reducer
+function transactionDisputeReasonAnswer(state, action) {
+    switch (action.type) {
+        case SET_DISPUTE_REASON_ANSWER:
+            return action.payload;
+
+        default:
+            return state
+    }
+}
+
+function transactionDisputeReasonAnswers(state = "", action) {
+    switch (action.type) {
+        case SET_DISPUTE_REASON_ANSWER:
+            return transactionDisputeReasonAnswer(undefined, action)
+        default:
+            return state
+    }
+}
 //Credit Card question reducer
 function creditCardQA(state, action) {
     switch (action.type) {
         case ADD_CREDIT_CARD_QUESTION_ANSWER:
-            return action.answers;
+            return action.payload;
 
         default:
             return state
@@ -153,6 +191,8 @@ const transactionDisputeReducer = combineReducers({
     transactionLists,
     transactionHistories,
     transactionDisputes,
+    transactionDisputeReasonQuestions,
+    transactionDisputeReasonAnswers,
     creditCardQAs,
     additionalQuestions,
     additionalQuestionAnswers,

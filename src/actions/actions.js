@@ -2,6 +2,8 @@
 export const GET_TRANSACTION_LIST = 'GET_TRANSACTION_LIST';
 export const GET_TRANSACTION_HISTORY = 'GET_TRANSACTION_HISTORY';
 export const ADD_DISPUTE = 'ADD_DISPUTE';
+export const GET_DISPUTE_REASON_QUESTIONS = 'GET_DISPUTE_REASON_QUESTIONS';
+export const SET_DISPUTE_REASON_ANSWER = 'SET_DISPUTE_REASON_ANSWER';
 export const ADD_CREDIT_CARD_QUESTION_ANSWER = 'ADD_CREDIT_CARD_QUESTION_ANSWER ';
 export const GET_ADDITIONAL_QUESTIONS = 'GET_ADDITIONAL_QUESTIONS ';
 export const SET_ADDITIONAL_QUESTIONS_ANSWER = 'SET_ADDITIONAL_QUESTIONS_ANSWER';
@@ -50,14 +52,38 @@ export function getTransactionHistory() {
 export function addDispute(transactionList) {
     return {
         type: ADD_DISPUTE,
-        transactionList: transactionList
+        payload: transactionList
     };
 }
-
+export function getDisputeReasonQuestions() {
+    return {
+        type: GET_DISPUTE_REASON_QUESTIONS,
+        payload: [
+            {
+                id: 1,
+                question: 'I cancelled ... '
+            },
+            {
+                id: 1,
+                question: 'I recieved incorrect ...'
+            },
+            {
+                id: 1,
+                question: 'I was charged ...'
+            }
+        ]
+    };
+}
+export function setDisputeReasonAnswer(answer) {
+    return {
+        type: SET_DISPUTE_REASON_ANSWER,
+        payload: answer
+    };
+}
 export function addCreditCardQuestionAnswer(answers) {
     return {
         type: ADD_CREDIT_CARD_QUESTION_ANSWER,
-        answers: answers
+        payload: answers
     };
 }
 

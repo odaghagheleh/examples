@@ -1,43 +1,29 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+
+import { getDisputeReasonQuestions, setDisputeReasonAnswer } from './../actions/actions';
 
 
 function QuestionsApp(props) {
     const questionList = props.questions;
     const selectItem = questionList.map((qtem) =>
         <option key={qtem.id} value={qtem.question}>{qtem.question}</option>
-    )
+    );
     return (
         <div>
             <br />
             <br />
             <br />
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="form-group col-sm-4">
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label>1. Why are you disputing these transactions?</label>
-                        <select class="form-control col-sm-12" >
-                            {selectItem}
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-4">
-                    </div>
+                <div class="form-group col-sm-4">
                 </div>
-            </div>
-            <div class="row">
-                <br />
-                <br />
-                <br />
-                <div class="col-lg-12">
-                    <div class="form-group col-sm-4">
-                    </div>
-                    <div class="form-group col-sm-4">
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <button name="next" type="button" class="btn btn-primary btn-sm" onClick={props.handleNext}>Next</button>
-                    </div>
+                <div class="form-group col-sm-4">
+                    <label>1. Why are you disputing these transactions?</label>
+                    <select class="form-control col-sm-12" value={props.selectValue} onChange={props.handleSelectAnswer} >
+                        {selectItem}
+                    </select>
+                </div>
+                <div class="form-group col-sm-4">
                 </div>
             </div>
         </div>
@@ -47,28 +33,28 @@ function QuestionsApp(props) {
 class DecisionQuestionApp extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            data: this.props.transactionDisputes,
-            questions: [
-                {
-                    id: 1,
-                    question: 'I cancelled ... '
-                },
-                {
-                    id: 1,
-                    question: 'I recieved incorrect ...'
-                },
-                {
-                    id: 1,
-                    question: 'I was charged ...'
-                }
-            ],
-            answer: ""
-        }
-        this.handleNext = this.handleNext.bind(this);
+        this.handleSelectAnswer = this.handleSelectAnswer.bind(this);
+        this.handleBt = this.handleBt.bind(this);
     }
-    handleNext() {
-        this.props.history.push('/CreditCardQuestionnaire');
+    componentWillMount() {
+        this.props.dispatch(getDisputeReasonQuestions());
+    }
+
+    handleSelectAnswer(e) {
+        const target = e.target;
+        const value = target.value;
+        this.props.dispatch(setDisputeReasonAnswer(value));
+    }
+    handleBt(e) {
+        const target = e.target;
+        const name = target.name;
+        if (name == "next") {
+            this.props.history.push('/CreditCardQuestionnaire');
+
+        } else if (name == "back") {
+            this.props.history.push('/DisputeCreditTransaction');
+
+        }
     }
 
     render() {
@@ -76,7 +62,22 @@ class DecisionQuestionApp extends Component {
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <QuestionsApp questions={this.state.questions} handleNext={this.handleNext} />
+                    <div class="container">
+                        <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={this.handleSelectAnswer} selectValue={this.props.transactionDisputeReasonAnswers} />
+                        <div class="row">
+                            <br />
+                            <br />
+                            <br />
+                            <div class="col-lg-4">
+                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleBt}>Back</button>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleBt}>Next</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
@@ -85,7 +86,9 @@ class DecisionQuestionApp extends Component {
 
 function select(store) {
     return {
-        transactionDisputes: store.transactionDisputes
+        transactionDisputeReasonQuestions: store.transactionDisputeReasonQuestions,
+        transactionDisputeReasonAnswers: store.transactionDisputeReasonAnswers
+
     }
 }
 export default connect(select)(DecisionQuestionApp);
