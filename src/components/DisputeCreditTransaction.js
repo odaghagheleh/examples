@@ -63,7 +63,7 @@ class DisputeCreditTransaction extends Component {
     }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
+        let wrapperClass = "gray-bg ";
         return (
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
