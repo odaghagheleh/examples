@@ -18,8 +18,8 @@ export default class MainForm extends Component {
                 { name: 'Step 3', component: <CreditCardQuestionnaire /> },
                 { name: 'Step 4', component: <AdditionalQuestionnaire /> },
                 { name: 'Step 5', component: <ExtraInfo /> },
-                { name: 'Step 6', component: <DisputeConfirmation /> },
-                { name: 'Step 7', component: <Confirmed /> }
+                { name: 'CONFIRMATION', component: <DisputeConfirmation /> },
+                { name: 'SUBMIT', component: <Confirmed /> }
             ]
 
         let wrapperClass = "gray-bg " + this.props.location.pathname;
@@ -27,7 +27,7 @@ export default class MainForm extends Component {
 
             <div id="wrapper">
                 <div id="page-wrapper" className={wrapperClass}>
-                    <div className='example'>
+                    <div className='example' >
                         <div className='step-progress'>
                             <StepZilla
                                 steps={steps}
