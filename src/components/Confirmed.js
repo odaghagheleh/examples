@@ -8,9 +8,7 @@ import { setExtraInfo } from './../actions/actions';
 function FinalConfirmation(props) {
 
     return (
-        <div class="container">
-            <br />
-            <br />
+        <div>
             <br />
             <div class="row">
                 <div class="col-lg-12">
@@ -48,7 +46,6 @@ class Confirmed extends Component {
     render() {
         return (
             <FinalConfirmation handleSubmit={this.handleSubmit} />
-
         );
     }
 }

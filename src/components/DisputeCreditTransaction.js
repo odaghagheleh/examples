@@ -16,31 +16,33 @@ function TransactionList(props) {
     }
     );
     return (
-        <div class="row" >
-            <div class="col-sm-12">
-                <h4>Please confirm the following transactions in question</h4>
-                <p>Transaction selected:</p>
-                <table class="grid table table-borderless table-hover" id="myTable" >
-                    <tr>
-                        <th>Recent Activity</th>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Balance</th>
-                    </tr>
-                    <tbody>
-                        {rowsData}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total</td>
-                            <td>{rowSum}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
+        <table class="table borderless " id="myTable" >
+            {/* <tr>
+                <th>Recent Activity</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Balance</th>
+            </tr> */}
+            <tbody>
+                {rowsData}                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><hr width="100%"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>{rowSum}</td>
+                </tr>
+            </tbody>
+        </table>
     );
 }
 
@@ -65,13 +67,21 @@ class DisputeCreditTransaction extends Component {
     render() {
         return (
             <div>
-                <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
+                <div class="row" >
+                    <br />
+                    <div class="col-sm-12">
+                        <h3>Please confirm the following transactions in question</h3>
+                        <br />
+                        <p>Transaction selected:</p>
+                        <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-sm-1">
-                        <button name="cancel" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
+                    <div class="col-sm-2">
+                        <button name="confirm" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
                     </div>
                     <div class="col-sm-4">
-                        <button name="confirm" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
+                        <button name="cancel" type="button" class="btn btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
                     </div>
                 </div>
             </div>

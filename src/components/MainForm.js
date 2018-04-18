@@ -50,7 +50,7 @@ export default class MainForm extends Component {
                                                         nextButtonCls="btn btn-prev btn-primary btn-sm pull-right"
                                                         backButtonCls="btn btn-next btn-primary btn-sm pull-left"
                                                         nextTextOnFinalActionStep="Submit"
-
+                                                        prevBtnOnLastStep={false}
                                                     />
                                                 </div>
                                             </div>

@@ -10,23 +10,9 @@ function QuestionsApp(props) {
         <option key={qtem.id} value={qtem.question}>{qtem.question}</option>
     );
     return (
-        <div>
-            <br />
-            <br />
-            <br />
-            <div class="row">
-                <div class="form-group col-sm-4">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label>1. Why are you disputing these transactions?</label>
-                    <select class="form-control col-sm-12" value={props.selectValue} onChange={props.handleSelectAnswer} >
-                        {selectItem}
-                    </select>
-                </div>
-                <div class="form-group col-sm-4">
-                </div>
-            </div>
-        </div>
+        <select id="sel" class="form-control" value={props.selectValue} onChange={props.handleSelectAnswer} >
+            {selectItem}
+        </select>
     );
 }
 
@@ -48,7 +34,17 @@ class DecisionQuestionApp extends Component {
     render() {
         return (
             <div>
-                <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={this.handleSelectAnswer} selectValue={this.props.transactionDisputeReasonAnswers} />
+                <br />
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="sel">1. Why are you disputing these transactions?</label>
+                        <br />
+                        <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={this.handleSelectAnswer} selectValue={this.props.transactionDisputeReasonAnswers} />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
             </div>
         );
     }

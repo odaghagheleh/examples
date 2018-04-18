@@ -6,16 +6,14 @@ import { addCreditCardQuestionAnswer } from './../actions/actions';
 function CreditCardQuestions(props) {
     var currentValues = props.currentValues;
     const yesBt = currentValues.creditCardwithCustomer == "Yes" ?
-        <input name="yes" type="button" class="btn btn-primary btn-sm active" onClick={props.handleUserAnswer} value="Yes" /> :
-        <input name="yes" type="button" class="btn btn-primary btn-sm" onClick={props.handleUserAnswer} value="Yes" />;
+        <input name="yes" type="button" class="btn btn-sm active" onClick={props.handleUserAnswer} value="Yes" /> :
+        <input name="yes" type="button" class="btn btn-sm" onClick={props.handleUserAnswer} value="Yes" />;
 
     const noBt = currentValues.creditCardwithCustomer == "No" ?
         <input name="no" type="button" class="btn btn-primary btn-sm active" onClick={props.handleUserAnswer} value="No" /> :
         <input name="no" type="button" class="btn btn-primary btn-sm" onClick={props.handleUserAnswer} value="No" />;
     return (
         <div>
-            <br />
-            <br />
             <br />
             <div class="row">
                 <div class="col-lg-12">
@@ -41,23 +39,19 @@ function CreditCardQuestions(props) {
                 </div>
             </div>
             <div class="row">
-                <div class="form-inline col-lg-12">
-                    <div class="form-group">
-                        <p>what date did you realize the card(s) were missing?</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" name="missingDate" onChange={props.handleUserAnswer} value={currentValues.missingDate} />
-                    </div>
+                <div class="col-lg-4">
+                    <p>what date did you realize the card(s) were missing?</p>
+                </div>
+                <div class="col-lg-4">
+                    <input type="date" name="missingDate" onChange={props.handleUserAnswer} value={currentValues.missingDate} />
                 </div>
             </div>
             <div class="row">
-                <div class="form-inline col-lg-12">
-                    <div class="form-group">
-                        <p>What date did you last use the card?</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" name="lastUsedDate" onChange={props.handleUserAnswer} value={currentValues.lastUsedDate} />
-                    </div>
+                <div class="col-lg-4">
+                    <p>What date did you last use the card?</p>
+                </div>
+                <div class="col-lg-4">
+                    <input type="date" name="lastUsedDate" onChange={props.handleUserAnswer} value={currentValues.lastUsedDate} />
                 </div>
             </div>
         </div>
@@ -109,7 +103,7 @@ class CreditCardQuestionnaire extends Component {
     }
     // componentWillUnmount() {
 
-        // this.props.dispatch(addCreditCardQuestionAnswer(this.state.userAnswer));
+    // this.props.dispatch(addCreditCardQuestionAnswer(this.state.userAnswer));
 
     // }
 
@@ -136,20 +130,7 @@ class CreditCardQuestionnaire extends Component {
         return (
             <div>
                 <CreditCardQuestions handleUserAnswer={this.handleUserAnswer} currentValues={this.state.userAnswer} />
-                {/* <div class="row">
-                    <br />
-                    <br />
-                    <br />
-                    <div class="col-lg-4">
-                        <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
-                    </div>
-                    <div class="col-lg-4">
-                    </div>
-                    <div class="col-lg-4">
-                        <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
-                    </div>
-                </div> */}
-                {/* {console.log(this.props.creditCardQAs)} */}
+                <br />
             </div>
         );
     }
