@@ -71,7 +71,7 @@ class CreditCardQuestionnaire extends Component {
             userAnswer: this.props.creditCardQAs
         }
         this.handleUserAnswer = this.handleUserAnswer.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleUserAnswer(e) {
@@ -107,48 +107,49 @@ class CreditCardQuestionnaire extends Component {
                 break;
         }
     }
+    // componentWillUnmount() {
 
-    handleSubmit(e) {
-        const target = e.target;
-        const name = target.name;
+        // this.props.dispatch(addCreditCardQuestionAnswer(this.state.userAnswer));
 
-        if (name == "next") {
-            // if (Object.keys(this.state.userAnswer).length < 3) {
-            //     alert("Please answer all questions");
-            // } else {
-                this.props.dispatch(addCreditCardQuestionAnswer(this.state.userAnswer));
-                this.props.history.push('/AdditionalQuestionnaire');
+    // }
 
-            // }
+    // handleSubmit(e) {
+    //     const target = e.target;
+    //     const name = target.name;
 
-        } else if (name == "back") {
-            this.props.history.push('/DecisionQuestionApp');
-        }
+    //     if (name == "next") {
+    //         // if (Object.keys(this.state.userAnswer).length < 3) {
+    //         //     alert("Please answer all questions");
+    //         // } else {
+    //         // this.props.dispatch(addCreditCardQuestionAnswer(this.state.userAnswer));
+    //         this.props.history.push('/AdditionalQuestionnaire');
 
-    }
+    //         // }
+
+    //     } else if (name == "back") {
+    //         this.props.history.push('/DecisionQuestionApp');
+    //     }
+
+    // }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <div class="container">
-                        <CreditCardQuestions handleUserAnswer={this.handleUserAnswer} currentValues={this.state.userAnswer} />
-                        <div class="row">
-                            <br />
-                            <br />
-                            <br />
-                            <div class="col-lg-4">
-                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
-                            </div>
-                            <div class="col-lg-4">
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
-                            </div>
-                        </div>
+            <div>
+                <CreditCardQuestions handleUserAnswer={this.handleUserAnswer} currentValues={this.state.userAnswer} />
+                {/* <div class="row">
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-lg-4">
+                        <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
                     </div>
-                </div>  
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                        <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
+                    </div>
+                </div> */}
+                {/* {console.log(this.props.creditCardQAs)} */}
             </div>
         );
     }

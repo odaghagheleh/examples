@@ -96,54 +96,24 @@ class DisputeConfirmation extends Component {
             creditCardQAs: this.props.creditCardQAs,
             extraInfos: this.props.extraInfos
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleSubmit(e) {
-        const target = e.target;
-        const name = target.name;
-
-        if (name == "next") {
-            this.props.history.push('/Confirmed');
-        } else if (name == "back") {
-            this.props.history.push('/ExtraInfoInput');
-        }
     }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <div class="container" >
-                        <div class="row" >
-                            <div class="col-lg-6">
-                                <Confirmation
-                                    transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
-                                    creditCardQAs={this.state.creditCardQAs}
-                                    extraInfos={this.state.extraInfos}
-                                />
-                            </div>
-                            <div class="col-lg-6">
-                                <br />
-                                <br />
-                                <br />
-                                <TransactionList data={this.props.transactionDisputes} />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <br />
-                            <br />
-                            <br />
-                            <div class="col-lg-4">
-                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
-                            </div>
-                            <div class="col-lg-4">
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit}>Submit</button>
-                            </div>
-                        </div>
+            <div >
+                <div class="row" >
+                    <div class="col-lg-6">
+                        <Confirmation
+                            transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
+                            creditCardQAs={this.state.creditCardQAs}
+                            extraInfos={this.state.extraInfos}
+                        />
+                    </div>
+                    <div class="col-lg-6">
+                        <br />
+                        <br />
+                        <br />
+                        <TransactionList data={this.props.transactionDisputes} />
                     </div>
                 </div>
             </div>

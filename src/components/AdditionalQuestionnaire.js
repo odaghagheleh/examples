@@ -93,7 +93,7 @@ class AdditionalQuestionnaire extends Component {
 
         if (name == "next") {
             this.props.dispatch(setAdditionalQuestionsAnswer(this.state.answers));
-            this.props.history.push('/ExtraInfoInput');
+            this.props.history.push('/ExtraInfo');
 
         } else if (name == "back") {
             this.props.history.push('/CreditCardQuestionnaire');
@@ -101,30 +101,25 @@ class AdditionalQuestionnaire extends Component {
     }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <div class="container">
-                        <br />
-                        <br />
-                        <br />
-                        <AdditionalQuestions questions={this.state.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.state.answers} />
-                        <div class="row">
-                            <br />
-                            <br />
-                            <br />
-                            <div class="col-lg-4">
-                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
-                            </div>
-                            <div class="col-lg-4">
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="next" type="submit" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
-                            </div>
-                        </div>
+            <div>
+                <br />
+                <br />
+                <br />
+                <AdditionalQuestions questions={this.state.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.state.answers} />
+                {/* <div class="row">
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-lg-4">
+                        <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
                     </div>
-                </div>
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                        <button name="next" type="submit" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit} >Next</button>
+                    </div>
+                </div> */}
             </div>
         );
     }

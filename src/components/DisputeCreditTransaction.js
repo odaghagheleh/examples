@@ -55,7 +55,7 @@ class DisputeCreditTransaction extends Component {
         const targetName = target.name;
 
         if (targetName == 'confirm') {
-            this.props.history.push('/DecisionQuestionApp');
+            this.props.jumpToStep(1);
 
         } else if (targetName == 'cancel') {
             this.props.history.push('/');
@@ -63,25 +63,15 @@ class DisputeCreditTransaction extends Component {
     }
 
     render() {
-        let wrapperClass = "gray-bg ";
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <div class="container">
-                        <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
-                        <div class="row">
-                            <br />
-                            <br />
-                            <br />
-                            <div class="col-lg-4">
-                                <button name="cancel" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
-                            </div>
-                            <div class="col-lg-4">
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="confirm" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleConfirmbt} >Yes - This is correct</button>
-                            </div>
-                        </div>
+            <div>
+                <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
+                <div class="row">
+                    <div class="col-sm-1">
+                        <button name="cancel" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button name="confirm" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
                     </div>
                 </div>
             </div>

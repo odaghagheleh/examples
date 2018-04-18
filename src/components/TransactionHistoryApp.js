@@ -102,7 +102,7 @@ class TransactionHistoryApp extends Component {
       }
     }
     this.props.dispatch(addDispute(data));
-    this.props.history.push('/DisputeCreditTransaction');
+    this.props.history.push('/MainForm');
   }
   handleCheckedTrans(e) {
 
