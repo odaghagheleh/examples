@@ -198,7 +198,7 @@ class TransactionHistoryApp extends Component {
                       </a>
                     </div>
                   </div>
-                  <div class="ibox-content">
+                  <div class="ibox-content" id="main-contents">
                     <div class="row">
                       <div class="col-sm-5 m-b-xs">
                         <SelectBar transactionList={this.state.transactionList} />
