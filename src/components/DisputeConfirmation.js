@@ -11,33 +11,30 @@ function Confirmation(props) {
 
     return (
         <div>
-            <br />
-            <br />
-            <br />
-            <br />
             <div class="row">
                 <div class="col-lg-12">
                     <label> Please confirm your dispute before submission </label>
                 </div>
                 <br />
+                <br />
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <label>1. Why are you disputing these transactions?</label>
+                    <p>1. Why are you disputing these transactions?</p>
                     <p>{props.transactionDisputeReasonAnswers}</p>
                 </div>
                 <br />
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <label>2. Has your credit card been with you the entire time?</label>
+                    <p>2. Has your credit card been with you the entire time?</p>
                     <p>{creditCardwithCustomer}</p>
                 </div>
                 <br />
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <label>3. Is there anything else you'd like to tell us about this dispute? </label>
+                    <p>3. Is there anything else you'd like to tell us about this dispute? </p>
                     <p>{props.extraInfos}</p>
                 </div>
                 <br />
@@ -61,29 +58,25 @@ function TransactionList(props) {
     }
     );
     return (
-        <div class="row" >
-            <div class="col-sm-12">
-                <table class="grid table table-borderless table-hover" id="myTable" >
-                    <tr>
-                        <th>Recent Activity</th>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Balance</th>
-                    </tr>
-                    <tbody>
-                        {rowsData}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total</td>
-                            <td>{rowSum}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <table class="table borderless" id="myTable" >
+            <tbody>
+                {rowsData}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><hr width="100%" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>{rowSum}</td>
+                </tr>
+            </tbody>
+        </table>
     );
 }
 
@@ -96,55 +89,22 @@ class DisputeConfirmation extends Component {
             creditCardQAs: this.props.creditCardQAs,
             extraInfos: this.props.extraInfos
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleSubmit(e) {
-        const target = e.target;
-        const name = target.name;
-
-        if (name == "next") {
-            this.props.history.push('/Confirmed');
-        } else if (name == "back") {
-            this.props.history.push('/ExtraInfoInput');
-        }
     }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <div class="container" >
-                        <div class="row" >
-                            <div class="col-lg-6">
-                                <Confirmation
-                                    transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
-                                    creditCardQAs={this.state.creditCardQAs}
-                                    extraInfos={this.state.extraInfos}
-                                />
-                            </div>
-                            <div class="col-lg-6">
-                                <br />
-                                <br />
-                                <br />
-                                <TransactionList data={this.props.transactionDisputes} />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <br />
-                            <br />
-                            <br />
-                            <div class="col-lg-4">
-                                <button name="back" type="button" class="btn btn-primary btn-sm" onClick={this.handleSubmit}>Back</button>
-                            </div>
-                            <div class="col-lg-4">
-                            </div>
-                            <div class="col-lg-4">
-                                <button name="next" type="button" class="btn btn-primary btn-sm pull-right" onClick={this.handleSubmit}>Submit</button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row" >
+                <div class="col-lg-8">
+                    <Confirmation
+                        transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
+                        creditCardQAs={this.state.creditCardQAs}
+                        extraInfos={this.state.extraInfos}
+                    />
+                </div>
+                <div class="col-lg-4">
+                    <hr />
+                    <p>Transaction(s) in Dispute</p>
+                    <TransactionList data={this.props.transactionDisputes} />
                 </div>
             </div>
         );

@@ -8,9 +8,7 @@ import { setExtraInfo } from './../actions/actions';
 function FinalConfirmation(props) {
 
     return (
-        <div class="container">
-            <br />
-            <br />
+        <div>
             <br />
             <div class="row">
                 <div class="col-lg-12">
@@ -27,19 +25,6 @@ function FinalConfirmation(props) {
                     <p>Regards,</p>
                 </div>
                 <br />
-            </div>
-
-            <div class="row">
-                <br />
-                <br />
-                <br />
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                    <button name="next" type="submit" class="btn btn-primary btn-sm pull-right">Submit</button>
-                </div>
             </div>
         </div>
     );
@@ -59,13 +44,8 @@ class Confirmed extends Component {
     }
 
     render() {
-        let wrapperClass = "gray-bg " + this.props.location.pathname;
         return (
-            <div id="wrapper">
-                <div id="page-wrapper" className={wrapperClass}>
-                    <FinalConfirmation handleSubmit={this.handleSubmit} />
-                </div>
-            </div>
+            <FinalConfirmation handleSubmit={this.handleSubmit} />
         );
     }
 }

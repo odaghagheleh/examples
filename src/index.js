@@ -8,6 +8,7 @@ import routes from './config/routes';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import transactionDisputeReducer from './reducers/reducers';
+import MainForm from './components/MainForm'
 
 import jquery from 'jquery';
 import metismenu from 'metismenu';
@@ -18,6 +19,8 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './../node_modules/font-awesome/css/font-awesome.css'
 import './../node_modules/animate.css/animate.min.css'
 import './styles/style.css'
+import './steps/css/main.css'
+import './cssoverride.css'
 
 
 
@@ -31,3 +34,5 @@ ReactDOM.render(
     </Provider>
     , document.getElementById('root'));
 registerServiceWorker();
+
+
