@@ -185,7 +185,6 @@ function extraInfos(state = "", action) {
     }
 }
 
-
 //Returning the reducers
 const transactionDisputeReducer = combineReducers({
     transactionLists,

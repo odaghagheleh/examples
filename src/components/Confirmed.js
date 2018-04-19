@@ -10,14 +10,14 @@ function FinalConfirmation(props) {
     return (
         <div>
             <br />
-            <div class="row">
-                <div class="col-lg-12">
+            <div className="row">
+                <div className="col-lg-12">
                     <h3> Confirmed</h3>
                 </div>
                 <br />
             </div>
-            <div class="row">
-                <div class="col-lg-12">
+            <div className="row">
+                <div className="col-lg-12">
                     <label>Your Dispute Request ID is: </label>
                     <p>Thanks you for your submission. Your dispute request has been successfully logged. You can review your request at any time in your notification list in the menu bar. </p>
                     <p>You should recieve an email shortly indicating next steps.</p>

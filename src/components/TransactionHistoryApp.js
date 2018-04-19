@@ -14,7 +14,7 @@ function SelectBar(props) {
   )
   return (
 
-    <select class="input-sm form-control input-s-sm inline">
+    <select className="input-sm form-control input-s-sm inline">
       {selectItem}
     </select>
 
@@ -50,42 +50,6 @@ function ProductTable(props) {
     </BootstrapTable>
   );
 
-  // const rowsData = props.data.map((dataItem) =>
-  //   <tr key={dataItem.id}>
-  //     <td>
-  //       <input type="checkbox" onChange={props.handleCheckedTrans} value={JSON.stringify(dataItem)} />
-  //     </td>
-  //     <td>{dataItem.recentActivity}
-  //       <br /><span>{dataItem.extraDescriptions}</span></td>
-  //     <td>{dataItem.type}
-  //       <br /><span>{dataItem.extraDescriptions}</span></td>
-  //     <td>{dataItem.Description}
-  //       <br /><span>{dataItem.extraDescriptions}</span></td>
-  //     <td>{dataItem.Amount}
-  //       <br /><span>{dataItem.extraDescriptions}</span></td>
-  //     <td>{dataItem.Balance}
-  //       <br /><span>{dataItem.extraDescriptions}</span></td>
-  //   </tr>
-
-  // );
-  // return (
-  //   <table class="table table-striped">
-  //     <thead>
-  //       <tr>
-  //         <th></th>
-  //         <th>Recent Activity</th>
-  //         <th>Type</th>
-  //         <th>Description</th>
-  //         <th>Amount</th>
-  //         <th>Balance</th>
-  //       </tr>
-  //     </thead>
-  //     <tbody>
-  //       {rowsData}
-  //     </tbody>
-  //   </table>
-  // );
-
 }
 
 class TransactionHistoryApp extends Component {
@@ -96,28 +60,28 @@ class TransactionHistoryApp extends Component {
     this.handleCheckedAll = this.handleCheckedAll.bind(this);
     this.state = {
       transactionSelectValue: [],
-      transactionList: this.props.transactionLists,
-      data: this.props.transactionHistories
+      transactionLists: this.props.transactionLists,
+      transactionHistories: this.props.transactionHistories
     };
   }
   componentWillMount() {
-    this.props.dispatch(getTransactionList());
-    this.props.dispatch(getTransactionHistory());
+    this.props.getTransactionList();
+    this.props.getTransactionHistory();
   }
-  componentDidUpdate() {
-    if (!(this.state.transactionList == this.props.transactionLists)) {
-      this.setState({
-        transactionList: this.props.transactionLists
-      });
-    }
-    if (!(this.state.data == this.props.transactionHistories)) {
-      this.setState({
-        data: this.props.transactionHistories
-      });
-    }
-  }
+  // componentDidUpdate() {
+  //   if (!(this.state.transactionLists == this.props.transactionLists)) {
+  //     this.setState({
+  //       transactionLists: this.props.transactionLists
+  //     });
+  //   }
+  //   if (!(this.state.transactionHistories == this.props.transactionHistories)) {
+  //     this.setState({
+  //       transactionHistories: this.props.transactionHistories
+  //     });
+  //   }
+  // }
   handleDisputebt(data) {
-    const stateData = this.state.data;
+    const stateData = this.state.transactionHistories;
 
     var storeData = [];
     for (var i in stateData) {
@@ -127,7 +91,7 @@ class TransactionHistoryApp extends Component {
         storeData.push(j);
       }
     }
-    this.props.dispatch(addDispute(data));
+    this.props.addDispute(data);
     this.props.history.push('/MainForm');
   }
 
@@ -163,6 +127,117 @@ class TransactionHistoryApp extends Component {
       this.setState({ transactionSelectValue: selectedValueArray });
     }
   }
+
+  render() {
+    let wrapperclassName = "gray-bg " + this.props.location.pathname;
+    return (
+      <div id="wrapper">
+        <div id="page-wrapper" className={wrapperclassName}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="ibox float-e-margins">
+                  <div className="ibox-title">
+                    <h2>Dispute Credit Transaction</h2>
+                    <div className="ibox-tools">
+                      <a className="collapse-link">
+                        <i className="fa fa-chevron-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="ibox-content" id="main-contents">
+                    <div className="row">
+                      <div className="col-sm-5 m-b-xs">
+                        <SelectBar transactionList={this.props.transactionLists} />
+                      </div>
+                      <div className="col-sm-4 m-b-xs">
+                      </div>
+                      <div className="col-sm-3">
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-sm-12">
+                        <br />
+                        <button type="button" className="btn btn-primary btn-sm" onClick={() => this.handleDisputebt(this.state.transactionSelectValue)} >Dispute</button>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-sm-12">
+                        <ProductTable data={this.props.transactionHistories} handleCheckedTrans={this.handleCheckedTrans} handleCheckedAll={this.handleCheckedAll} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    transactionLists: state.transactionLists,
+    transactionHistories: state.transactionHistories
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    getTransactionList: () => {
+      dispatch(getTransactionList());
+    },
+    getTransactionHistory: () => {
+      dispatch(getTransactionHistory());
+    },
+    addDispute: (data) => {
+      dispatch(addDispute(data));
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionHistoryApp);
+
+
+
+  // const rowsData = props.data.map((dataItem) =>
+  //   <tr key={dataItem.id}>
+  //     <td>
+  //       <input type="checkbox" onChange={props.handleCheckedTrans} value={JSON.stringify(dataItem)} />
+  //     </td>
+  //     <td>{dataItem.recentActivity}
+  //       <br /><span>{dataItem.extraDescriptions}</span></td>
+  //     <td>{dataItem.type}
+  //       <br /><span>{dataItem.extraDescriptions}</span></td>
+  //     <td>{dataItem.Description}
+  //       <br /><span>{dataItem.extraDescriptions}</span></td>
+  //     <td>{dataItem.Amount}
+  //       <br /><span>{dataItem.extraDescriptions}</span></td>
+  //     <td>{dataItem.Balance}
+  //       <br /><span>{dataItem.extraDescriptions}</span></td>
+  //   </tr>
+
+  // );
+  // return (
+  //   <table className="table table-striped">
+  //     <thead>
+  //       <tr>
+  //         <th></th>
+  //         <th>Recent Activity</th>
+  //         <th>Type</th>
+  //         <th>Description</th>
+  //         <th>Amount</th>
+  //         <th>Balance</th>
+  //       </tr>
+  //     </thead>
+  //     <tbody>
+  //       {rowsData}
+  //     </tbody>
+  //   </table>
+  // );
+
+
+
   // handleCheckedTrans(e) {
 
   //   var selectedValueArray = this.state.transactionSelectValue;
@@ -179,68 +254,6 @@ class TransactionHistoryApp extends Component {
   //     this.setState({ transactionSelectValue: selectedValueArray });
   //   }
   // }
-
-  render() {
-    const { dispatch } = this.props
-    let wrapperClass = "gray-bg " + this.props.location.pathname;
-    return (
-      <div id="wrapper">
-        <div id="page-wrapper" className={wrapperClass}>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="ibox float-e-margins">
-                  <div class="ibox-title">
-                    <h2>Dispute Credit Transaction</h2>
-                    <div class="ibox-tools">
-                      <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="ibox-content" id="main-contents">
-                    <div class="row">
-                      <div class="col-sm-5 m-b-xs">
-                        <SelectBar transactionList={this.state.transactionList} />
-                      </div>
-                      <div class="col-sm-4 m-b-xs">
-                      </div>
-                      <div class="col-sm-3">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <br />
-                        <button type="button" class="btn btn-primary btn-sm" onClick={() => this.handleDisputebt(this.state.transactionSelectValue)} >Dispute</button>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <ProductTable data={this.state.data} handleCheckedTrans={this.handleCheckedTrans} handleCheckedAll={this.handleCheckedAll} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-function select(store) {
-  return {
-    transactionLists: store.transactionLists,
-    transactionHistories: store.transactionHistories
-  }
-}
-export default connect(select)(TransactionHistoryApp);
-
-
-
-
-
 
 
 

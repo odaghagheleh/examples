@@ -11,33 +11,17 @@ function AdditionalQuestions(props) {
 
 
     const questions = propsQuestions.map((question) => {
-        if (Object.keys(currentValues).length > 0) {
-            return (
-                <div class="row" key={question.id} >
-                    <div class="col-lg-3">
-                        <p> {question.question} </p>
-                    </div>
-                    <div class="col-lg-4">
-                        <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} value={currentValues[question.id]} />
-                    </div>
-                    <br />
+        return (
+            <div className="row" key={question.id} >
+                <div className="col-lg-3">
+                    <p> {question.question} </p>
                 </div>
-            );
-        } else {
-            return (
-                <div class="row" key={question.id} >
-                    <div class="col-lg-3">
-                        <p> {question.question} </p>
-                    </div>
-                    <div class="col-lg-4">
-                        <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} />
-                    </div>
-                    <br />
+                <div className="col-lg-4">
+                    <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} value={currentValues[question.id]} />
                 </div>
-            );
-
-        }
-
+                <br />
+            </div>
+        );
     });
 
     return (
@@ -52,70 +36,70 @@ class AdditionalQuestionnaire extends Component {
         super(props);
 
         this.state = {
-            additionalQuestions: this.props.additionalQuestions,
-            answers: this.props.additionalQuestionAnswers
+            additionalQuestionAnswers: this.props.additionalQuestionAnswers
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleAnswer = this.handleAnswer.bind(this);
     }
     componentWillMount() {
-        this.props.dispatch(getAdditionalQuestions());
-    }
-    componentDidUpdate() {
-        if (!(this.state.additionalQuestions == this.props.additionalQuestions)) {
-            this.setState({
-                additionalQuestions: this.props.additionalQuestions
-            });
-        }
+        this.props.getAdditionalQuestions();
     }
 
     handleAnswer(questionId, e) {
         const target = e.target;
         const value = target.value;
 
-        var currentAnswer = this.state.answers;
+        var currentAnswer = this.props.additionalQuestionAnswers;
         currentAnswer[questionId] = value;
+        
         this.setState({
-            answers: currentAnswer
+            additionalQuestionAnswers: currentAnswer
         });
-
-    }
-    handleSubmit(e) {
-        const target = e.target;
-        const name = target.name;
-
-        if (name == "next") {
-            this.props.dispatch(setAdditionalQuestionsAnswer(this.state.answers));
-            this.props.history.push('/ExtraInfo');
-
-        } else if (name == "back") {
-            this.props.history.push('/CreditCardQuestionnaire');
-        }
     }
 
     render() {
         return (
             <div>
                 <br />
-                <div class="row">
-                    <div class="col-lg-12">
+                <div className="row">
+                    <div className="col-lg-12">
                         <label> Additional Questions: </label>
                     </div>
                     <br />
                     <br />
                 </div>
-                <AdditionalQuestions questions={this.state.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.state.answers} />
+
+                <div className="row">
+                    <div className="col-lg-12">
+                        <AdditionalQuestions questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
+                    </div>
+                </div>
             </div>
         );
     }
 }
 
-function select(store) {
+// function select(store) {
+//     return {
+//         additionalQuestions: store.additionalQuestions,
+//         additionalQuestionAnswers: store.additionalQuestionAnswers
+//     }
+// }
+
+const mapStateToProps = state => {
     return {
-        additionalQuestions: store.additionalQuestions,
-        additionalQuestionAnswers: store.additionalQuestionAnswers
+        additionalQuestions: state.additionalQuestions,
+        additionalQuestionAnswers: state.additionalQuestionAnswers
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return{
+        getAdditionalQuestions: () => {
+            dispatch(getAdditionalQuestions());
+        },
+        setAdditionalQuestionsAnswer: (payload) => {
+            dispatch(setAdditionalQuestionsAnswer(payload));
+        }
     }
 }
 
-export default connect(select)(AdditionalQuestionnaire);
+export default connect(mapStateToProps,mapDispatchToProps)(AdditionalQuestionnaire);

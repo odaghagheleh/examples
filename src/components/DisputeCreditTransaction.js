@@ -17,21 +17,14 @@ function TransactionList(props) {
     );
     return (
 
-        <table class="table borderless " id="myTable" >
-            {/* <tr>
-                <th>Recent Activity</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Balance</th>
-            </tr> */}
+        <table className="table borderless " id="myTable" >
             <tbody>
-                {rowsData}                
+                {rowsData}
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><hr width="100%"/></td>
+                    <td><hr width="100%" /></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -67,21 +60,21 @@ class DisputeCreditTransaction extends Component {
     render() {
         return (
             <div>
-                <div class="row" >
+                <div className="row" >
                     <br />
-                    <div class="col-sm-12">
+                    <div className="col-sm-12">
                         <h3>Please confirm the following transactions in question</h3>
                         <br />
                         <p>Transaction selected:</p>
                         <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-2">
-                        <button name="confirm" type="button" class="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
+                <div className="row">
+                    <div className="col-sm-2">
+                        <button name="confirm" type="button" className="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
                     </div>
-                    <div class="col-sm-4">
-                        <button name="cancel" type="button" class="btn btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
+                    <div className="col-sm-4">
+                        <button name="cancel" type="button" className="btn btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
                     </div>
                 </div>
             </div>
@@ -89,12 +82,12 @@ class DisputeCreditTransaction extends Component {
     }
 }
 
-function select(store) {
+const mapStateToProps = state => {
     return {
-        transactionDisputes: store.transactionDisputes
+        transactionDisputes: state.transactionDisputes
     }
 }
-export default connect(select)(DisputeCreditTransaction);
 
 
-// {console.log(JSON.stringify(this.props.transactionDisputes))}
+export default connect(mapStateToProps)(DisputeCreditTransaction);
+

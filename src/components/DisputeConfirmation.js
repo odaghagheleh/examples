@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import { setExtraInfo } from './../actions/actions';
 
 function Confirmation(props) {
     const creditCardQAs = props.creditCardQAs;
@@ -11,29 +10,29 @@ function Confirmation(props) {
 
     return (
         <div>
-            <div class="row">
-                <div class="col-lg-12">
+            <div className="row">
+                <div className="col-lg-12">
                     <label> Please confirm your dispute before submission </label>
                 </div>
                 <br />
                 <br />
             </div>
-            <div class="row">
-                <div class="col-lg-5">
+            <div className="row">
+                <div className="col-lg-5">
                     <p>1. Why are you disputing these transactions?</p>
                     <p>{props.transactionDisputeReasonAnswers}</p>
                 </div>
                 <br />
             </div>
-            <div class="row">
-                <div class="col-lg-12">
+            <div className="row">
+                <div className="col-lg-12">
                     <p>2. Has your credit card been with you the entire time?</p>
                     <p>{creditCardwithCustomer}</p>
                 </div>
                 <br />
             </div>
-            <div class="row">
-                <div class="col-lg-5">
+            <div className="row">
+                <div className="col-lg-5">
                     <p>3. Is there anything else you'd like to tell us about this dispute? </p>
                     <p>{props.extraInfos}</p>
                 </div>
@@ -43,7 +42,7 @@ function Confirmation(props) {
     );
 
 }
-function TransactionList(props) {
+const TransactionList = props => {
 
     var rowSum = 0;
     const rowsData = props.data.map(function (dataItem) {
@@ -58,7 +57,7 @@ function TransactionList(props) {
     }
     );
     return (
-        <table class="table borderless" id="myTable" >
+        <table className="table borderless" id="myTable" >
             <tbody>
                 {rowsData}
                 <tr>
@@ -80,44 +79,34 @@ function TransactionList(props) {
     );
 }
 
-class DisputeConfirmation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: this.props.transactionDisputes,
-            transactionDisputeReasonAnswers: this.props.transactionDisputeReasonAnswers,
-            creditCardQAs: this.props.creditCardQAs,
-            extraInfos: this.props.extraInfos
-        }
-    }
+const DisputeConfirmation = props => {
 
-    render() {
-        return (
-            <div class="row" >
-                <div class="col-lg-8">
-                    <Confirmation
-                        transactionDisputeReasonAnswers={this.state.transactionDisputeReasonAnswers}
-                        creditCardQAs={this.state.creditCardQAs}
-                        extraInfos={this.state.extraInfos}
-                    />
-                </div>
-                <div class="col-lg-4">
-                    <hr />
-                    <p>Transaction(s) in Dispute</p>
-                    <TransactionList data={this.props.transactionDisputes} />
-                </div>
+    return (
+        <div className="row" >
+            <div className="col-lg-8">
+                <Confirmation
+                    transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
+                    creditCardQAs={props.creditCardQAs}
+                    extraInfos={props.extraInfos}
+                />
             </div>
-        );
-    }
+            <div className="col-lg-4">
+                <hr />
+                <p>Transaction(s) in Dispute</p>
+                <TransactionList data={props.transactionDisputes} />
+            </div>
+        </div>
+    );
 }
 
-function select(store) {
+
+const mapStateToProps = state => {
     return {
-        transactionDisputes: store.transactionDisputes,
-        transactionDisputeReasonAnswers: store.transactionDisputeReasonAnswers,
-        creditCardQAs: store.creditCardQAs,
-        extraInfos: store.extraInfos
+        transactionDisputes: state.transactionDisputes,
+        transactionDisputeReasonAnswers: state.transactionDisputeReasonAnswers,
+        creditCardQAs: state.creditCardQAs,
+        extraInfos: state.extraInfos
     }
 }
 
-export default connect(select)(DisputeConfirmation);
+export default connect(mapStateToProps)(DisputeConfirmation);
