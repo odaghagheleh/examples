@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { addCreditCardQuestionAnswer } from './../actions/actions';
 
-function CreditCardQuestions(props) {
+const CreditCardQuestions = props => {
     var currentValues = props.currentValues;
     const yesBt = currentValues.creditCardwithCustomer == "Yes" ?
         <input name="yes" type="button" className="btn btn-sm neibourb active" onClick={props.handleUserAnswer} value="Yes" /> :
@@ -64,7 +64,6 @@ class CreditCardQuestionnaire extends Component {
         this.state = {
             userAnswer: this.props.creditCardQAs
         }
-        this.handleUserAnswer = this.handleUserAnswer.bind(this);
     }
 
     handleUserAnswer(e) {
@@ -79,34 +78,38 @@ class CreditCardQuestionnaire extends Component {
                 this.setState({
                     userAnswer: currentUserAnswer
                 });
+                this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "no":
                 currentUserAnswer["creditCardwithCustomer"] = value;
                 this.setState({
                     userAnswer: currentUserAnswer
                 });
+                this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "missingDate":
                 currentUserAnswer["missingDate"] = value;
                 this.setState({
                     userAnswer: currentUserAnswer
                 });
+                this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "lastUsedDate":
                 currentUserAnswer["lastUsedDate"] = value;
                 this.setState({
                     userAnswer: currentUserAnswer
                 });
+                this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
         }
+
     }
 
     render() {
         return (
             <div>
-                <CreditCardQuestions handleUserAnswer={this.handleUserAnswer} currentValues={this.props.creditCardQAs} />
+                <CreditCardQuestions handleUserAnswer={(e) => this.handleUserAnswer(e)} currentValues={this.props.creditCardQAs} />
                 <br />
-                {/* {console.log(this.props.creditCardQAs)} */}
             </div>
         );
     }
@@ -124,4 +127,4 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
-export default connect(mapStateToProps)(CreditCardQuestionnaire);
+export default connect(mapStateToProps, mapDispatchToProps)(CreditCardQuestionnaire);

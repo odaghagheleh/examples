@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getAdditionalQuestions } from './../actions/actions';
 import { setAdditionalQuestionsAnswer } from './../actions/actions';
 
-function AdditionalQuestions(props) {
+const AdditionalQuestions = props => {
 
     const propsQuestions = props.questions;
     const currentValues = props.currentValues;
@@ -50,10 +50,12 @@ class AdditionalQuestionnaire extends Component {
 
         var currentAnswer = this.props.additionalQuestionAnswers;
         currentAnswer[questionId] = value;
-        
         this.setState({
             additionalQuestionAnswers: currentAnswer
         });
+        this.props.setAdditionalQuestionsAnswer(this.state.additionalQuestionAnswers);
+
+
     }
 
     render() {
@@ -92,7 +94,7 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = dispatch => {
-    return{
+    return {
         getAdditionalQuestions: () => {
             dispatch(getAdditionalQuestions());
         },
@@ -102,4 +104,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(AdditionalQuestionnaire);
+export default connect(mapStateToProps, mapDispatchToProps)(AdditionalQuestionnaire);

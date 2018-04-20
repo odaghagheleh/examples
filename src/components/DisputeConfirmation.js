@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-function Confirmation(props) {
+const Confirmation = props =>  {
     const creditCardQAs = props.creditCardQAs;
-    const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
-        "" :
-        creditCardQAs.creditCardwithCustomer;
+    // const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
+    //     "" :
+    //     creditCardQAs.creditCardwithCustomer;
 
     return (
         <div>
@@ -27,7 +27,7 @@ function Confirmation(props) {
             <div className="row">
                 <div className="col-lg-12">
                     <p>2. Has your credit card been with you the entire time?</p>
-                    <p>{creditCardwithCustomer}</p>
+                    <p>{props.creditCardQAs.creditCardwithCustomer}</p>
                 </div>
                 <br />
             </div>
@@ -98,7 +98,6 @@ const DisputeConfirmation = props => {
         </div>
     );
 }
-
 
 const mapStateToProps = state => {
     return {
