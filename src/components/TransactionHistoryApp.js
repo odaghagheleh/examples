@@ -31,28 +31,60 @@ const ProductTable = props => {
     // console.log(JSON.stringify(rows[i]));
     props.handleCheckedAll(JSON.stringify(rows), isSelected);
   }
+  const expandComponent = (row) => {
+    return (
+      <BSTable data={row.extraDescriptions} />
+    );
+  }
+  const isExpandableRow = (row) => {
+    return "true";
+  }
 
-  const selected = props.transactionDisputes.map((item) => item.id );
+  const selected = props.transactionDisputes.map((item) => item.id);
 
   const selectRowProp = {
     mode: 'checkbox',
     clickToSelect: true,
+    clickToExpand: true,
     onSelect: onRowSelect,
     onSelectAll: onSelectAll,
     selected: selected
   };
 
+
   return (
-    <BootstrapTable data={props.data} selectRow={selectRowProp} bordered={false} search={true} striped hover pagination>
-      <TableHeaderColumn isKey dataField='id' dataSort={true}>Product ID</TableHeaderColumn>
-      <TableHeaderColumn dataField='recentActivity' dataSort={true}>recentActivity</TableHeaderColumn>
-      <TableHeaderColumn dataField='type' dataSort={true}>type</TableHeaderColumn>
+    <BootstrapTable data={props.data}
+      bordered={false}
+      search={true}
+      selectRow={selectRowProp}
+      expandableRow={(row) => { return 'true' }}
+      expandComponent={(row) => { return (<BSTable data={row.extraDescriptions} />) }}
+      striped hover pagination>
+      <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
+      <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
+      <TableHeaderColumn dataField='type' dataSort={true}>Type</TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
-      <TableHeaderColumn dataField='Amount' dataSort={true}>Amount</TableHeaderColumn>
-      <TableHeaderColumn dataField='Balance' dataSort={true}>Balance</TableHeaderColumn>
+      <TableHeaderColumn dataField='Amount' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
+      <TableHeaderColumn dataField='Balance' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
     </BootstrapTable>
   );
 
+}
+
+const BSTable = props => {
+  return (
+    <BootstrapTable data={props.data}
+    bordered={false}
+    hover={false}
+    >
+      <TableHeaderColumn dataField='id' isKey={true} hidden></TableHeaderColumn>
+      <TableHeaderColumn dataField='Transaction_Details'>Transaction Details</TableHeaderColumn>
+      <TableHeaderColumn dataField='code'></TableHeaderColumn>
+      <TableHeaderColumn dataField='where_you_Paid'></TableHeaderColumn>
+      <TableHeaderColumn dataField='description'></TableHeaderColumn>
+      <TableHeaderColumn dataField='balance'></TableHeaderColumn>
+    </BootstrapTable>
+  );
 }
 
 class TransactionHistoryApp extends Component {
@@ -105,7 +137,7 @@ class TransactionHistoryApp extends Component {
       delete selectedValueArray[value.id];
       this.setState({ transactionSelectValue: selectedValueArray });
     }
-    
+
     for (var key in selectedValueArray) {
       selectedListtoStore.push(selectedValueArray[key]);
     }

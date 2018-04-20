@@ -6,12 +6,12 @@ import { addCreditCardQuestionAnswer } from './../actions/actions';
 const CreditCardQuestions = props => {
     var currentValues = props.currentValues;
     const yesBt = currentValues.creditCardwithCustomer == "Yes" ?
-        <input name="yes" type="button" className="btn btn-sm neibourb active" onClick={props.handleUserAnswer} value="Yes" /> :
+        <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb active" onClick={props.handleUserAnswer} value="Yes" /> :
         <input name="yes" type="button" className="btn btn-sm neibourb" onClick={props.handleUserAnswer} value="Yes" />;
 
     const noBt = currentValues.creditCardwithCustomer == "No" ?
         <input name="no" type="button" className="btn btn-primary btn-sm neibourbt active" onClick={props.handleUserAnswer} value="No" /> :
-        <input name="no" type="button" className="btn btn-primary btn-sm neibourbt" onClick={props.handleUserAnswer} value="No" />;
+        <input name="no" type="button" className="btn btn-sm neibourbt" onClick={props.handleUserAnswer} value="No" />;
     return (
         <div>
             <br />

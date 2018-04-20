@@ -26,16 +26,30 @@ export function getTransactionHistory() {
                 "Description": "Simple",
                 "Amount": 24,
                 "Balance": 36,
-                "extraDescriptions": "extraDescriptions"
+                "extraDescriptions": [{
+                    id: '1',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
             },
             {
                 "id": "2",
                 "recentActivity": "18/03/2018",
                 "type": "Payment",
                 "Description": "Good",
-                "Amount": 24,
+                "Amount": -24,
                 "Balance": 36,
-                "extraDescriptions": "extraDescriptions"
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
             },
             {
                 "id": "3",
@@ -43,8 +57,15 @@ export function getTransactionHistory() {
                 "type": "Payment",
                 "Description": "Bad",
                 "Amount": 25,
-                "Balance": 36,
-                "extraDescriptions": "extraDescriptions"
+                "Balance": -36,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
             }
         ]
     };
