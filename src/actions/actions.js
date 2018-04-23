@@ -68,7 +68,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "2",
+                "id": "4",
                 "recentActivity": "18/03/2018",
                 "type": "Charge",
                 "Description": "Good",
@@ -84,7 +84,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "3",
+                "id": "5",
                 "recentActivity": "18/03/2018",
                 "type": "Transfer",
                 "Description": "Bad",
@@ -100,7 +100,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "2",
+                "id": "6",
                 "recentActivity": "18/03/2018",
                 "type": "Charge",
                 "Description": "Good",
@@ -116,7 +116,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "3",
+                "id": "7",
                 "recentActivity": "18/03/2018",
                 "type": "Transfer",
                 "Description": "Bad",
@@ -132,7 +132,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "2",
+                "id": "8",
                 "recentActivity": "18/03/2018",
                 "type": "Charge",
                 "Description": "Good",
@@ -148,7 +148,7 @@ export function getTransactionHistory() {
                 }]
             },
             {
-                "id": "3",
+                "id": "9",
                 "recentActivity": "18/03/2018",
                 "type": "Transfer",
                 "Description": "Bad",

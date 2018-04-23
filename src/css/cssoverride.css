@@ -155,3 +155,23 @@ html, body, #main-contents{
 .neibourbt{
   margin-left: 5px;
 }
+.row-white-bg td{
+  background-color: #fff;
+}
+.row-hover :hover{
+  background-color: rgb(228, 228, 228);
+}
+.row-white-bg th{
+  background-color: #fff;
+  border: none !important;
+}
+.extend-row-white-bg td{
+  background-color: #fff;
+  border: none !important;
+
+}
+.extend-row-white-bg th{
+  background-color: #fff;
+  border: none !important;
+
+}

@@ -63,6 +63,9 @@ const ProductTable = props => {
   }
   return (
     <BootstrapTable data={props.data}
+      tableHeaderClass='row-white-bg'
+      tableBodyClass='row-white-bg'
+      trClassName='row-hover'
       options={options}
       bordered={false}
       search={true}
@@ -87,6 +90,8 @@ const BSTable = props => {
     <BootstrapTable data={props.data}
       bordered={false}
       hover={false}
+      tableHeaderClass='extend-row-white-bg'
+      tableBodyClass='extend-row-white-bg'
     >
       <TableHeaderColumn dataField='id' isKey={true} hidden></TableHeaderColumn>
       <TableHeaderColumn dataField='Transaction_Details'>Transaction Details</TableHeaderColumn>
