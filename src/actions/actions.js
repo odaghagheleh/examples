@@ -38,7 +38,7 @@ export function getTransactionHistory() {
             {
                 "id": "2",
                 "recentActivity": "18/03/2018",
-                "type": "Payment",
+                "type": "Charge",
                 "Description": "Good",
                 "Amount": -24,
                 "Balance": 36,
@@ -54,7 +54,103 @@ export function getTransactionHistory() {
             {
                 "id": "3",
                 "recentActivity": "18/03/2018",
-                "type": "Payment",
+                "type": "Transfer",
+                "Description": "Bad",
+                "Amount": 25,
+                "Balance": -36,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "2",
+                "recentActivity": "18/03/2018",
+                "type": "Charge",
+                "Description": "Good",
+                "Amount": -24,
+                "Balance": 36,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "3",
+                "recentActivity": "18/03/2018",
+                "type": "Transfer",
+                "Description": "Bad",
+                "Amount": 25,
+                "Balance": -36,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "2",
+                "recentActivity": "18/03/2018",
+                "type": "Charge",
+                "Description": "Good",
+                "Amount": -24,
+                "Balance": 36,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "3",
+                "recentActivity": "18/03/2018",
+                "type": "Transfer",
+                "Description": "Bad",
+                "Amount": 25,
+                "Balance": -36,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "2",
+                "recentActivity": "18/03/2018",
+                "type": "Charge",
+                "Description": "Good",
+                "Amount": -24,
+                "Balance": 36,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'Where you paid',
+                    description: 'Description of Shop or other Seller',
+                    balance: '123eedd'
+                }]
+            },
+            {
+                "id": "3",
+                "recentActivity": "18/03/2018",
+                "type": "Transfer",
                 "Description": "Bad",
                 "Amount": 25,
                 "Balance": -36,

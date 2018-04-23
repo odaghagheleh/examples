@@ -50,10 +50,20 @@ const ProductTable = props => {
     onSelectAll: onSelectAll,
     selected: selected
   };
-
-
+  const qualityType = {
+    Payment: 'Payment',
+    Charge: 'Charge',
+    Transfer: 'Transfer'
+  };
+  const options = {
+    sizePerPage: 5
+  }
+  const enumFormatter = (cell, row, enumObject) => {
+    return enumObject[cell];
+  }
   return (
     <BootstrapTable data={props.data}
+      options={options}
       bordered={false}
       search={true}
       selectRow={selectRowProp}
@@ -62,7 +72,8 @@ const ProductTable = props => {
       striped hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
       <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
-      <TableHeaderColumn dataField='type' dataSort={true}>Type</TableHeaderColumn>
+      <TableHeaderColumn dataField='type' filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
+        filter={{ type: 'SelectFilter', options: qualityType }}>Type</TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
       <TableHeaderColumn dataField='Amount' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
       <TableHeaderColumn dataField='Balance' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
@@ -74,8 +85,8 @@ const ProductTable = props => {
 const BSTable = props => {
   return (
     <BootstrapTable data={props.data}
-    bordered={false}
-    hover={false}
+      bordered={false}
+      hover={false}
     >
       <TableHeaderColumn dataField='id' isKey={true} hidden></TableHeaderColumn>
       <TableHeaderColumn dataField='Transaction_Details'>Transaction Details</TableHeaderColumn>
@@ -165,7 +176,7 @@ class TransactionHistoryApp extends Component {
                   <div className="ibox-content" id="main-contents">
                     <div className="row">
                       <div className="col-sm-5 m-b-xs">
-                        <SelectBar transactionList={this.props.transactionLists} />
+                        {/* <SelectBar transactionList={this.props.transactionLists} /> */}
                       </div>
                       <div className="col-sm-4 m-b-xs">
                       </div>
@@ -174,8 +185,7 @@ class TransactionHistoryApp extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-12">
-                        <br />
-                        <button type="button" className="btn btn-primary btn-sm" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                        <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
                       </div>
                     </div>
                     <div className="row">
