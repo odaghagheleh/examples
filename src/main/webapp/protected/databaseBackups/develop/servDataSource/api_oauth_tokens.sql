@@ -1,0 +1,1 @@
+INSERT INTO api_oauth_tokens (accesstoken,clientid,expiresin,refreshtoken,granttype,localuser) VALUES ('46c21d6b5c96a03c9ce921e4cfa79381','LOCAL_USER','2018-04-25 13:45:45','d8e10fa43a2ab67763ae85113927499f','implicit','admin');
