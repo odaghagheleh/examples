@@ -32,4 +32,4 @@ INSERT INTO pages_metadata_online (code,titles,modelcode,showinmenu,extraconfig,
   <mimeType>text/html</mimeType>
 </config>
 
-','2018-04-27 15:23:55');
+','2018-04-28 13:34:35');

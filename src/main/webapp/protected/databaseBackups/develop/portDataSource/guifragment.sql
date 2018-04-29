@@ -1799,11 +1799,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto);
  </style>
-
-<@wp.headInfo type="CSS" info="../static/css/main.2ca915f9.css"/>
+<link rel="stylesheet" href="<@wp.resourceURL />static/static/css/main.8cd2b6dc.css" rel="stylesheet">
 <div id="fsi-demo-customer"></div>
 
-<script type="text/javascript" src="<@wp.resourceURL />static/static/js/main.cceeae37.js"></script>
+<script type="text/javascript" src="<@wp.resourceURL />static/static/js/main.31920ae4.js"></script>
+<script>console.log(window.location)</script>
 
 
 ',NULL,0);

@@ -5,3 +5,4 @@
 2018-04-29 10:07:32.834 - INFO  -  com.agiletec.apsadmin.common.DispatchAction - User - admin logged
 2018-04-29 10:07:35.510 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
 2018-04-29 10:07:35.523 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
+2018-04-29 10:16:44.886 - INFO  -  org.entando.entando.aps.system.XmlWebApplicationContext - Closing Root WebApplicationContext: startup date [Sun Apr 29 09:03:05 AEST 2018]; root of context hierarchy
