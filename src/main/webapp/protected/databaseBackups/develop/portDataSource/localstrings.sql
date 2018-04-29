@@ -248,3 +248,5 @@ INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('jacms_SEARCH_TE
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('jacms_SEARCH_TEXT_AT_LEAST_ONE_WORD','en','At least one word');
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('jacms_SEARCH_TEXT_EXACT','it','Frase esatta');
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('jacms_SEARCH_TEXT_EXACT','en','Exact');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('userprofile_PFL_fullname','en','Full Name');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('userprofile_PFL_email','en','Email');

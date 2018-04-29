@@ -211,3 +211,6 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 </properties>','<config>
         <parameter name="channel">channel</parameter>
 </config>','creditdisputecustomer',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('fsi','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">fsi-credit-card-dispute-customer</property><property key="it">fsi-credit-card-dispute-customer</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');

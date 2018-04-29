@@ -18,91 +18,108 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('home'
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('inspinia','inspinia','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
 	<frame pos="0">
-		<descr>Navbar 1</descr>
+		<descr>Sidebar 1</descr>
+		<sketch x1="0" y1="0" x2="1" y2="0" />
 	</frame>
 	<frame pos="1">
-		<descr>Navbar 2</descr>
+		<descr>Top Bar 1</descr>
+		<sketch x1="2" y1="0" x2="4" y2="0" />
 	</frame>
 	<frame pos="2">
-		<descr>Navbar 3</descr>
+		<descr>Top Bar 2</descr>
+		<sketch x1="5" y1="0" x2="7" y2="0" />
 	</frame>
 	<frame pos="3">
-		<descr>Navbar 4</descr>
+		<descr>Top Bar 3</descr>
+		<sketch x1="8" y1="0" x2="9" y2="0" />
 	</frame>
 	<frame pos="4">
-		<descr>Toolbar 1</descr>
+		<descr>Top Bar 4</descr>
+		<sketch x1="10" y1="0" x2="11" y2="0" />
 	</frame>
 	<frame pos="5">
-		<descr>Hero Unit</descr>
+		<descr>Header</descr>
+		<sketch x1="2" y1="1" x2="11" y2="1" />
 	</frame>
 	<frame pos="6">
-		<descr>Toolbar 2</descr>
+		<descr>Sidebar 2</descr>
+		<sketch x1="0" y1="1" x2="1" y2="1" />
 	</frame>
-	<frame pos="7" main="true">
-		<descr>Top Story</descr>
+	<frame pos="7">
+		<descr>Content Left 1</descr>
+		<sketch x1="2" y1="2" x2="4" y2="2" />
 	</frame>
 	<frame pos="8">
-		<descr>Box 1</descr>
+		<descr>Content Central 1</descr>
+		<sketch x1="5" y1="2" x2="8" y2="2" />
 	</frame>
 	<frame pos="9">
-		<descr>Box 2</descr>
+		<descr>Content Right 1</descr>
+		<sketch x1="9" y1="2" x2="11" y2="2" />
 	</frame>
 	<frame pos="10">
-		<descr>Box 3</descr>
+		<descr>Sidebar 3</descr>
+		<sketch x1="0" y1="2" x2="1" y2="2" />
 	</frame>
 	<frame pos="11">
-		<descr>Side 1</descr>
+		<descr>Content Left 2</descr>
+		<sketch x1="2" y1="3" x2="4" y2="3" />
 	</frame>
 	<frame pos="12">
-		<descr>Side 2</descr>
+		<descr>Content Central 2</descr>
+		<sketch x1="5" y1="3" x2="8" y2="3" />
 	</frame>
 	<frame pos="13">
-		<descr>Side 3</descr>
+		<descr>Content Right 2</descr>
+		<sketch x1="9" y1="3" x2="11" y2="3" />
 	</frame>
 	<frame pos="14">
-		<descr>Side 4</descr>
+		<descr>Sidebar 4</descr>
+		<sketch x1="0" y1="3" x2="1" y2="3" />
 	</frame>
-	<frame pos="15">
-		<descr>Content 1</descr>
+	<frame pos="15" main="true">
+		<descr>Content Full 1</descr>
+		<sketch x1="2" y1="4" x2="11" y2="4" />
 	</frame>
 	<frame pos="16">
-		<descr>Content 2</descr>
+		<descr>Sidebar 5</descr>
+		<sketch x1="0" y1="4" x2="1" y2="4" />
 	</frame>
 	<frame pos="17">
-		<descr>Content 3</descr>
+		<descr>Content Full 2</descr>
+		<sketch x1="2" y1="5" x2="11" y2="5" />
 	</frame>
 	<frame pos="18">
-		<descr>Content 4</descr>
+		<descr>Sidebar 6</descr>
+		<sketch x1="0" y1="5" x2="1" y2="5" />
 	</frame>
 	<frame pos="19">
-		<descr>Content 5</descr>
+		<descr>Content Left 3</descr>
+		<sketch x1="2" y1="6" x2="4" y2="6" />
 	</frame>
 	<frame pos="20">
-		<descr>Side 5</descr>
+		<descr>Content Central 3</descr>
+		<sketch x1="5" y1="6" x2="8" y2="6" />
 	</frame>
 	<frame pos="21">
-		<descr>Side 6</descr>
+		<descr>Content Right 3</descr>
+		<sketch x1="9" y1="6" x2="11" y2="6" />
 	</frame>
 	<frame pos="22">
-		<descr>Side 7</descr>
+		<descr>Content Left 4</descr>
+		<sketch x1="2" y1="7" x2="4" y2="7" />
 	</frame>
 	<frame pos="23">
-		<descr>Side 8</descr>
+		<descr>Content Central 4</descr>
+		<sketch x1="5" y1="7" x2="8" y2="7" />
 	</frame>
 	<frame pos="24">
-		<descr>Footer 1</descr>
+		<descr>Content Right 4</descr>
+		<sketch x1="9" y1="7" x2="11" y2="7" />
 	</frame>
 	<frame pos="25">
-		<descr>Footer 2</descr>
-	</frame>
-	<frame pos="26">
-		<descr>Footer 3</descr>
-	</frame>
-	<frame pos="27">
-		<descr>Footer 4</descr>
-	</frame>
-	<frame pos="28">
-		<descr>Footer 5</descr>
+		<descr>Footer</descr>
+		<sketch x1="2" y1="8" x2="11" y2="8" />
 	</frame>
 </frames>
 
@@ -118,145 +135,206 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('inspi
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />
+              favicon.png" type="image/png" />
               <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
               <!--[if lt IE 9]>
-                      <script src="<@wp.resourceURL />static/js/entando-misc-html5-essentials/html5shiv.js"></script>
+              <script src="<@wp.resourceURL />static/js/entando-misc-html5-essentials/html5shiv.js"></script>
               <![endif]-->
-              <@c.import url="/WEB-INF/aps/jsp/models/inc/lesscss-active/lesscss.jsp" />
-              <@c.import url="/WEB-INF/aps/jsp/models/inc/models-common-utils.jsp" />
-	      <@c.import url="/WEB-INF/aps/jsp/models/inc/content_inline_editing.jsp" />
+              <@c.import url="/WEB-INF/aps/jsp/models/inc/content_inline_editing.jsp" />
+              <@c.import url="/WEB-INF/aps/jsp/models/inc/header-inclusions.jsp" />
+              <@c.import url="/WEB-INF/aps/jsp/models/inc/flash_toast.jsp" />
     </head>
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#"><img src="<@wp.imgURL />entando-logo.png" alt="Entando - Access. Build. Connect." /></a>
-                    <div class="nav-collapse collapse">
-                        <@wp.show frame=0 />
-                        <@wp.show frame=1 />
-                        <@wp.show frame=2 />
-                        <@wp.show frame=3 />
-                    </div><!-- /.nav-collapse -->
-                </div>
-            </div><!-- /navbar-inner -->
+    <body class="pace-done">
+    <div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=4 />
+        <div class="pace-activity"></div></div>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <@wp.show frame=1 />
+                            <@wp.show frame=2 />
+                            <@wp.show frame=3 />
+                            <@wp.show frame=4 />
+                    </ul>
+                </nav>
+            </div>
+            <div class="row white-bg" style="padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <@wp.show  frame=5 />
+            </div>
+            <div style="padding-top:20px;">
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show frame=7 />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show frame=8 />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show frame=9 />
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top:20px;">
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show frame=11 />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show  frame=12 />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="white-bg">
+                        <@wp.show  frame=13 />
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <@wp.show frame=5 />
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=6 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=7 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span4">
-                    <@wp.show frame=8 />
-                </div>
-                <div class="span4">
-                    <@wp.show frame=9 />
-                </div>
-                <div class="span4">
-                    <@wp.show frame=10 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <@wp.show frame=11 />
-                </div>
-                <div class="span6">
-                    <@wp.show frame=12 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <@wp.show frame=13 />
-                </div>
-                <div class="span6">
-                    <@wp.show frame=14 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=15 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=16 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=17 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=18 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <@wp.show frame=19 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <@wp.show frame=20 />
-                </div>
-                <div class="span6">
-                    <@wp.show frame=21 />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6">
-                    <@wp.show frame=22 />
-                </div>
-                <div class="span6">
-                    <@wp.show frame=23 />
-                </div>
-            </div>
-        </div>
-        <footer class="padding-medium-top">
-            <div class="container">
-                <div class="row margin-medium-bottom">
-                    <div class="span12">
-                        <@wp.show frame=24 />
+                <div class="col-lg-12">
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <@wp.show frame=15 />
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <@wp.show  frame= 17/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="white-bg">
+                                    <@wp.show  frame=19 />
+                                </div>
+                                <div class="white-bg">
+                                    <@wp.show frame=22/>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="white-bg">
+                                    <@wp.show frame=20 />
+                                </div>
+                                <div class="white-bg">
+                                    <@wp.show  frame=23 />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="white-bg">
+                                    <@wp.show  frame=21 />
+                                </div>
+                                <div class="white-bg">
+                                    <@wp.show frame=24 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
                         <@wp.show frame=25 />
                     </div>
                 </div>
-                <div class="row margin-medium-bottom">
-                    <div class="span4">
-                        <@wp.show frame=26 />
-                    </div>
-                    <div class="span4">
-                        <@wp.show frame=27 />
-                    </div>
-                    <div class="span4">
-                        <@wp.show frame=28 />
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="span12 text-center margin-medium-top"><@wp.i18n key="COPYRIGHT" escapeXml=false /> - Powered by <a href="http://www.entando.com/">Entando - Access. Build. Connect.</a></p>
-                </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </div> 
+</body>
 </html>');
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('FSI-Dashboard-customer','FSI-Dashboard-customer','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+	<frame pos="0">
+		<descr>Top bar 1</descr>
+		<sketch x1="0" y1="0" x2="1" y2="0" />
+	</frame>
+	<frame pos="1">
+		<descr>Top Bar 2</descr>
+		<sketch x1="2" y1="0" x2="3" y2="0" />
+	</frame>
+	<frame pos="2">
+		<descr>Top Bar 3</descr>
+		<sketch x1="4" y1="0" x2="5" y2="0" />
+	</frame>
+	<frame pos="3">
+		<descr>Top Bar 4</descr>
+		<sketch x1="6" y1="0" x2="7" y2="0" />
+	</frame>
+	<frame pos="4">
+		<descr>Top Bar 5</descr>
+		<sketch x1="8" y1="0" x2="9" y2="0" />
+	</frame>
+	<frame pos="5">
+		<descr>Top Bar 6</descr>
+		<sketch x1="10" y1="0" x2="11" y2="0" />
+	</frame>
+	<frame pos="6">
+		<descr>Main Bar 1</descr>
+		<sketch x1="0" y1="1" x2="11" y2="1" />
+	</frame>
+	<frame pos="7">
+		<descr>Main Bar 2</descr>
+		<sketch x1="0" y1="2" x2="11" y2="2" />
+	</frame>
+	<frame pos="8">
+		<descr>Content 1 left</descr>
+		<sketch x1="0" y1="3" x2="3" y2="3" />
+	</frame>
+	<frame pos="9">
+		<descr>Content 2 center</descr>
+		<sketch x1="4" y1="3" x2="7" y2="3" />
+	</frame>
+	<frame pos="10">
+		<descr>Content 2 right</descr>
+		<sketch x1="8" y1="3" x2="11" y2="3" />
+	</frame>
+	<frame pos="11">
+		<descr>Content 3</descr>
+		<sketch x1="0" y1="4" x2="11" y2="4" />
+	</frame>
+	<frame pos="12">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="5" x2="11" y2="5" />
+	</frame>
+	<frame pos="13">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="6" x2="11" y2="6" />
+	</frame>
+	<frame pos="14">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="7" x2="11" y2="7" />
+	</frame>
+	<frame pos="15">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="8" x2="11" y2="8" />
+	</frame>
+	<frame pos="16">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="9" x2="11" y2="9" />
+	</frame>
+	<frame pos="17">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="10" x2="11" y2="10" />
+	</frame>
+	<frame pos="18">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="11" x2="11" y2="11" />
+	</frame>
+</frames>
+
+',NULL,'<div></div>');

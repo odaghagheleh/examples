@@ -1795,3 +1795,15 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 	<p class="text-right"><a class="btn btn-primary" href="<@wp.url page="${pageLinkVar}"/>">${pageLinkDescriptionVar}</a></p>
 </#if>
 <#assign contentInfoList="">',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('fsi','fsi',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto);
+ </style>
+
+<@wp.headInfo type="CSS" info="../static/css/main.2ca915f9.css"/>
+<div id="fsi-demo-customer"></div>
+
+<script type="text/javascript" src="<@wp.resourceURL />static/static/js/main.cceeae37.js"></script>
+
+
+',NULL,0);

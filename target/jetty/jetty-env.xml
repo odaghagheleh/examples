@@ -1,0 +1,124 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logActiveFileOutput</Arg>
+        <Arg type="java.lang.String">true</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logName</Arg>
+        <Arg type="java.lang.String">fsi-credit-card-dispute-customer</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logFilePrefix</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/target/log_fsi-credit-card-dispute-customer</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logLevel</Arg>
+        <Arg type="java.lang.String">INFO</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logFileSize</Arg>
+        <Arg type="java.lang.String">200000</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>logFilesCount</Arg>
+        <Arg type="java.lang.String">10</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>configVersion</Arg>
+        <Arg type="java.lang.String">production</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>applicationBaseURL</Arg>
+        <Arg type="java.lang.String">http://localhost:8080/fsi-credit-card-dispute-customer/</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>resourceRootURL</Arg>
+        <Arg type="java.lang.String">/fsi-credit-card-dispute-customer/resources/</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>protectedResourceRootURL</Arg>
+        <Arg type="java.lang.String">/fsi-credit-card-dispute-customer/protected/</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>resourceDiskRootFolder</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/src/main/webapp/resources</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>protectedResourceDiskRootFolder</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/src/main/webapp/protected</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>indexDiskRootFolder</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/target/temp/indexdir</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>configFolder</Arg>
+        <Arg type="java.lang.String">${profile.config.path}</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New id="portDataSource" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>java:comp/env/jdbc/portDataSource</Arg>
+        <Arg>
+            <New class="org.apache.commons.dbcp.BasicDataSource">
+                <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
+                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/target/derby/production/fsi-credit-card-dispute-customerPort;create=true</Set>
+                <Set name="username">agile</Set>
+                <Set name="password">agile</Set>
+            </New>
+        </Arg>
+    </New>
+
+    <New id="servDataSource" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>java:comp/env/jdbc/servDataSource</Arg>
+        <Arg>
+            <New class="org.apache.commons.dbcp.BasicDataSource">
+                <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
+                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-customer/target/derby/production/fsi-credit-card-dispute-customerServ;create=true</Set>
+                <Set name="username">agile</Set>
+                <Set name="password">agile</Set>
+            </New>
+        </Arg>
+    </New>
+
+</Configure>

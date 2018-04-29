@@ -23,3 +23,13 @@ INSERT INTO pages_metadata_online (code,titles,modelcode,showinmenu,extraconfig,
 <property key="en">Home</property>
 <property key="it">Home</property>
 </properties>','home',1,NULL,'2017-02-18 00:12:24');
+INSERT INTO pages_metadata_online (code,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('landing','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">landing</property><property key="it">landing</property></properties>
+','inspinia',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>
+
+','2018-04-27 15:23:55');
