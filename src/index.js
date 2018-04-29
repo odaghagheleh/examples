@@ -28,11 +28,12 @@ let store = createStore(transactionDisputeReducer);
 
 ReactDOM.render(
     <Provider store={store} >
-        <Router>
+        <Router
+        basename={'/fsi-credit-card-dispute-customer/preview/en/landing'}
+        >
             {routes}
         </Router>
     </Provider>
-    , document.getElementById('root'));
+    , document.getElementById('fsi-demo-customer'));
 registerServiceWorker();
-
 

@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { addDispute, getTransactionList, getTransactionHistory } from './../actions/actions';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
+import HelloBar from './HelloBar';
+import InformationTab from './InformationTab';
+import MonthlyIncome from './MonthlyIncome';
+
 const SelectBar = props => {
 
   const transactionList = props.transactionList;
@@ -142,6 +146,7 @@ class TransactionHistoryApp extends Component {
   handleCheckedTrans(rowValue, checked) {
     var selectedValueArray = this.state.transactionSelectValue;
 
+    console.log(rowValue);
     const value = JSON.parse(rowValue);
     var selectedListtoStore = []
 
@@ -162,44 +167,63 @@ class TransactionHistoryApp extends Component {
   }
 
   render() {
-    let wrapperclassName = "gray-bg " + this.props.location.pathname;
     return (
+
       <div id="wrapper">
-        <div id="page-wrapper" className={wrapperclassName}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="ibox float-e-margins">
-                  <div className="ibox-title">
-                    <h2>Dispute Credit Transaction</h2>
-                    <div className="ibox-tools">
-                      <a className="collapse-link">
-                        <i className="fa fa-chevron-up"></i>
-                      </a>
+        <div class="gray-bg">
+
+          <div class="row border-bottom white-bg">
+          </div>
+
+          <div class="wrapper wrapper-content">
+
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <HelloBar />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-8">
+                  <InformationTab />
+                </div>
+                <div className="col-lg-4">
+                <MonthlyIncome />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="ibox float-e-margins">
+                    <div className="ibox-title">
+                      <h2>Dispute Credit Transaction</h2>
+                      <div className="ibox-tools">
+                        <a className="collapse-link">
+                          <i className="fa fa-chevron-up"></i>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="ibox-content" id="main-contents">
-                    <div className="row">
-                      <div className="col-sm-5 m-b-xs">
-                        {/* <SelectBar transactionList={this.props.transactionLists} /> */}
+                    <div className="ibox-content" id="main-contents">
+                      <div className="row">
+                        <div className="col-sm-5 m-b-xs">
+                        </div>
+                        <div className="col-sm-4 m-b-xs">
+                        </div>
+                        <div className="col-sm-3">
+                        </div>
                       </div>
-                      <div className="col-sm-4 m-b-xs">
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                        </div>
                       </div>
-                      <div className="col-sm-3">
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <ProductTable
-                          data={this.props.transactionHistories}
-                          handleCheckedTrans={this.handleCheckedTrans}
-                          handleCheckedAll={this.handleCheckedAll}
-                          transactionDisputes={this.props.transactionDisputes} />
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <ProductTable
+                            data={this.props.transactionHistories}
+                            handleCheckedTrans={this.handleCheckedTrans}
+                            handleCheckedAll={this.handleCheckedAll}
+                            transactionDisputes={this.props.transactionDisputes} />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -208,9 +232,6 @@ class TransactionHistoryApp extends Component {
             </div>
           </div>
         </div>
-        {/* {console.log(JSON.stringify(this.props.transactionLists))}
-        {console.log(JSON.stringify(this.props.transactionHistories))} */}
-        {/* {console.log(JSON.stringify(this.props.transactionDisputes))} */}
       </div>
     );
   }
@@ -238,7 +259,17 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionHistoryApp);
 
-
+// let wrapperClass = "gray-bg " + props.location.pathname;
+{/* <div id="wrapper">
+        <div id="page-wrapper" className={wrapperclassName}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
 
   // const rowsData = props.data.map((dataItem) =>
   //   <tr key={dataItem.id}>

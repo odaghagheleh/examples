@@ -11,6 +11,7 @@ import AdditionalQuestionnaire from './../components/AdditionalQuestionnaire';
 import ExtraInfo from './../components/ExtraInfo';
 import DisputeConfirmation from './../components/DisputeConfirmation';
 import Confirmed from './../components/Confirmed';
+import Greeting from './../components/Greating';
 
 
 export default (
@@ -25,6 +26,7 @@ export default (
         <Route exact path='/ExtraInfo' component={ExtraInfo} />
         <Route exact path='/DisputeConfirmation' component={DisputeConfirmation} />
         <Route exact path='/Confirmed' component={Confirmed} />
+        <Route exact path='/Greeting' component={Greeting} />
     </Switch>
 
 );
