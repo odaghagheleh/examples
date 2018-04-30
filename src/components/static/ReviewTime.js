@@ -11,6 +11,7 @@ const ReviewTime= (props) => {
         </div>
         <div class="ibox-content">           
            <h2>3.5 min</h2>
+           <i class="fas fa-stopwatch"></i>
           <FontAwesome
             className='icon'
             name='bell'
