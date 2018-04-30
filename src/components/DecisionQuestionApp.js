@@ -32,11 +32,33 @@ class DecisionQuestionApp extends Component {
                         <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={(e) => this.props.setDisputeReasonAnswer(e.target.value)} selectValue={this.props.transactionDisputeReasonAnswers} />
                     </div>
                 </div>
+
+                <div className="row">
+                    <div className="form-group col-sm-12">
+                        {showAndHide(this.props.transactionDisputeReasonAnswers)}
+                    </div>
+                </div>
             </div>
         );
     }
 }
 
+function showAndHide(transactionDisputeReasonAnswers) {
+    if (transactionDisputeReasonAnswers == 'I was charged ...') {
+        return (
+            <div>
+
+                <br />
+
+                Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.
+            <br /><br /><br />
+                <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" value="Confirm - Reissue Card" />
+                <input name="yes" type="button" className="btn btn-sm neibourb" value="No - Cancel" />
+
+            </div>
+        )
+    }
+}
 
 const mapStateToProps = state => {
     return {

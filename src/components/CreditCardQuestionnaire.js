@@ -5,13 +5,49 @@ import { addCreditCardQuestionAnswer } from './../actions/actions';
 
 const CreditCardQuestions = props => {
     var currentValues = props.currentValues;
-    const yesBt = currentValues.creditCardwithCustomer == "Yes" ?
+    const yesBt = currentValues.creditCardwithCustomer === "Yes" ?
         <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb active" onClick={props.handleUserAnswer} value="Yes" /> :
         <input name="yes" type="button" className="btn btn-sm neibourb" onClick={props.handleUserAnswer} value="Yes" />;
 
-    const noBt = currentValues.creditCardwithCustomer == "No" ?
+    const noBt = currentValues.creditCardwithCustomer === "No" ?
         <input name="no" type="button" className="btn btn-primary btn-sm neibourbt active" onClick={props.handleUserAnswer} value="No" /> :
         <input name="no" type="button" className="btn btn-sm neibourbt" onClick={props.handleUserAnswer} value="No" />;
+
+
+    const showOrNot = () => {
+        if (currentValues.creditCardwithCustomer === "Yes") {
+            return (<div>
+                <div className="row">
+                    <div className="form-inline col-lg-12">
+                        <div className="form-group">
+                            <label>When was your Credit Card last in your posession?</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-4">
+                        <p>What date did you realize the card(s) were missing?</p>
+                    </div>
+                    <div className="col-lg-4">
+                        <input type="date" name="missingDate" onChange={props.handleUserAnswer} value={currentValues.missingDate} />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-4">
+                        <p>What date did you last use the card?</p>
+                    </div>
+                    <div className="col-lg-4">
+                        <input type="date" name="lastUsedDate" onChange={props.handleUserAnswer} value={currentValues.lastUsedDate} />
+                    </div>
+                </div>
+            </div>)
+        } else {
+            return (<div> </div>);
+        }
+    }
+
+
     return (
         <div>
             <br />
@@ -31,29 +67,7 @@ const CreditCardQuestions = props => {
                 </div>
             </div>
             <br />
-            <div className="row">
-                <div className="form-inline col-lg-12">
-                    <div className="form-group">
-                        <label>When was your Credit Card last in your posession?</label>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-4">
-                    <p>What date did you realize the card(s) were missing?</p>
-                </div>
-                <div className="col-lg-4">
-                    <input type="date" name="missingDate" onChange={props.handleUserAnswer} value={currentValues.missingDate} />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-4">
-                    <p>What date did you last use the card?</p>
-                </div>
-                <div className="col-lg-4">
-                    <input type="date" name="lastUsedDate" onChange={props.handleUserAnswer} value={currentValues.lastUsedDate} />
-                </div>
-            </div>
+            {showOrNot()}
         </div>
     );
 }
