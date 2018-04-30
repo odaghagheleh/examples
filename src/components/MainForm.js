@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import StepZilla from '../steps/main'
+import { connect } from 'react-redux';
+
+import { setCurrentStep } from '../actions/stepper';
+// import StepZilla from '../steps/main'
 import '../steps/css/main.css'
 import DisputeCreditTransaction from './DisputeCreditTransaction';
 import DecisionQuestionApp from './DecisionQuestionApp';
@@ -8,12 +11,18 @@ import AdditionalQuestionnaire from './AdditionalQuestionnaire';
 import ExtraInfo from './ExtraInfo';
 import DisputeConfirmation from './DisputeConfirmation';
 import Confirmed from './Confirmed';
+import Stepper from './Stepper';
 
 
 const MainForm = props => {
     const steps =
         [
-            { name: 'Step 1', component: <DisputeCreditTransaction history={props.history} /> },
+            { name: 'Step 1', component: 
+              <DisputeCreditTransaction
+                history={props.history}
+                jumpToStep={props.setCurrentStep}
+              />
+            },
             { name: 'Step 2', component: <DecisionQuestionApp /> },
             { name: 'Step 3', component: <CreditCardQuestionnaire /> },
             { name: 'Step 4', component: <AdditionalQuestionnaire /> },
@@ -44,14 +53,15 @@ const MainForm = props => {
                                         <div className='example' className="row"  >
                                             <div className="col-lg-12">
                                                 <div className='step-progress' id="main-contents">
-                                                    <StepZilla
+                                                    <Stepper steps={steps} />
+                                                    {/* <StepZilla
                                                         steps={steps}
                                                         nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
                                                         backButtonCls="btn btn-next btn-primary btn-sm pull-left stepZillRightabt"
                                                         nextTextOnFinalActionStep="Submit"
                                                         prevBtnOnLastStep={false}
                                                         stepsNavigation={false}
-                                                    />
+                                                    /> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -67,11 +77,10 @@ const MainForm = props => {
     )
 }
 
-export default MainForm;
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+      setCurrentStep: (step) => dispatch(setCurrentStep(step)),
+    }
+};
 
-      //<div class="ibox float-e-margins">
-       // <div class="ibox-title">
-       // </div>
-      //  <div class="ibox-content">
-     //   </div>
-     // </div>
+export default connect(null, mapDispatchToProps)(MainForm);
