@@ -24,8 +24,7 @@ const MainForm = props => {
 
     return (
         <div id="wrapper">
-            <div class="gray-bg">
-
+            <div class="white-bg">
                 <div class="row border-bottom white-bg">
                 </div>
                 <div class="wrapper wrapper-content">
@@ -33,7 +32,7 @@ const MainForm = props => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="ibox float-e-margins">
-                                    <div className="ibox-title">
+                                    <div className="ibox-title bluetop">
                                         <h2>Dispute Credit Transaction</h2>
                                         <div className="ibox-tools">
                                             <a className="collapse-link">

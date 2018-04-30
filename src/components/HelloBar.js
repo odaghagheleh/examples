@@ -9,7 +9,7 @@ const HelloBar = (props) => {
     today = JSON.stringify(today);
     return (
         <div class="ibox float-e-margins">
-            <div class="ibox-title">
+            <div class="ibox-title bluetop">
                 <div className='row'>
                     <div className='col-md-6'>
                         <h2> Hi Kevin!</h2>

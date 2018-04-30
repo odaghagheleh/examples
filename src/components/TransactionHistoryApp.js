@@ -168,15 +168,11 @@ class TransactionHistoryApp extends Component {
 
   render() {
     return (
-
       <div id="wrapper">
-        <div class="gray-bg">
-
+        <div class="white-bg">
           <div class="row border-bottom white-bg">
           </div>
-
           <div class="wrapper wrapper-content">
-
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
@@ -188,13 +184,13 @@ class TransactionHistoryApp extends Component {
                   <InformationTab />
                 </div>
                 <div className="col-lg-4">
-                <MonthlyIncome />
+                  <MonthlyIncome />
                 </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="ibox float-e-margins">
-                    <div className="ibox-title">
+                    <div className="ibox-title bluetop">
                       <h2>Dispute Credit Transaction</h2>
                       <div className="ibox-tools">
                         <a className="collapse-link">

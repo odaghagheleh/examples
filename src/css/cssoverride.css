@@ -61,3 +61,7 @@ html, body, #main-contents {
 .widget {
   margin-top: 5%;
 }
+ .bluetop{
+  border-color: #1a7bb9;           
+  border-width: 5px 0 0;
+ }
