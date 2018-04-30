@@ -11,11 +11,11 @@ export const setCurrentStep = step => ({
 });
 
 export const stepUp = () => ({
-    type: SET_CURRENT_STEP,
+    type: STEP_UP,
 });
 
 export const stepDown = step => ({
-    type: SET_CURRENT_STEP,
+    type: STEP_DOWN,
 });
 
 export const setTotalSteps = totalSteps => ({
