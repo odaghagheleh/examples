@@ -101,7 +101,7 @@
             </button>
             <div class="logo-names">
                 <wp:show frame="0" />
-                <img alt="image" class="" src="/fsi-customer/resources/static/img/shield-logo.png">&nbsp;
+                <img alt="image" class="" src="/fsi-credit-card-dispute-customer/resources/static/img/shield-logo.png">&nbsp;
                 <b>FORTRESS -</b>&nbsp;
                 <span>Bank &amp; Loan</span>
             </div>
