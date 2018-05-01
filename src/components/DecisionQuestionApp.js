@@ -29,10 +29,10 @@ class DecisionQuestionApp extends Component {
         //this.props.jumpToStep();
         const value = e.target.value;
         this.props.setDisputeReasonAnswer(value);
-        if(value != 'I did not authorize the transaction(s)' ){
-            this.props.jumpToStep(3); 
+        // if(value != 'I did not authorize the transaction(s)' ){
+        //     this.props.jumpToStep(3); 
 
-        }
+        // }
     }
 
     render() {
