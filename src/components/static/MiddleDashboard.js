@@ -28,9 +28,9 @@ const MiddleDashboard = (props) => {
                 sum += chart.config.data.datasets[0].data[i];
             }
 
-            var text = "90%",
+            var text = chart.config.data.text,
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
-                textY = height / 1.85;
+                textY = height / 1.75;
 
             ctx.fillText(text, textX, textY);
         }
@@ -44,11 +44,11 @@ const MiddleDashboard = (props) => {
             data: [10, 90],
             backgroundColor: [
                 'rgb(202, 15, 15)',
-                'rgb(47, 211, 32)'
+                '#19aa89'
             ],
             hoverBackgroundColor: [
-                '#36A2EB',
-                '#FF6384'
+                '#FF6384',
+                '#2de6bc'
             ]
         }],
         text: "90%"
@@ -63,14 +63,15 @@ const MiddleDashboard = (props) => {
         datasets: [{
             data: [75, 25],
             backgroundColor: [
-                'rgb(47, 211, 32)',
+                '#19aa89',
                 'rgb(202, 15, 15)'
             ],
             hoverBackgroundColor: [
-                '#36A2EB',
+                '#2de6bc',
                 '#FF6384'
             ]
-        }]
+        }],
+        text: "25%"
     };
 
 
@@ -81,14 +82,15 @@ const MiddleDashboard = (props) => {
         datasets: [{
             data: [75, 25],
             backgroundColor: [
-                'rgb(47, 211, 32)',
+                '#19aa89',
                 'rgb(202, 15, 15)'
             ],
             hoverBackgroundColor: [
-                '#36A2EB',
+                '#2de6bc',
                 '#FF6384'
             ]
-        }]
+        }],
+        text: "25%"
     };
 
 
@@ -120,10 +122,10 @@ const MiddleDashboard = (props) => {
                             <h3>Approved Request</h3>
                             <hr />
                             <div className="donutChart">
-                                <Doughnut data={middleDonut} width="100" height="85" />
+                                <Doughnut data={leftDonut} width="100" height="85" />
                             </div>
                             <div class="colorSquare red"></div>
-                            <p> Rejected. 350 <br />
+                            <p> Rejected. 1800 <br />
                                 total. 2500 </p>
                         </div>
                         <div className="col-md-4">
