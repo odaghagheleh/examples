@@ -65,3 +65,11 @@ html, body, #main-contents {
   border-color: #1a7bb9;           
   border-width: 5px 0 0;
  }
+ .monthyIncome{
+   background-image: url(./monthyIncomebg.png);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+ }
+ .monthlyincomeinline{
+   margin-top: -5%;
+ }
