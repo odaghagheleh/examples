@@ -27,8 +27,14 @@ class DecisionQuestionApp extends Component {
 
     handleSelectAnswer(e) {
         //this.props.jumpToStep();
-        this.props.setDisputeReasonAnswer(e.target.value)
+        const value = e.target.value;
+        this.props.setDisputeReasonAnswer(value);
+        if(value != 'I did not authorize the transaction(s)' ){
+            this.props.jumpToStep(3); 
+
+        }
     }
+
     render() {
         return (
             <div>
@@ -40,42 +46,28 @@ class DecisionQuestionApp extends Component {
                         <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={this.handleSelectAnswer} selectValue={this.props.transactionDisputeReasonAnswers} />
                     </div>
                 </div>
-            
+
                 <div className="row">
                     <div className="form-group col-sm-12">
-                        {showAndHide(this.props.transactionDisputeReasonAnswers, this.props)}
+                        {
+                            this.props.transactionDisputeReasonAnswers == 'I did not authorize the transaction(s)' ?
+                                <div>
+                                    <br />
+                                    <p>Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.</p>
+                                    <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" value="Confirm - Reissue Card" />
+                                    <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" />
+                                </div>
+                            : <div></div>
+                        }
                     </div>
                 </div>
             </div>
-        ); 
-        
+        );
+
     }
 }
 
-function showAndHide(transactionDisputeReasonAnswers, props) {
-    if (transactionDisputeReasonAnswers == 'I did not authorize the transaction(s)') {
-        return (
-            <div>
 
-                <br />
-
-                Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.
-            <br /><br /><br />
-                <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" onClick={() => props.jumpToStep(2)} value="Confirm - Reissue Card" />
-                <input name="yes" type="button" className="btn btn-sm neibourb" value="No - Cancel" />
-
-            </div>
-        )
-    } else {
-        if(transactionDisputeReasonAnswers != '')
-        return (
-            <div>
-                            
-{props.jumpToStep(4)}
-            </div>
-        )
-    }
-}
 
 const mapStateToProps = state => {
     return {
@@ -94,3 +86,6 @@ const mapDispatchToProps = dispatch => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DecisionQuestionApp);
+
+
+// props.jumpToStep(4)

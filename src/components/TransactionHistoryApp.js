@@ -167,7 +167,6 @@ class TransactionHistoryApp extends Component {
     this.props.addDispute(selectedListtoStore);
   }
 
-  
   render() {
     return (
       <div id="wrapper">
@@ -211,7 +210,10 @@ class TransactionHistoryApp extends Component {
                       </div>
                       <div className="row">
                         <div className="col-sm-12">
-                        {checkIfDispute(this.props.transactionDisputes)}
+                          {
+                            this.props.transactionDisputes.length > 0 ? <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                              : <button type="button" disabled className="btn btn-default btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                          }
                         </div>
                       </div>
                       <div className="row">
@@ -260,20 +262,7 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionHistoryApp);
 
-function checkIfDispute(transactionDisputes) {
-  if(transactionDisputes.length > 0) {
-    return (
-      <div>
-      <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-       </div>             
-    )}else{
-      return (
-      <div>
-        <button type="button" disabled className="btn btn-default btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-        </div>
-      )
-    }
-}
+
 
 // let wrapperClass = "gray-bg " + props.location.pathname;
 {/* <div id="wrapper">
