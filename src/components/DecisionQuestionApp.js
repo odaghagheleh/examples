@@ -12,11 +12,14 @@ const QuestionsApp = props => {
     return (
         <select id="sel" className="form-control" value={props.selectValue} onChange={props.handleSelectAnswer} >
             {selectItem}
+            
         </select>
+        
+        
     );
 }
 
-class DecisionQuestionApp extends Component {
+class DecisionQuestionApp extends React.Component {
     constructor(props) {
         super(props);
         this.handleSelectAnswer = this.handleSelectAnswer.bind(this);
@@ -30,8 +33,7 @@ class DecisionQuestionApp extends Component {
         const value = e.target.value;
         this.props.setDisputeReasonAnswer(value);
         if(value != 'I did not authorize the transaction(s)' ){
-            this.props.jumpToStep(3); 
-
+             this.props.jumpToStep(4); 
         }
     }
 
@@ -46,7 +48,6 @@ class DecisionQuestionApp extends Component {
                         <QuestionsApp questions={this.props.transactionDisputeReasonQuestions} handleSelectAnswer={this.handleSelectAnswer} selectValue={this.props.transactionDisputeReasonAnswers} />
                     </div>
                 </div>
-
                 <div className="row">
                     <div className="form-group col-sm-12">
                         {
@@ -54,7 +55,7 @@ class DecisionQuestionApp extends Component {
                                 <div>
                                     <br />
                                     <p>Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.</p>
-                                    <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" value="Confirm - Reissue Card" />
+                                    <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb"  onClick={() => this.props.jumpToStep(2)} value="Confirm - Reissue Card" />
                                     <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" />
                                 </div>
                             : <div></div>

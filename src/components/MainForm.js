@@ -23,7 +23,10 @@ const MainForm = props => {
                 jumpToStep={props.setCurrentStep}
               />
             },
-            { name: 'Step 2', component: <DecisionQuestionApp /> },
+            { name: 'Step 2', component: <DecisionQuestionApp 
+                jumpToStep={props.setCurrentStep}
+              />
+            },
             { name: 'Step 3', component: <CreditCardQuestionnaire /> },
             { name: 'Step 4', component: <AdditionalQuestionnaire /> },
             { name: 'Step 5', component: <ExtraInfo /> },
