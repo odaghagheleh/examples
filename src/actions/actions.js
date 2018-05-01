@@ -177,16 +177,36 @@ export function getDisputeReasonQuestions() {
         type: GET_DISPUTE_REASON_QUESTIONS,
         payload: [
             {
-                id: 1,
-                question: 'I cancelled ... '
+                id: 0,
+                question: ''
             },
             {
                 id: 1,
-                question: 'I recieved incorrect ...'
+                question: 'I cancelled or returned merchandise or services but did not receive credit or full credit'
             },
             {
-                id: 1,
-                question: 'I was charged ...'
+                id: 2,
+                question: 'I recieved incorrect merchandise, or the quality of merchandise or service was unacceptable'
+            },
+            {
+                id: 3,
+                question: 'I was charged in an incorrect amount'
+            },
+            {
+                id: 4,
+                question: 'I was charged too many times'
+            },
+            {
+                id: 5,
+                question: 'I paid by alternate means'
+            },
+            {
+                id: 6,
+                question: 'I either did not receive, or did not receive the full value, of the merchandise or services on the invoices'
+            },
+            {
+                id: 7,
+                question: 'I did not authorize the transaction(s)'
             }
         ]
     };
