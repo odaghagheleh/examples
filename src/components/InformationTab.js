@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 const InformationTab = (props) => {
 
     return (
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
+        <div class="ibox float-e-margins ">
+            <div class="ibox-title bluetop">
                 <h2>Information</h2>
             </div>
             <div class="ibox-content">
