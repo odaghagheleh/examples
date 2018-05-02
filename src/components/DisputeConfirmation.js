@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-const Confirmation = props =>  {
+const Confirmation = props => {
     const creditCardQAs = props.creditCardQAs;
     // const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
     //     "" :
@@ -82,18 +82,24 @@ const TransactionList = props => {
 const DisputeConfirmation = props => {
 
     return (
-        <div className="row" >
-            <div className="col-lg-8">
-                <Confirmation
-                    transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
-                    creditCardQAs={props.creditCardQAs}
-                    extraInfos={props.extraInfos}
-                />
+        <div>
+            <div className="row" >
+                <div className="col-lg-8">
+                    <Confirmation
+                        transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
+                        creditCardQAs={props.creditCardQAs}
+                        extraInfos={props.extraInfos}
+                    />
+                </div>
+                <div className="col-lg-4">
+                    <hr />
+                    <p>Transaction(s) in Dispute</p>
+                    <TransactionList data={props.transactionDisputes} />
+                </div>
             </div>
-            <div className="col-lg-4">
-                <hr />
-                <p>Transaction(s) in Dispute</p>
-                <TransactionList data={props.transactionDisputes} />
+            <div className="row">
+                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
+                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
             </div>
         </div>
     );

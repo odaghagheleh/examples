@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { setCurrentStep } from '../actions/stepper';
-// import StepZilla from '../steps/main'
+import StepZilla from '../steps/main'
 import '../steps/css/main.css'
 import DisputeCreditTransaction from './DisputeCreditTransaction';
 import DecisionQuestionApp from './DecisionQuestionApp';
@@ -17,18 +17,8 @@ import Stepper from './Stepper';
 const MainForm = props => {
     const steps =
         [
-            {
-                name: 'Step 1', component:
-                    <DisputeCreditTransaction
-                        history={props.history}
-                        jumpToStep={props.setCurrentStep}
-                    />
-            },
-            {
-                name: 'Step 2', component: <DecisionQuestionApp
-                    jumpToStep={props.setCurrentStep}
-                />
-            },
+            { name: 'Step 1', component: <DisputeCreditTransaction history={props.history} /> },
+            { name: 'Step 2', component: <DecisionQuestionApp /> },
             { name: 'Step 3', component: <CreditCardQuestionnaire /> },
             { name: 'Step 4', component: <AdditionalQuestionnaire /> },
             { name: 'Step 5', component: <ExtraInfo /> },
@@ -57,15 +47,16 @@ const MainForm = props => {
                                     <div className='example' className="row"  >
                                         <div className="col-lg-12">
                                             <div className='step-progress' id='main-contents'>
-                                                <Stepper steps={steps} />
-                                                {/* <StepZilla
-                                                        steps={steps}
-                                                        nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
-                                                        backButtonCls="btn btn-next btn-primary btn-sm pull-left stepZillRightabt"
-                                                        nextTextOnFinalActionStep="Submit"
-                                                        prevBtnOnLastStep={false}
-                                                        stepsNavigation={false}
-                                                    /> */}
+                                                {/* <Stepper steps={steps} /> */}
+                                                <StepZilla
+                                                    steps={steps}
+                                                    nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
+                                                    backButtonCls="btn btn-next btn-primary btn-sm pull-left stepZillRightabt"
+                                                    nextTextOnFinalActionStep="Submit"
+                                                    prevBtnOnLastStep={false}
+                                                    stepsNavigation={false}
+                                                    showNavigation={false}
+                                                />
                                             </div>
                                         </div>
                                     </div>

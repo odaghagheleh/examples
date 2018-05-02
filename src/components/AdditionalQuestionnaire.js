@@ -75,6 +75,11 @@ class AdditionalQuestionnaire extends Component {
                         <AdditionalQuestions questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
                     </div>
                 </div>
+
+                <div className="row">
+                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(2)} >Prev</button>
+                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >Next</button>
+                </div>
             </div>
         );
     }

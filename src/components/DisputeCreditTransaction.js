@@ -77,6 +77,10 @@ class DisputeCreditTransaction extends Component {
                         <button name="cancel" type="button" className="btn btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
                     </div>
                 </div>
+                <div className="row">
+                    {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >Prev</button> */}
+                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >Next</button>
+                </div>
             </div>
         );
     }

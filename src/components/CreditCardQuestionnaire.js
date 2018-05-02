@@ -122,8 +122,14 @@ class CreditCardQuestionnaire extends Component {
     render() {
         return (
             <div>
-                <CreditCardQuestions handleUserAnswer={(e) => this.handleUserAnswer(e)} currentValues={this.props.creditCardQAs} />
-                <br />
+                <div>
+                    <CreditCardQuestions handleUserAnswer={(e) => this.handleUserAnswer(e)} currentValues={this.props.creditCardQAs} />
+                    <br />
+                </div>
+                <div className="row">
+                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >Prev</button>
+                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(3)} >Next</button>
+                </div>
             </div>
         );
     }
