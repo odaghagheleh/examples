@@ -5,7 +5,7 @@ import {
   STEP_UP,
   STEP_DOWN,
   SET_TOTAL_STEPS,
-} from '../actions/stepper';
+} from './types';
 
 const defaultState = {
   currentStep: 0,
