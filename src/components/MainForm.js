@@ -19,7 +19,7 @@ const MainForm = props => {
     const steps =
         [
             { name: 'Step 1', component: <DisputeCreditTransaction history={props.history} /> },
-            { name: 'Step 2', component: <DecisionQuestionApp /> },
+            { name: 'Step 2', component: <DecisionQuestionApp history={props.history} /> },
             { name: 'Step 3', component: <CreditCardQuestionnaire /> },
             { name: 'Step 4', component: <AdditionalQuestionnaire /> },
             { name: 'Step 5', component: <ExtraInfo /> },
