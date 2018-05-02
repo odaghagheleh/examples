@@ -222,14 +222,52 @@ export function addCreditCardQuestionAnswer(answers) {
 }
 
 export function getAdditionalQuestions() {
+    var payloadArray = [];
+    var response = {
+        "type" : "SUCCESS",
+        "msg" : "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
+        "result" : {
+          "execution-results" : {
+            "results" : [ {
+              "value" : 3,
+              "key" : "additional-info-fired"
+            }, {
+              "value" : [{"com.fsi.creditcarddisputecase.Cardholder":{
+        "stateCode" : "VA",
+        "age" : 35,
+        "status" : "GOLD",
+        "incidentCount" : 2,
+        "balanceRatio" : 0.2
+      }},{"com.fsi.creditcarddisputecase.AdditionalInformation":{
+        "questionId" : 1,
+        "answerValue" : null,
+        "questionType" : "boolean",
+        "questionPrompt" : "Were any charges related to online purchases?"
+      }},{"com.fsi.creditcarddisputecase.AdditionalInformation":{
+        "questionId" : 26,
+        "answerValue" : null,
+        "questionType" : "boolean",
+        "questionPrompt" : "Were any of these charges related to tobacco sales?"
+      }}],
+              "key" : "questions"
+            }, {
+              "value" : 3,
+              "key" : "cleanup-fired"
+            } ],
+            "facts" : [ {
+              "value" : {"org.drools.core.common.DefaultFactHandle":{
+        "external-form" : "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
+      }},
+              "key" : "cardholder"
+            } ]
+          }
+        }
+      };
+
+      payloadArray = processJson(response);
     return {
         type: GET_ADDITIONAL_QUESTIONS,
-        payload: [
-            { id: "1", question: "What is your name?" },
-            { id: "2", question: "What is you lastname?" },
-            { id: "3", question: "What is your age?" },
-            { id: "4", question: "What is your address?" }
-        ]
+        payload: payloadArray
     };
 }
 
@@ -245,4 +283,29 @@ export function setExtraInfo(payload) {
         type: SET_EXTRA_INFO,
         payload: payload
     };
+}
+
+function processJson (response) {
+
+      var finalResult = [];
+      var length = response.result["execution-results"].results.length;
+      var resultArray = response.result["execution-results"].results;
+        for(var i=0; i<length; i++) {
+            if(resultArray[i].key === 'questions') {
+                var anotherArray = resultArray[i].value;
+                for(var j=0; j < anotherArray.length; j++) {
+                    var oneMoreArray = Object.keys(anotherArray[j]);
+                    for(var k=0; k < oneMoreArray.length; k++) {
+                        if(oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
+                            var tmp = {};
+                            tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
+                            tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
+                            finalResult.push(tmp);
+                        }
+                    }
+                }
+            }
+        }
+
+        return finalResult;
 }
