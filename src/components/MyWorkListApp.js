@@ -52,7 +52,7 @@ const ProductTable = props => {
       <TableHeaderColumn dataField='task' dataSort={true}>Task</TableHeaderColumn>
       <TableHeaderColumn dataField='customerName' dataSort={true}>Customer Name</TableHeaderColumn>
       <TableHeaderColumn dataField='typeOfDispute' dataSort={true}>Type Of Dispute</TableHeaderColumn>
-      <TableHeaderColumn dataFormat={(cell, row) => { return <input type='button' className='btn btn-sm btn-outline btn-success' onClick={() => props.history.push('/Tasks')} value='open' /> }}></TableHeaderColumn>
+      <TableHeaderColumn dataFormat={(cell, row) => { return <input type='button' className='btn btn-sm btn-outline btn-success' onClick={() => props.history.push('/Tasks')} value='open' /> }}>Action</TableHeaderColumn>
     </BootstrapTable>
   );
 

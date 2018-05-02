@@ -51,7 +51,7 @@ html, body, #main-contents{
 
 }
 .rankingImage{
-  background-image: url(./icon.png);
+  background-image: url(./../img/icon.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
