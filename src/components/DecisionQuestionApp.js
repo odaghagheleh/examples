@@ -32,9 +32,9 @@ class DecisionQuestionApp extends React.Component {
         //this.props.jumpToStep();
         const value = e.target.value;
         this.props.setDisputeReasonAnswer(value);
-        if (value != 'I did not authorize the transaction(s)') {
-            this.props.jumpToStep(4);
-        }
+        // if (value != 'I did not authorize the transaction(s)') {
+        //     this.props.jumpToStep(4);
+        // }
     }
 
     render() {
@@ -56,16 +56,17 @@ class DecisionQuestionApp extends React.Component {
                                     <br />
                                     <p>Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.</p>
                                     <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" onClick={() => this.props.jumpToStep(2)} value="Confirm - Reissue Card" />
-                                    <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" />
+                                    <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" onClick={() => this.props.jumpToStep(0)}/>
                                 </div>
-                                : <div></div>
+                                : <div> <br />
+                                    <div className="row">
+                                        <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >Prev</button>
+                                        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >Next</button>
+                                    </div></div>
                         }
                     </div>
                 </div>
-                <div className="row">
-                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >Prev</button>
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(2)} >Next</button>
-                </div>
+
             </div>
         );
 

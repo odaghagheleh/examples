@@ -177,10 +177,6 @@ export function getDisputeReasonQuestions() {
         type: GET_DISPUTE_REASON_QUESTIONS,
         payload: [
             {
-                id: 0,
-                question: ''
-            },
-            {
                 id: 1,
                 question: 'I cancelled or returned merchandise or services but did not receive credit or full credit'
             },
