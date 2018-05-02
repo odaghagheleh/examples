@@ -23,6 +23,11 @@ const QuestionsApp = props => {
 class DecisionQuestionApp extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            confirmCheck: false
+        }
+        this.confirmed = this.confirmed.bind(this);
         this.handleSelectAnswer = this.handleSelectAnswer.bind(this);
     }
     componentWillMount() {
@@ -36,6 +41,34 @@ class DecisionQuestionApp extends React.Component {
         // if (value != 'I did not authorize the transaction(s)') {
         //     this.props.jumpToStep(4);
         // }
+    }
+
+    confirmed() {
+        var jsonObj = this.state;
+        jsonObj.confirmCheck = true;
+        this.setState({
+            jsonObj
+        });
+    }
+
+    buttonActive(value) {
+        if (value === true) {
+            return (
+                <div>
+                    <br /><br /><br />
+                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(2)} >
+                        Next</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <br /><br /><br />
+                    <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(2)} >
+                        Next</button>
+                </div>
+            )
+        }
     }
 
     render() {
@@ -56,8 +89,11 @@ class DecisionQuestionApp extends React.Component {
                                 <div>
                                     <br />
                                     <p>Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.</p>
-                                    <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" onClick={() => this.props.jumpToStep(2)} value="Confirm - Reissue Card" />
-                                    <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" onClick={() => this.props.jumpToStep(0)}/>
+                                    <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb" onClick={() => this.confirmed()} value="Confirm - Reissue Card" />
+                                    <input name="no" type="button" className="btn btn-sm neibourb" value="No - Cancel" onClick={() => this.props.jumpToStep(0)} />
+                                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >Prev</button>
+                                    {this.buttonActive(this.state.confirmCheck)}
+
                                 </div>
                                 : <div> <br />
                                     <div className="row">
