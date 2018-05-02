@@ -43,10 +43,10 @@ const AdditionalQuestions = props => {
         }
         return (
             <div className="row" key={myIDs[index]} >
-                <div className="col-lg-3">
+                <div className="col-lg-4">
                     <p> {myQuestions[index]} </p>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-6">
                     <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
                 </div>
                 <br />
