@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 

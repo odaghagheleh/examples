@@ -42,21 +42,47 @@ function TransactionList(props) {
 class DisputeCreditTransaction extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            confirmCheck : false
+        }
         this.handleConfirmbt = this.handleConfirmbt.bind(this);
+        this.confirmed = this.confirmed.bind(this);
     }
 
     handleConfirmbt(e) {
         const target = e.target;
         const targetName = target.name;
 
-        if (targetName == 'confirm') {
+        if (targetName === 'confirm') {
             this.props.jumpToStep(1);
 
-        } else if (targetName == 'cancel') {
+        } else if (targetName === 'cancel') {
             this.props.history.push('/');
         }
     }
 
+    confirmed() {
+        var jsonObj = this.state;
+        jsonObj.confirmCheck = true;
+        this.setState({
+            jsonObj
+        });
+    }
+
+    buttonActive(value) {
+        if(value === true) {
+            return(
+                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
+                        Next</button>
+            )
+        }else{
+            return(
+                <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
+                        Next</button>
+            )
+        }
+    }
     render() {
         return (
             <div>
@@ -71,7 +97,7 @@ class DisputeCreditTransaction extends Component {
                 </div>
                 <div className="row">
                     <div className="col-sm-2">
-                        <button name="confirm" type="button" className="btn btn-primary btn-sm" onClick={this.handleConfirmbt} >Yes - This is correct</button>
+                        <button name="confirm" type="button" className="btn btn-primary btn-sm" onClick={this.confirmed} >Yes - This is correct</button>
                     </div>
                     <div className="col-sm-4">
                         <button name="cancel" type="button" className="btn btn-sm" onClick={this.handleConfirmbt} >No -Cancel</button>
@@ -79,7 +105,8 @@ class DisputeCreditTransaction extends Component {
                 </div>
                 <div className="row">
                     {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >Prev</button> */}
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >Next</button>
+                    {this.buttonActive(this.state.confirmCheck)}
+                    
                 </div>
             </div>
         );

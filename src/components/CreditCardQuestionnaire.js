@@ -15,7 +15,7 @@ const CreditCardQuestions = props => {
 
 
     const showOrNot = () => {
-        if (currentValues.creditCardwithCustomer === "Yes") {
+        if (currentValues.creditCardwithCustomer === "No") {
             return (<div>
                 <div className="row">
                     <div className="form-inline col-lg-12">

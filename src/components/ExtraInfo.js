@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -8,8 +9,18 @@ const ExtraInfoInput = props => {
     return (
         <div>
             <textarea className="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} value={props.currentValue} ></textarea>
+            {console.log(props.currentValue)}
         </div>
     );
+}
+
+
+function disableButton(props) {
+    if(props.extraInfos == "") {
+    return ( <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button> )
+    }else{
+    return ( <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button> )
+    }
 }
 
 const ExtraInfo = props => {
@@ -28,7 +39,7 @@ const ExtraInfo = props => {
             </div>
             <div className="row">
                     <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(3)} >Prev</button>
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                   {disableButton(props)}
             </div>
         </div>
     );

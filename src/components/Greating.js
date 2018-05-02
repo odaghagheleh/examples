@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import MonthlyIncome from './MonthlyIncome';
 import './../css/cssoverride.css'

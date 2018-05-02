@@ -1,4 +1,4 @@
-
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
