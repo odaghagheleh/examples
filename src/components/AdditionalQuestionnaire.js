@@ -17,7 +17,8 @@ const AdditionalQuestions = props => {
 
         //props.increment();
 
-        return (<div /> 
+        return (
+            <div ></div>
             // <div className="row" key={question.id} >
             //     <div className="col-lg-3">
             //         <p> {question.question} </p>
@@ -31,49 +32,54 @@ const AdditionalQuestions = props => {
     });
 
     function print(index) {
-        if(index < 0) {
+        if (index < 0) {
             index = 0;
+            props.jumpToStep(2);
         }
-        if(index > propsQuestions.length) {
+        if (index >= propsQuestions.length) {
             // when all the questions are done
+
+            props.jumpToStep(4);
         }
-            return (
-                <div className="row" key={myIDs[index]} >
-                    <div className="col-lg-3">
-                        <p> {myQuestions[index]} </p>
-                    </div>
-                    <div className="col-lg-4">
-                        <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
-                    </div>
-                    <br />
+        return (
+            <div className="row" key={myIDs[index]} >
+                <div className="col-lg-3">
+                    <p> {myQuestions[index]} </p>
                 </div>
-            );
-        
+                <div className="col-lg-4">
+                    <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
+                </div>
+                <br />
+            </div>
+        );
+
     }
 
-    function goNext () {
+    function goNext() {
         props.increment();
         var temp = props.counter;
         print(temp);
     }
-    function goPrev () {
+    function goPrev() {
         props.decrement();
         var temp = props.counter;
         print(temp);
     }
 
-    
+
     return (
         <div>
-            {questions}
-            {print(props.counter)}
+            <div className="row">
+                <div className="col-lg-12">
+                    {questions}
+                    {print(props.counter)}
+                </div>
+            </div>
+            <div className="row">
+                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => goPrev()} >Prev</button>
+                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
+            </div>
 
-
-            {console.log(props.counter)}
-            <br /><br />
-            <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => goPrev()} >Prev</button>
-            <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
-               
         </div>
     );
 }
@@ -84,7 +90,7 @@ class AdditionalQuestionnaire extends Component {
 
         this.state = {
             additionalQuestionAnswers: this.props.additionalQuestionAnswers,
-            counter : 0
+            counter: 0
         }
         this.handleAnswer = this.handleAnswer.bind(this);
         this.increment = this.increment.bind(this);
@@ -136,17 +142,17 @@ class AdditionalQuestionnaire extends Component {
                     <br />
                 </div>
 
-                <div className="row">
-                    <div className="col-lg-12">
-                    <AdditionalQuestions increment={this.increment} decrement={this.decrement} counter={this.state.counter} questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
-                    </div>
-                </div>
+                {/* <div className="row">
+                    <div className="col-lg-12"> */}
+                <AdditionalQuestions jumpToStep={this.props.jumpToStep} increment={this.increment} decrement={this.decrement} counter={this.state.counter} questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
+                {/* </div>
+                </div> */}
 
-                <div className="row">
-                    {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(2)} >Prev</button>
+                {/* <div className="row"> */}
+                {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(2)} >Prev</button>
                     <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >Next</button> */}
-                </div>
             </div>
+            // </div>
         );
     }
 }
