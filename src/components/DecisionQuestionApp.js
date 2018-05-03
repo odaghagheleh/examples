@@ -8,11 +8,12 @@ import { getDisputeReasonQuestions, setDisputeReasonAnswer } from './../actions/
 const QuestionsApp = props => {
     const questionList = props.questions;
     const selectItem = questionList.map((qtem) =>
+
         <option key={qtem.id} value={qtem.question}>{qtem.question}</option>
     );
     return (
         <select id="sel" className="form-control" value={props.selectValue} onChange={props.handleSelectAnswer} >
-            <option key={999} value=""></option>
+            <option>Select an answer...</option>
             {selectItem}
         </select>
 
@@ -85,9 +86,11 @@ class DecisionQuestionApp extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="DecisionQuestionApp">
                 <br />
                 <div className="row">
+
+                <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                     <div className="form-group col-sm-6">
                         <label htmlFor="sel">1. Why are you disputing these transactions?</label>
                         <br />
