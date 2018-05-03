@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 const ProgressBar = props => {
-
+    console.log(props);
     return (
         <div className="ProgressBar">
         <div class="ProgressBar__flex">
@@ -21,10 +21,10 @@ const ProgressBar = props => {
     )
 }
 
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//     return {
-//         setCurrentStep: (step) => dispatch(setCurrentStep(step)),
-//     }
-// };
+const mapStateToProps = (state) => {
+    return {
+        currentStep: state.stepper.currentStep,
+    }
+};
 
-export default ProgressBar;
+export default connect(mapStateToProps, null)(ProgressBar);

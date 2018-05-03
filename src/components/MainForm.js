@@ -54,6 +54,7 @@ const MainForm = props => {
                                                     stepsNavigation={false}
                                                     showNavigation={false}
                                                     showSteps={false}
+                                                    onStepChange={(step) => props.setCurrentStep(step)}
                                                 />
                                             </div>
                                         </div>
