@@ -863,17 +863,36 @@
             <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpinfinispan</artifactId>
             <version>${entando.version}</version>
             <type>war</type>
         </dependency>
+        -->
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpkiebpm</artifactId>
-            <version>4.3.2-SNAPSHOT</version>
+            <version>${entando.version}</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpkiebpm</artifactId>
+            <version>${entando.version}</version><!-- version. Don't remove this comment. -->
+            <type>jar</type>
+            <classifier>classes</classifier>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jprestapi</artifactId>
+            <version>${entando.version}</version><!-- version. Don't remove this comment. -->
+            <type>jar</type>
+            <classifier>classes</classifier>
+            <scope>provided</scope>
+        </dependency>
+        
     </dependencies>
 </project>
