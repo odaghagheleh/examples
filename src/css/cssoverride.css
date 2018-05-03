@@ -223,18 +223,17 @@ ol.order-list > li:before {
 }
 
 ol.ProgressBar {
-  list-style-type: none;
-  list-style-type: decimal;
-  padding: 0;
-  counter-reset: li-counter;
-  display: -ms-flexbox;
-  display: flex;
-  list-style-type:none
+    padding: 0;
+    counter-reset: li-counter;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
 }
 
 ol.ProgressBar > li{
   position: relative;
-  margin: 19px;
+  margin: 3px;
   width: 280px;
 }
 
