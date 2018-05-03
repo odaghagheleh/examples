@@ -18,7 +18,7 @@ const Confirmation = props => {
         <br />
         <br />
         </div>
-        <ol className="simple-list">
+        <ol className="order-list">
         <li>
         <p className="DisputeConfirmation__list">Why are you disputing these transactions?</p>
         <p className="DisputeConfirmation__list-small">{props.transactionDisputeReasonAnswers}</p>
