@@ -20,26 +20,11 @@ export function getTransactionHistory() {
         type: GET_TRANSACTION_HISTORY,
         payload: [
             {
-                "id": "1",
-                "recentActivity": "18/03/2018",
-                "type": "Payment",
-                "Description": "Simple",
-                "Amount": 24,
-                "Balance": 36,
-                "extraDescriptions": [{
-                    id: '1',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
                 "id": "2",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
+                "recentActivity": "03/18/2017",
+                "time":"12:23 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": -24,
                 "Balance": 36,
                 "extraDescriptions": [{
@@ -53,9 +38,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "3",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
+                "recentActivity": "03/14/2017",
+                "time":"5:00 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": 25,
                 "Balance": -36,
                 "extraDescriptions": [{
@@ -69,9 +55,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "4",
-                "recentActivity": "18/03/2018",
+                "recentActivity": "03/13/2017",
+                "time":"03:40 PM",
                 "type": "Charge",
-                "Description": "Good",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": -24,
                 "Balance": 36,
                 "extraDescriptions": [{
@@ -85,9 +72,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "5",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
+                "recentActivity": "03/10/2017",
+                "time":"10:48 PM",
+                "type": "Charge",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": 25,
                 "Balance": -36,
                 "extraDescriptions": [{
@@ -101,9 +89,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "6",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
+                "recentActivity": "03/08/2017",
+                "time":"12:23 PM",
+                "type": "Transfer",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": -24,
                 "Balance": 36,
                 "extraDescriptions": [{
@@ -117,9 +106,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "7",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
+                "recentActivity": "03/07/2017",
+                "time":"5:00 AM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": 25,
                 "Balance": -36,
                 "extraDescriptions": [{
@@ -133,9 +123,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "8",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
+                "recentActivity": "03/04/2017",
+                "time":"03:49 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": -24,
                 "Balance": 36,
                 "extraDescriptions": [{
@@ -149,9 +140,10 @@ export function getTransactionHistory() {
             },
             {
                 "id": "9",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
+                "recentActivity": "03/03/2017",
+                "time":"12:00 AM",
+                "type": "Charge",
+                "Description": "Lorem Ipsum is simply ...",
                 "Amount": 25,
                 "Balance": -36,
                 "extraDescriptions": [{

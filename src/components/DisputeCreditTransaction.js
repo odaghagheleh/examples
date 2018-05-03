@@ -10,8 +10,8 @@ function TransactionList(props) {
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>{dataItem.Amount}</td>
-            <td>{dataItem.Balance}</td>
+            <td>$ {dataItem.Amount}</td>
+            <td>$ {dataItem.Balance}</td>
         </tr>);
     }
     );
@@ -32,7 +32,7 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td>Total</td>
-                    <td>{rowSum}</td>
+                    <td>$ {rowSum}</td>
                 </tr>
             </tbody>
         </table>
@@ -74,7 +74,7 @@ class DisputeCreditTransaction extends Component {
                         <button name="confirm" type="button" className="btn btn-primary btn-sm" onClick={this.confirmed} >Yes - This is correct</button>
                     </div>
                     <div className="col-sm-4">
-                        <button name="cancel" type="button" className="btn btn-sm" onClick={() => this.props.history.push('/')} >No -Cancel</button>
+                        <button name="cancel" type="button" className="btn btn-default btn-sm" onClick={() => this.props.history.push('/')} >No -Cancel</button>
                     </div>
                 </div>
                 <div className="row">
@@ -83,7 +83,7 @@ class DisputeCreditTransaction extends Component {
                         <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
                         Next</button>
                         :
-                        <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
+                        <button name="next" disabled type="button" className="btn btn-default btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
                         Next</button>
                     }
 
