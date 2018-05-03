@@ -59,8 +59,10 @@ html, body, #main-contents {
   background-color: #fff;
   border: none !important;
 }
-.widget {
-  margin-top: 5%;
+.widget-monthly {
+  border-radius: 5px;
+  margin-top: 0px;
+  height: 271px;
 }
 .ibox .bluetop{
   border-color: #1a7bb9;

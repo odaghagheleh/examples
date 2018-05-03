@@ -3360,10 +3360,10 @@ vertical-align: top;
     width: 23% !important;
 }
 .table > tbody > tr > td:nth-child(3) {
-  width: 23% !important;
+  width: 24% !important;
 }
 .table > tbody > tr > td:nth-child(4) {
-  width: 25% !important;
+  width: 23% !important;
 }
 .table > tbody > tr > td:nth-child(5) {
   width: 19% !important;
