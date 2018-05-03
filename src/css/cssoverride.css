@@ -242,16 +242,16 @@ ol.ProgressBar > li{
   font-weight: 500;
   background: #00659c;
   color: #fff;
-  height: 55px;
-  line-height: 55px;
+  height: 66px;
+  line-height: 66px;
 }
 .ProgressBar__list_green {
   font-size: 16px;
   font-weight: 500;
   background: #6EC664;
   color: #fff;
-  height: 55px;
-  line-height: 55px;
+  height: 66px;
+  line-height: 66px;
 }
 
 .ProgressBar__list_gray {
@@ -259,8 +259,8 @@ ol.ProgressBar > li{
   font-weight: 500;
   background: #D8D8D8;
   color: #B6B8B9;
-  height: 55px;
-  line-height: 55px;
+  height: 66px;
+  line-height: 66px;
 }
 
 .big {
