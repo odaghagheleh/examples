@@ -86,8 +86,9 @@ public class KieEndpointDictionary {
         //ADDED FOR DEMO - 2018-05-02 - START
         //Run Additional Info Rules
         endpoints.put(API_POST_RUN_ADDITIONAL_INFO_RULES, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/instances/%s", HttpStatus.SC_OK, true));
-        endpoints.put(API_POST_START_CASE_AUTOMATED, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/%s/cases/%s/instances", HttpStatus.SC_OK, true));
-        endpoints.put(API_POST_START_CASE_MANUAL, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/%s/cases/%s/instances", HttpStatus.SC_OK, true));
+        endpoints.put(API_POST_START_CASE, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/%s/cases/%s/instances", HttpStatus.SC_OK, true));
+        //endpoints.put(API_POST_START_CASE_AUTOMATED, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/%s/cases/%s/instances", HttpStatus.SC_OK, true));
+        //endpoints.put(API_POST_START_CASE_MANUAL, new Endpoint(IEndpoint.httpVerb.POST, "/services/rest/server/containers/%s/cases/%s/instances", HttpStatus.SC_OK, true));
         //ADDED FOR DEMO - 2018-05-02 - END
     }
 

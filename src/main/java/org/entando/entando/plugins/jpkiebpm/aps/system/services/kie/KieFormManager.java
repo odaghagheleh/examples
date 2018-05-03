@@ -82,6 +82,7 @@ import com.agiletec.aps.system.common.AbstractService;
 import com.agiletec.aps.system.exception.ApsSystemException;
 import com.agiletec.aps.system.services.baseconfig.ConfigInterface;
 import static org.entando.entando.plugins.jpkiebpm.aps.system.KieBpmSystemConstants.API_POST_RUN_ADDITIONAL_INFO_RULES;
+import static org.entando.entando.plugins.jpkiebpm.aps.system.KieBpmSystemConstants.API_POST_START_CASE;
 //import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.helper.FSIDemoHelper;
 
 /**
@@ -1100,18 +1101,18 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
     // ADDED FOR DEMO - 2018-05-02
     //http://rhpam7-cc-dispute-kieserver-rhpam7-cc-dispute-en.54.36.53.206.xip.io/kie-server/services/rest/server/containers/instances/credit-dispute-decisions_1.0-SNAPSHOT
     @Override
-    public String runAdditionalInfoRules(String jsonBody, String instance) throws ApsSystemException {
+    public String runAdditionalInfoRules(String jsonBody, String container) throws ApsSystemException {
         Map<String, String> headersMap = new HashMap<>();
         String result = null;
         if (null == config) {
             config = this.loadFirstConfigurations();
         }
-        if (!config.getActive() || StringUtils.isBlank(instance)) {
+        if (!config.getActive() || StringUtils.isBlank(container)) {
             return null;
         }
         try {
             // process endpoint first
-            Endpoint ep = KieEndpointDictionary.create().get(API_POST_RUN_ADDITIONAL_INFO_RULES).resolveParams(instance);
+            Endpoint ep = KieEndpointDictionary.create().get(API_POST_RUN_ADDITIONAL_INFO_RULES).resolveParams(container);
             // generate client from the current configuration
             KieClient client = getCurrentClient();
             // add header
@@ -1119,12 +1120,36 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
             headersMap.put(HEADER_KEY_CONTENT_TYPE, HEADER_VALUE_JSON);
             // perform query
             result = new KieRequestBuilder(client).setEndpoint(ep)
-                    .setHeaders(headersMap)
-                    .setPayload(jsonBody)
-                    .setDebug(config.getDebug())
-                    .doRequest();
+                    .setHeaders(headersMap).setPayload(jsonBody).setDebug(config.getDebug()).doRequest();
         } catch (Throwable t) {
             throw new ApsSystemException("Error running additional file system", t);
+        }
+        return result;
+    }
+
+    @Override
+    public String executeStartCase(String json, String container, String instance) throws ApsSystemException {
+        Map<String, String> headersMap = new HashMap<>();
+        String result = null;
+        if (null == config) {
+            config = this.loadFirstConfigurations();
+        }
+        if (!config.getActive() || StringUtils.isBlank(container)) {
+            return null;
+        }
+        try {
+            // process endpoint first
+            Endpoint ep = KieEndpointDictionary.create().get(API_POST_START_CASE).resolveParams(container, instance);
+            // generate client from the current configuration
+            KieClient client = getCurrentClient();
+            // add header
+            headersMap.put(HEADER_KEY_ACCEPT, HEADER_VALUE_JSON);
+            headersMap.put(HEADER_KEY_CONTENT_TYPE, HEADER_VALUE_JSON);
+            // perform query
+            result = new KieRequestBuilder(client).setEndpoint(ep)
+                    .setHeaders(headersMap).setPayload(json).setDebug(config.getDebug()).doRequest();
+        } catch (Throwable t) {
+            throw new ApsSystemException("Error starting case", t);
         }
         return result;
     }

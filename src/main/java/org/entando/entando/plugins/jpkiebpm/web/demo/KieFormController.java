@@ -34,6 +34,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -54,12 +55,20 @@ public class KieFormController {
 
     //@RestAccessControl(permission = "")
     //@RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{instance}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    @RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{instance:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{container:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     //@ResponseBody
-    public String runAdditionalInfoRules(@PathVariable String instance, HttpServletRequest request) throws IOException {
+    public @ResponseBody
+    String runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
         System.out.println("json = " + json);
-        return this.getKieFormService().runAdditionalInfoRules(json, instance);
+        return this.getKieFormService().runAdditionalInfoRules(json, container);
+    }
+
+    @RequestMapping(value = "/kiebpm/startCase/{container:.+}/{instance:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String executeStartCase(@PathVariable String container, @PathVariable String instance, HttpServletRequest request) throws IOException {
+        String json = IOUtils.toString(request.getInputStream());
+        System.out.println("json = " + json);
+        return this.getKieFormService().executeStartCase(json, container, instance);
     }
 
 }

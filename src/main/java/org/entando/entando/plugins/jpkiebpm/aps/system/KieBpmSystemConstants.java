@@ -107,6 +107,7 @@ public interface KieBpmSystemConstants {
     /*
     http://rhpam7-cc-dispute-kieserver-rhpam7-cc-dispute-en.54.36.53.206.xip.io/kie-server/services/rest/server/containers/instances/credit-dispute-decisions_1.0-SNAPSHOT
      */
+    public final static String API_POST_START_CASE = "API_POST_START_CASE";
     //Start Case (Automated)
     public final static String API_POST_START_CASE_AUTOMATED = "API_POST_START_CASE_AUTOMATED";
     /*

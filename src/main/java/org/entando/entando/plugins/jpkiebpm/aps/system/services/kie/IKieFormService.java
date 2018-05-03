@@ -30,4 +30,6 @@ public interface IKieFormService {
 
     public String runAdditionalInfoRules(String jsonBody, String instance);
 
+    public String executeStartCase(String json, String container, String instance);
+
 }

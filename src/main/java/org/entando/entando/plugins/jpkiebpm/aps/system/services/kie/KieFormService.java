@@ -39,6 +39,15 @@ public class KieFormService implements IKieFormService {
         }
     }
 
+    @Override
+    public String executeStartCase(String json, String container, String instance) {
+        try {
+            return this.getKieFormManager().executeStartCase(json, container, instance);
+        } catch (Exception e) {
+            throw new RuntimeException("Error invoking executeStartCase", e);
+        }
+    }
+
     public IKieFormManager getKieFormManager() {
         return kieFormManager;
     }

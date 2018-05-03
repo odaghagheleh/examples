@@ -347,4 +347,6 @@ public interface IKieFormManager {
 
     public String runAdditionalInfoRules(String jsonBody, String instance) throws ApsSystemException;
 
+    public String executeStartCase(String json, String container, String instance) throws ApsSystemException;
+
 }
