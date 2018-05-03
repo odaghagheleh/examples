@@ -791,6 +791,12 @@
             <artifactId>entando-admin-console</artifactId>
             <version>${entando.version}</version>
             <type>war</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
@@ -806,12 +812,24 @@
             <version>${entando.version}</version>
             <type>jar</type>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-portal-ui</artifactId>
             <version>${entando.version}</version>
             <type>war</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
@@ -893,6 +911,12 @@
             <classifier>classes</classifier>
             <scope>provided</scope>
         </dependency>
-        
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20170516</version>
+            <type>jar</type>
+
+        </dependency>
     </dependencies>
 </project>

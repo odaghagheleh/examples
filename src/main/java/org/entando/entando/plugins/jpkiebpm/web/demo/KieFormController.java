@@ -23,19 +23,18 @@
  */
 package org.entando.entando.plugins.jpkiebpm.web.demo;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.IOUtils;
 import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.IKieFormService;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Map;
 
 @RestController
 public class KieFormController {
@@ -57,18 +56,25 @@ public class KieFormController {
     //@RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{instance}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{container:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     //@ResponseBody
-    public @ResponseBody
-    String runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
+    public @ResponseBody Map<String, Object> runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
         System.out.println("json = " + json);
-        return this.getKieFormService().runAdditionalInfoRules(json, container);
+        String response = this.getKieFormService().runAdditionalInfoRules(json, container);
+
+        JSONObject jsonObj = new JSONObject(response);
+        return jsonObj.toMap();
+
     }
 
     @RequestMapping(value = "/kiebpm/startCase/{container:.+}/{instance:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String executeStartCase(@PathVariable String container, @PathVariable String instance, HttpServletRequest request) throws IOException {
+    public Map<String, Object> executeStartCase(@PathVariable String container, @PathVariable String instance, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
         System.out.println("json = " + json);
-        return this.getKieFormService().executeStartCase(json, container, instance);
+        String response =  this.getKieFormService().executeStartCase(json, container, instance);
+
+        JSONObject jsonObj = new JSONObject(response);
+        return jsonObj.toMap();
+
     }
 
 }
