@@ -17,15 +17,15 @@ function TransactionList(props) {
     );
     return (
 
-        <table className="table borderless " id="myTable" >
+        <table className="table borderless DecisionQuestionApp__table" id="myTable" >
             <tbody>
                 {rowsData}
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><hr width="100%" /></td>
-                    <td><hr width="100%" /></td>
+                    <td></td>
+                    <td><hr className="DecisionQuestionApp__hr" /></td>
                 </tr>
                 <tr>
                     <td></td>

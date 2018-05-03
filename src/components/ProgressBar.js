@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 const ProgressBar = props => {
-let step1 = "ProgressBar__list"
-let step2 = "ProgressBar__list_green"
+let step1 = "ProgressBar__list_green"
+let step2 = "ProgressBar__list_gray"
 let step3 = "ProgressBar__list_gray"
 
 if (props.currentStep <= 1 ) {
-  step1 = "ProgressBar__list"
-  step2 = "ProgressBar__list_gray"
-  step3 = "ProgressBar__list_gray"
+ step1 = "ProgressBar__list_green"
+ step2 = "ProgressBar__list_gray"
+ step3 = "ProgressBar__list_gray"
 }
 else if (props.currentStep === 2 || props.currentStep === 3 || props.currentStep === 4) {
-  step1 = "ProgressBar__list_green"
-  step2 = "ProgressBar__list"
+  step1 = "ProgressBar__list"
+  step2 = "ProgressBar__list_green"
   step3 = "ProgressBar__list_gray"
 }
 else if (props.currentStep === 5) {
-  step1 = "ProgressBar__list_green"
-  step2 =  "ProgressBar__list_green"
-  step3 = "ProgressBar__list"
+  step1 = "ProgressBar__list"
+  step2 =  "ProgressBar__list"
+  step3 = "ProgressBar__list_green"
 }
   console.log('TEST', step1 , step2 , step3);
 return (

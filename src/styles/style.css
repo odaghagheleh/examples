@@ -3368,6 +3368,13 @@ vertical-align: top;
 .table > tbody > tr > td:nth-child(5) {
   width: 19% !important;
 }
+
+.DecisionQuestionApp__table > tbody > tr > td:nth-child(4) {
+  width: 9% !important;
+}
+
+
+
 .select-filter {
 width: 16% !important;
 position: absolute;

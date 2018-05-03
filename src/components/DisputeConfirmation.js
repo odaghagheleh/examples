@@ -58,8 +58,8 @@ const TransactionList = props => {
           <td></td>
           <td></td>
           <td></td>
-          <td><hr width="100%" /></td>
-          <td><hr width="100%" /></td>
+          <td></td>
+          <td><hr className="DecisionQuestionApp__hr2" /></td>
         </tr>
         <tr>
           <td></td>
@@ -77,26 +77,26 @@ const DisputeConfirmation = props => {
 
     return (
     <div className="DisputeConfirmation">
-        <div className="row" >
+       <div className="row" >
           <div className="col-lg-7">
-            <Confirmation
-            transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
-            creditCardQAs={props.creditCardQAs}
-             extraInfos={props.extraInfos}
-            />
+             <Confirmation
+                transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
+                creditCardQAs={props.creditCardQAs}
+                extraInfos={props.extraInfos}
+                />
           </div>
           <div className="col-lg-5">
-            <div className="DisputeConfirmation__box">
-              <p>Transaction(s) in Dispute</p>
-              <TransactionList data={props.transactionDisputes} />
-            </div>
+             <div className="DisputeConfirmation__box">
+                <p>Transaction(s) in Dispute</p>
+                <TransactionList data={props.transactionDisputes} />
+             </div>
           </div>
-         </div>
-          <div className="row">
-            <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
-            <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
-          </div>
-        </div>
+       </div>
+       <div className="row">
+          <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
+          <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
+       </div>
+    </div>
     );
 }
 
