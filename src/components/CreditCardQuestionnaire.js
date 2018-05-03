@@ -80,7 +80,6 @@ class CreditCardQuestionnaire extends Component {
             confirmed: false
         }
     }
-
     handleUserAnswer(e) {
         const target = e.target;
         const name = target.name;
