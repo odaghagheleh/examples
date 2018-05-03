@@ -25,6 +25,7 @@ package org.entando.entando.plugins.jpkiebpm.web.demo;
 
 import org.apache.commons.io.IOUtils;
 import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.IKieFormService;
+import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -56,14 +58,14 @@ public class KieFormController {
     //@RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{instance}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping(value = "/kiebpm/runAdditionalInfoRules/{container:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     //@ResponseBody
-    public @ResponseBody Map<String, Object> runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
+    public @ResponseBody
+    Map<String, Object> runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
         System.out.println("json = " + json);
         String response = this.getKieFormService().runAdditionalInfoRules(json, container);
 
         JSONObject jsonObj = new JSONObject(response);
         return jsonObj.toMap();
-
     }
 
     @RequestMapping(value = "/kiebpm/startCase/{container:.+}/{instance:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -74,7 +76,11 @@ public class KieFormController {
 
         JSONObject jsonObj = new JSONObject(response);
         return jsonObj.toMap();
+    }
 
+    @RequestMapping(value = "/kiebpm/instances", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<KieProcessInstance> getAllProcessInstancesList() {
+        return this.getKieFormService().getAllProcessInstancesList();
     }
 
 }
