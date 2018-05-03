@@ -25,14 +25,14 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td><hr width="100%" /></td>
-                    <td></td>
+                    <td><hr width="100%" /></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-                    <td>{rowSum}</td>
+                    <td><strong>Total:</strong></td>
+                    <td><strong>{rowSum}</strong></td>
                 </tr>
             </tbody>
         </table>

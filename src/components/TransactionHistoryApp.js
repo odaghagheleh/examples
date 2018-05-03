@@ -67,9 +67,7 @@ const ProductTable = props => {
   }
   return (
     <BootstrapTable data={props.data}
-      tableHeaderClass='row-white-bg '
-      tableBodyClass='row-white-bg '
-      trClassName='row-hover'
+    
       options={options}
       bordered={false}
       search={true}
@@ -79,8 +77,11 @@ const ProductTable = props => {
       striped hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
       <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
-      <TableHeaderColumn dataField='type' filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
-        filter={{ type: 'SelectFilter', options: qualityType }}>Type</TableHeaderColumn>
+      <TableHeaderColumn dataField='type' headerAlign='left'
+      filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
+        filter={{ type: 'SelectFilter', options: qualityType }}>
+        Type
+        </TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
       <TableHeaderColumn dataField='Amount' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
       <TableHeaderColumn dataField='Balance' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
@@ -192,11 +193,6 @@ class TransactionHistoryApp extends Component {
                 <div className="ibox float-e-margins">
                   <div className="ibox-title bluetop">
                     <h2>Dispute Credit Transaction</h2>
-                    <div className="ibox-tools">
-                      <a className="collapse-link">
-                        <i className="fa fa-chevron-up"></i>
-                      </a>
-                    </div>
                   </div>
                   <div className="ibox-content" id="main-contents">
                     <div className="row">

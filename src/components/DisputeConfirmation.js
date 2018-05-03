@@ -51,50 +51,51 @@ const TransactionList = props => {
         }
     );
     return (
-        <table className="table borderless" id="myTable" >
+      <table className="table borderless" id="myTable" >
         <tbody>
         {rowsData}
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><hr width="100%" /></td>
-        <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><hr width="100%" /></td>
+          <td><hr width="100%" /></td>
         </tr>
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Total</td>
-        <td>{rowSum}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><strong>Total:</strong></td>
+          <td><strong>{rowSum}</strong></td>
         </tr>
         </tbody>
-        </table>
+      </table>
     );
 }
 
 const DisputeConfirmation = props => {
 
     return (
-        <div>
+    <div className="DisputeConfirmation">
         <div className="row" >
-        <div className="col-lg-8">
-        <Confirmation
-        transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
-        creditCardQAs={props.creditCardQAs}
-        extraInfos={props.extraInfos}
-        />
-        </div>
-        <div className="col-lg-4">
-        <hr />
-        <p>Transaction(s) in Dispute</p>
-        <TransactionList data={props.transactionDisputes} />
-        </div>
-        </div>
-        <div className="row">
-        <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
-        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
-        </div>
+          <div className="col-lg-7">
+            <Confirmation
+            transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
+            creditCardQAs={props.creditCardQAs}
+             extraInfos={props.extraInfos}
+            />
+          </div>
+          <div className="col-lg-5">
+            <div className="DisputeConfirmation__box">
+              <p>Transaction(s) in Dispute</p>
+              <TransactionList data={props.transactionDisputes} />
+            </div>
+          </div>
+         </div>
+          <div className="row">
+            <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
+            <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
+          </div>
         </div>
     );
 }
