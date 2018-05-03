@@ -24,9 +24,11 @@
 package org.entando.entando.plugins.jpkiebpm.web.demo;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.IOUtils;
 import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.IKieFormService;
+import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +71,11 @@ public class KieFormController {
         String json = IOUtils.toString(request.getInputStream());
         System.out.println("json = " + json);
         return this.getKieFormService().executeStartCase(json, container, instance);
+    }
+
+    @RequestMapping(value = "/kiebpm/instances", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<KieProcessInstance> getAllProcessInstancesList() {
+        return this.getKieFormService().getAllProcessInstancesList();
     }
 
 }

@@ -23,6 +23,9 @@
  */
 package org.entando.entando.plugins.jpkiebpm.aps.system.services.kie;
 
+import java.util.List;
+import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
+
 /**
  * @author E.Santoboni
  */
@@ -31,5 +34,7 @@ public interface IKieFormService {
     public String runAdditionalInfoRules(String jsonBody, String instance);
 
     public String executeStartCase(String json, String container, String instance);
+
+    public List<KieProcessInstance> getAllProcessInstancesList();
 
 }

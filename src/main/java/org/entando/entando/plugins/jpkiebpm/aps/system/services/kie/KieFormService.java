@@ -23,6 +23,10 @@
  */
 package org.entando.entando.plugins.jpkiebpm.aps.system.services.kie;
 
+import java.util.HashMap;
+import java.util.List;
+import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
+
 /**
  * @author E.Santoboni
  */
@@ -45,6 +49,16 @@ public class KieFormService implements IKieFormService {
             return this.getKieFormManager().executeStartCase(json, container, instance);
         } catch (Exception e) {
             throw new RuntimeException("Error invoking executeStartCase", e);
+        }
+    }
+
+    @Override
+    public List<KieProcessInstance> getAllProcessInstancesList() {
+        try {
+            this.getKieFormManager().loadFirstConfigurations();
+            return this.getKieFormManager().getAllProcessInstancesList(new HashMap<>());
+        } catch (Exception e) {
+            throw new RuntimeException("Error invoking getAllProcessInstancesList", e);
         }
     }
 
