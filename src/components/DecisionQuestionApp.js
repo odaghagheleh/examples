@@ -98,13 +98,9 @@
                         {
                             this.props.transactionDisputeReasonAnswers == 'I did not authorize the transaction(s)' ?
                                 <div className="form-group col-sm-12 DecisionQuestionApp__spacer">
-
                                     <p className="DecisionQuestionApp__cancel-credit">Due to strict security and privacy regulations, we must cancel your credit card and issue a new one. Please confirm.</p>
-
                                     <input name="yes" type="button" className="btn DecisionQuestionApp__custom-buttons btn-primary neibourb" onClick={() => this.confirmed()} value="Confirm - Reissue Card" />
-
                                     <input name="no" type="button" className="btn DecisionQuestionApp__custom-buttons neibourb" value="No - Cancel" onClick={() => this.props.history.push('/')} />
-
                                 </div>
                                 :
                                 <div> </div>
@@ -114,14 +110,10 @@
                         <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >Prev</button>
                         {this.buttonActive(this.state.confirmCheck, this.props.transactionDisputeReasonAnswers)}
                     </div>
-
                 </div>
             );
-
         }
     }
-
-
 
     const mapStateToProps = state => {
         return {

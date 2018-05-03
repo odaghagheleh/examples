@@ -28,7 +28,7 @@ const Confirmation = props => {
         <p className="DisputeConfirmation__list-small">{props.creditCardQAs.creditCardwithCustomer}</p>
         </li>
         <li>
-        <p className="DisputeConfirmation__list"> Is there anything else you'd like to tell us about this dispute? </p>
+        <p className="DisputeConfirmation__list"> Is there anything else you&apos;d like to tell us about this dispute? </p>
         <p className="DisputeConfirmation__list-small">{props.extraInfos}</p>
         </li>
         </ol>

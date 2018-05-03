@@ -13,7 +13,7 @@ import ExtraInfo from './ExtraInfo';
 import DisputeConfirmation from './DisputeConfirmation';
 import Confirmed from './Confirmed';
 import Stepper from './Stepper';
-
+import ProgressBar from './ProgressBar';
 
 const MainForm = props => {
     const steps =
@@ -43,7 +43,8 @@ const MainForm = props => {
                                     <div className='example' className="row"  >
                                         <div className="col-lg-12">
                                             <div className='step-progress' id='main-contents'>
-                                                {/* <Stepper steps={steps} /> */}
+
+                                                <ProgressBar />
                                                 <StepZilla
                                                     steps={steps}
                                                     nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
@@ -52,6 +53,7 @@ const MainForm = props => {
                                                     prevBtnOnLastStep={false}
                                                     stepsNavigation={false}
                                                     showNavigation={false}
+                                                    showSteps={false}
                                                 />
                                             </div>
                                         </div>
