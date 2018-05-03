@@ -62,15 +62,133 @@ html, body, #main-contents {
 .widget {
   margin-top: 5%;
 }
- .ibox .bluetop{
+.ibox .bluetop{
   border-color: #1a7bb9;
   border-width: 5px 0 0;
- }
- .monthyIncome{
-   background-image: url(./monthyIncomebg.png);
-   background-repeat: no-repeat;
-   background-size: 100% 100%;
- }
- .monthlyincomeinline{
-   margin-top: -5%;
- }
+}
+.monthyIncome{
+  background-image: url(./monthyIncomebg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.monthlyincomeinline{
+  margin-top: -5%;
+}
+
+/* decision app  */
+.DecisionQuestionApp__question {
+  font-family: Open Sans;
+  font-weight: 100;
+  font-size: 24px;
+  margin: 0px 0 25px 15px;
+}
+
+.DecisionQuestionApp__step {
+  font-family: Open Sans;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 15px 13px;
+}
+
+.DecisionQuestionApp__select {
+  margin: 0 0 15px 13px;
+}
+
+.DecisionQuestionApp__spacer {
+  margin: 0 0 15px 13px;
+}
+.DecisionQuestionApp__select--width {
+  width: 710px !important;
+}
+
+select option {
+  color: #676A6C;
+  font-size: 14px;
+  background: #fff;
+}
+
+select option:first-child{
+  color: #ded6d6;
+}
+
+select option:last-child{
+  color: black;
+  font-weight: bold;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+.DecisionQuestionApp__cancel-credit {
+  font-size:16px ;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 12px 0 28px 0;
+}
+
+.DecisionQuestionApp__select .form-control, .single-line {
+  border: 1px solid #e5e6e7 !important;
+}
+
+.btn {
+  font-family: Open Sans !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.btn-primary[disabled] {
+  background-color: #D8D8D8 !important;
+  border-color: #D8D8D8 !important;
+}
+
+.DecisionQuestionApp__custom-buttons {
+  padding: .5em 2em .5em 2em !important;
+  border-radius: 1px !important;
+  font-size: 14px !important;
+  margin-right: 20px !important;
+}
+
+ol.simple-list {
+  list-style-type: none;
+  list-style-type: decimal;
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  counter-reset: li-counter;
+}
+ol.simple-list > li{
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 2.5em;
+  min-height: 3em;
+}
+ol.simple-list > li:before {
+  position: absolute;
+  top: 0;
+  left: -1em;
+  width: 2em;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  background: #00659C;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  padding: 9px;
+  text-align: center;
+}
+
+.DisputeConfirmation__list{
+font-size: 16;
+font-weight:500;
+}
+.DisputeConfirmation__list-small{
+font-size: 14;
+font-weight:300;
+}
+.DisputeConfirmation {
+margin: 2em 0 0 0; 
+}

@@ -42,11 +42,13 @@ const AdditionalQuestions = props => {
         }
         return (
             <div className="row" key={myIDs[index]} >
+            <div className="DecisionQuestionApp__spacer">
                 <div className="col-lg-3">
                     <p> {myQuestions[index]} </p>
                 </div>
                 <div className="col-lg-4">
                     <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
+                </div>
                 </div>
                 <br />
             </div>
@@ -134,8 +136,9 @@ class AdditionalQuestionnaire extends Component {
             <div>
                 <br />
                 <div className="row">
+                <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                     <div className="col-lg-12">
-                        <label> Additional Questions: </label>
+                        <label className="DecisionQuestionApp__step"> Additional Questions: </label>
                     </div>
                     <br />
                     <br />

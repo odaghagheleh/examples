@@ -20,11 +20,12 @@ const CreditCardQuestions = props => {
                 <div className="row">
                     <div className="form-inline col-lg-12">
                         <div className="form-group">
-                            <label>When was your Credit Card last in your posession?</label>
+                            <label className="DecisionQuestionApp__step">When was your Credit Card last in your posession?</label>
                         </div>
                     </div>
                 </div>
 
+                <div className="DecisionQuestionApp__spacer">
                 <div className="row">
                     <div className="col-lg-4">
                         <p>What date did you realize the card(s) were missing?</p>
@@ -41,6 +42,7 @@ const CreditCardQuestions = props => {
                         <input type="date" name="lastUsedDate" onChange={props.handleUserAnswer} value={currentValues.lastUsedDate} />
                     </div>
                 </div>
+                </div>
             </div>)
         } else {
             return (<div> </div>);
@@ -52,18 +54,21 @@ const CreditCardQuestions = props => {
         <div>
             <br />
             <div className="row">
+            <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                 <div className="col-lg-12">
-                    <label>2. Has your credit card been with you the entire time?</label>
+                      <label className="DecisionQuestionApp__step" >2. Has your credit card been with you the entire time?</label>
                 </div>
             </div>
             <div className="row">
                 <div className="form-inline col-lg-12">
+            <div className="DecisionQuestionApp__spacer">
                     <div className="form-group">
                         {yesBt}
                     </div>
                     <div className="form-group">
                         {noBt}
                     </div>
+                  </div>
                 </div>
             </div>
             <br />
