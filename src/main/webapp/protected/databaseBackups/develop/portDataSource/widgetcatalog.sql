@@ -214,3 +214,30 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('fsi','<?xml version="1.0" encoding="UTF-8"?>
 <properties><property key="en">fsi-credit-card-dispute-customer</property><property key="it">fsi-credit-card-dispute-customer</property></properties>
 ',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Footer','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Footer</property><property key="it">FSI Footer</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Toplink_Account_Placeholder','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Toplink Account Placeholder</property><property key="it">FSI Toplink Account Placeholder</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Toplink_Customer_Internal','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Toplink Customer Internal</property><property key="it">FSI Toplink Customer Internal</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Toplink_Logout','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Toplink Logout</property><property key="it">FSI Toplink Logout</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Toplink_Personal_Placeholder','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Toplink Personal Placeholder</property><property key="it">FSI Toplink Personal Placeholder</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('FSI_Toplink_Small_Business_Placeholder','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">FSI Toplink Small Business Placeholder</property><property key="it">FSI Toplink Small Business Placeholder</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('fsi-greeting','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">fsi-greeting</property><property key="it">fsi-greeting</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('home_page_cards','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">home_page_cards</property><property key="it">home_page_cards</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('monthly-income-greeting','<?xml version="1.0" encoding="UTF-8"?>
+<properties><property key="en">monthly-income-greeting</property><property key="it">monthly-income-greeting</property></properties>
+',NULL,NULL,NULL,NULL,0,'free');
