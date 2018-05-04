@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import routes from './config/routes';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import transactionDisputeReducer from './reducers/reducers';
 import MainForm from './components/MainForm'
+import thunkMiddleware from 'redux-thunk'
 
 import jquery from 'jquery';
 import metismenu from 'metismenu';
@@ -25,7 +26,11 @@ import './css/cssoverride.css'
 
 
 
-let store = createStore(transactionDisputeReducer);
+let store = createStore(
+    transactionDisputeReducer,
+    applyMiddleware(
+        thunkMiddleware, // lets us dispatch() functions
+      ));
 
 ReactDOM.render(
     <Provider store={store} >

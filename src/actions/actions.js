@@ -316,7 +316,7 @@ export function addCreditCardQuestionAnswer(answers) {
     };
 }
 
-export function getAdditionalQuestions(payloadArray) {
+export function getAdditionalQuestionsAsync(payloadArray) {
     payloadArray = processJson(expectedJson);
     console.log(payloadArray);
     return {
@@ -325,40 +325,46 @@ export function getAdditionalQuestions(payloadArray) {
     };
 }
 
-export function getAdditionalQuestionsAsync() {
-    var payloadArray = [];
-    
-    
-            request
-                .post(targetURL)
-                .set('Content-Type', 'application/json')
-                .set('Accept', 'application/json')
-                .auth('pamAdmin', 'redhatpam1!')
-                .send(jsonINPUT)
-                .then(function (res) {
-                    var tmp = {};
-                    tmp.status = res.status;
-                    tmp.body = res.body;
+export function getAdditionalQuestions() {
+    return function (dispatch) {
+
+        var payloadArray = [];
+        request
+            .post(targetURL)
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+            .auth('pamAdmin', 'redhatpam1!')
+            .send(jsonINPUT)
+            .then( (res) => {
+                var tmp = {};
+                tmp.status = res.status;
+                tmp.body = res.body;
                 //    console.log(tmp.body);
-                    payloadArray = processJson(tmp.body);
-                    //console.log(payloadArray);                    
-                    return getAdditionalQuestionsAsync(payloadArray);
-                    
+                payloadArray = processJson(tmp.body);
+                //console.log(payloadArray);                    
+                return dispatch({type: GET_ADDITIONAL_QUESTIONS, payload:payloadArray});
 
-                })
-                .catch(function (err) {
-                    var tmp = {};
-                    
-                    tmp.errorMessage = err.message;
-                    tmp.errorResponse = err.response;
-                    return tmp;
-                    // return (err.message);
-                });
 
-            
+            })
+            .catch((err)=> {
+                var tmp = {};
+
+                tmp.errorMessage = err.message;
+                tmp.errorResponse = err.response;
+                return dispatch({type: GET_ADDITIONAL_QUESTIONS, payload:{"id":"", "question":""}});;
+                // return (err.message);
+            });
+
+    }
+
+
+
+
+
+
 
     //payloadArray = processJson(response);
-    
+
 }
 
 export function setAdditionalQuestionsAnswer(payload) {
@@ -378,110 +384,33 @@ export function setExtraInfo(payload) {
 
 function processJson(response) {
     //console.log(response);
-    if(typeof response == "object") {
-    var finalResult = [];
-    var length = response.result["execution-results"].results.length;
-    var resultArray = response.result["execution-results"].results;
-    for (var i = 0; i < length; i++) {
-        if (resultArray[i].key === 'questions') {
-            var anotherArray = resultArray[i].value;
-            for (var j = 0; j < anotherArray.length; j++) {
-                var oneMoreArray = Object.keys(anotherArray[j]);
-                for (var k = 0; k < oneMoreArray.length; k++) {
-                    if (oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
-                        var tmp = {};
-                        tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
-                        tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
-                        finalResult.push(tmp);
+    if (typeof response == "object") {
+        var finalResult = [];
+        var length = response.result["execution-results"].results.length;
+        var resultArray = response.result["execution-results"].results;
+        for (var i = 0; i < length; i++) {
+            if (resultArray[i].key === 'questions') {
+                var anotherArray = resultArray[i].value;
+                for (var j = 0; j < anotherArray.length; j++) {
+                    var oneMoreArray = Object.keys(anotherArray[j]);
+                    for (var k = 0; k < oneMoreArray.length; k++) {
+                        if (oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
+                            var tmp = {};
+                            tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
+                            tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
+                            finalResult.push(tmp);
+                        }
                     }
                 }
             }
         }
-    }
 
-    return finalResult;
-}else{
-    console.log("No")
-    return response;
-}
-}
-
-function responseFromRest() {
-    var mockOrNot = false;
-
-    if (mockOrNot === true) {
-        return ({
-            "type": "SUCCESS",
-            "msg": "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
-            "result": {
-                "execution-results": {
-                    "results": [{
-                        "value": 3,
-                        "key": "additional-info-fired"
-                    }, {
-                        "value": [{
-                            "com.fsi.creditcarddisputecase.Cardholder": {
-                                "stateCode": "VA",
-                                "age": 35,
-                                "status": "GOLD",
-                                "incidentCount": 2,
-                                "balanceRatio": 0.2
-                            }
-                        }, {
-                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
-                                "questionId": 1,
-                                "answerValue": null,
-                                "questionType": "boolean",
-                                "questionPrompt": "Were any charges related to online purchases?"
-                            }
-                        }, {
-                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
-                                "questionId": 26,
-                                "answerValue": null,
-                                "questionType": "boolean",
-                                "questionPrompt": "Were any of these charges related to tobacco sales?"
-                            }
-                        }],
-                        "key": "questions"
-                    }, {
-                        "value": 3,
-                        "key": "cleanup-fired"
-                    }],
-                    "facts": [{
-                        "value": {
-                            "org.drools.core.common.DefaultFactHandle": {
-                                "external-form": "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
-                            }
-                        },
-                        "key": "cardholder"
-                    }]
-                }
-            }
-        });
+        return finalResult;
     } else {
-    
-            request
-                .post('http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT')
-                .set('Content-Type', 'application/json')
-                .set('Accept', 'application/json')
-                .auth('pamAdmin', 'redhatpam1!')
-                .send(jsonINPUT)
-                .then(function (res) {
-                    var tmp = {};
-                    tmp.status = res.status;
-                    tmp.body = res.body;
-                    console.log(JSON.stringify(tmp.body));
-                    return (JSON.stringify(tmp.body));
-                })
-                .catch(function (err) {
-                    var tmp = {};
-                    
-                    tmp.errorMessage = err.message;
-                    tmp.errorResponse = err.response;
-                    return tmp;
-                    // return (err.message);
-                });
+        console.log("No")
+        return response;
     }
 }
+
 
 
