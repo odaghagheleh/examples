@@ -1799,11 +1799,147 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto);
  </style>
-<link rel="stylesheet" href="<@wp.resourceURL />static/static/css/main.8cd2b6dc.css" rel="stylesheet">
+<link rel="stylesheet" href="<@wp.resourceURL />static/static/css/main.f2a3aaca.css" rel="stylesheet">
 <div id="fsi-demo-customer"></div>
 
-<script type="text/javascript" src="<@wp.resourceURL />static/static/js/main.31920ae4.js"></script>
-<script>console.log(window.location)</script>
+<script type="text/javascript" src="<@wp.resourceURL />static/static/js/main.44ff8ad2.js"></script>
+<script>console.log(window.location.host)</script>
 
 
 ',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Footer','FSI_Footer',NULL,'<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<div class="fsi-footer-wrapper">
+  <div class="fsi-footer">
+    <div class="col-md-2 col-md-offset-1">
+      <div class="logo-names">
+        <img alt="image" class="" src="<@wp.imgURL />shield-logo.png">&nbsp;
+        <b>FORTRESS -</b>
+        <span>Bank &amp; Loan</span></div>
+    </div>
+    <div class="col-md-2 col-md-offset-2 side-menu">
+      <div class="side-menu-item">Personal</div>
+      <div class="side-menu-item">Small Business</div>
+      <div class="side-menu-item">Commercial</div>
+      <div class="side-menu-item">Global Wealth</div>
+    </div>
+    <div class="col-md-2 contacts">
+      <div class="item">
+        <i class="fa fa-comments-o"></i>
+        <span class="labels">Start chat</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-phone"></i>
+        <span class="labels">001-500-200</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-envelope-o"></i>
+        <span class="labels">Write to us</span>
+      </div>
+    </div>
+    <div class="col-md-2 contacts">
+      <div class="item">
+        <i class="fa fa-credit-card"></i>
+        <span class="labels">Block your card</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-users"></i>
+        <span class="labels">Set up a meeting</span>
+      </div>
+      <div class="item">
+        <i class="fa fa-home"></i>
+        <span class="labels">Find local branch</span>
+      </div>
+    </div>
+  </div>
+  <div class="copyright row">
+    <div class="col-md-6 col-md-offset-1">Copyright Example Company &copy; 2014-2015</div>
+  </div>
+</div>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Toplink_Account_Placeholder','FSI_Toplink_Account_Placeholder',NULL,'<b>account</b>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Toplink_Customer_Internal','FSI_Toplink_Customer_Internal',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<a href="<@wp.url page="customer_internal" />" >personal</a>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Toplink_Logout','FSI_Toplink_Logout',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<!--#if (Session.currentUser != "guest")-->
+    <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action">Logout</a>
+<!--/#if-->',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Toplink_Personal_Placeholder','FSI_Toplink_Personal_Placeholder',NULL,'<b>personal</b>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('FSI_Toplink_Small_Business_Placeholder','FSI_Toplink_Small_Business_Placeholder',NULL,'<b>small business</b>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('fsi-greeting','fsi-greeting',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<style>
+ .blackan{
+   color: black;
+ }
+ .blackan :hover{
+  color: black;
+} 
+.blackan :active{
+  color: black;
+}
+</style>
+<script>
+  window.onload=function(){
+	var current=window.location.host;
+	$("a#gopage").attr("href", "http://"+current+"/fsi-credit-card-dispute-customer/preview/en/landing");
+}
+</script> 
+<a  id="gopage" class="blackan" href="">        
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2> Hi Kevin!</h2>
+                                    </div>
+                                    <div class="ibox-content" >
+                                        <p>Account Number </p>
+                                        <h2><b>XXXX-XXXX-XXXX-1234</b></h2>
+                                        <p>Show Full Account Number:</p>
+                                    </div>
+                                </div>
+</a>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('home_page_cards','home_page_cards',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<style>
+    .homepagecard {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<img class="homepagecard" src="<@wp.resourceURL />static/img/homecards.png" />',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('monthly-income-greeting','monthly-income-greeting',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<style>
+ .blackan{
+   color: black;
+ }
+ .blackan :hover{
+  color: black;
+} 
+.blackan :active{
+  color: black;
+}
+ .monthyIncome{
+   background-image: url(<@wp.resourceURL />static/img/monthyIncomebg.png);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   margin-top: -1%;
+   margin-left: -7%;
+ }
+</style>
+<script>
+  window.onload=function(){
+	var current=window.location.host;
+	$("a#gopage").attr("href", "http://"+current+"/fsi-credit-card-dispute-customer/preview/en/landing");
+}
+</script> 
+<a  id="gopage" class="blackan" href="">   
+        <div class="widget lazur-bg no-padding monthyIncome">
+            <div class="p-m"   style="height: 100px">
+                <h1 class="m-xs">$ 210,660</h1>
+
+                <h3 class="font-bold no-margins">
+                    Monthly income
+                        </h3>
+                <small>Income form project Beta.</small>
+            </div>
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-chart2"></div>
+            </div>
+        </div>
+</a>',NULL,0);
