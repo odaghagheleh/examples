@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { setCurrentStep } from '../actions/stepper';
+import { setCurrentStep } from '../stepper/state/actions';
 import StepZilla from '../steps/main'
 import '../steps/css/main.css'
 import DisputeCreditTransaction from './DisputeCreditTransaction';
@@ -12,7 +12,7 @@ import AdditionalQuestionnaire from './AdditionalQuestionnaire';
 import ExtraInfo from './ExtraInfo';
 import DisputeConfirmation from './DisputeConfirmation';
 import Confirmed from './Confirmed';
-import Stepper from './Stepper';
+import Stepper from '../stepper/Stepper';
 import ProgressBar from './ProgressBar';
 
 const MainForm = props => {

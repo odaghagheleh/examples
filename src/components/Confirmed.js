@@ -1,7 +1,7 @@
 /* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import request from "../../node_modules/superagent/superagent";
 import { setExtraInfo } from './../actions/actions';
 
 
@@ -35,8 +35,11 @@ function FinalConfirmation(props) {
 class Confirmed extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            result: {}
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.restCallFetch = this.restCallFetch.bind(this);
     }
 
     handleSubmit(e) {
@@ -46,9 +49,41 @@ class Confirmed extends Component {
 
     render() {
         return (
+            
             <FinalConfirmation handleSubmit={this.handleSubmit} />
+            // <div>
+            //                  <p> --------------------------- </p>
+            //                  <button name="get" type="button"    onClick={() => this.restCallFetch()} >Get</button>
+            //                  <pre> {JSON.stringify(this.state.result,null, 2)} </pre>
+            //                  </div>
+            
+            
         );
     }
+
+    restCallFetch() {
+        var that = this;
+        request
+        .post('https://httpbin.org/anything')
+        .set('Content-Type', 'application/json')
+        .auth('pamAdmin', 'redhatpam1!')
+        .send({ "Hakuna":"Matata" })
+        .then(function(res) {
+            var tmp = {};
+            tmp.status = res.status;
+            tmp.body = res.body;
+            that.setState({
+                result:tmp
+            })
+        })
+        .catch(function(err) {
+            console.log("Failed");
+            console.log(err.message);
+            console.log(err.response);
+        });
+    }
+
+
 }
 
 function select(store) {

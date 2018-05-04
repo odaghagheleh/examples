@@ -65,9 +65,12 @@ const ProductTable = props => {
   const enumFormatter = (cell, row, enumObject) => {
     return enumObject[cell];
   }
+  const priceFormatter = (cell, row) => {
+    return `<i class='glyphicon glyphicon-usd'></i>${cell}`;
+  }
   return (
     <BootstrapTable data={props.data}
-    
+  
       options={options}
       bordered={false}
       search={true}
@@ -76,15 +79,16 @@ const ProductTable = props => {
       expandComponent={(row) => { return (<BSTable data={row.extraDescriptions} />) }}
       striped hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
-      <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
+      <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn> 
+      <TableHeaderColumn dataField='time' ></TableHeaderColumn> 
       <TableHeaderColumn dataField='type' headerAlign='left'
       filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
         filter={{ type: 'SelectFilter', options: qualityType }}>
         Type
         </TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
-      <TableHeaderColumn dataField='Amount' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
-      <TableHeaderColumn dataField='Balance' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
+      <TableHeaderColumn dataField='Amount' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
+      <TableHeaderColumn dataField='Balance' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
     </BootstrapTable>
   );
 

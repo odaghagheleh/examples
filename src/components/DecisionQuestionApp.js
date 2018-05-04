@@ -76,7 +76,7 @@
 
             } else {
                 return (
-                    <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
+                    <button name="next" disabled type="button" className="btn btn-default btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
                         Next</button>
                 )
             }
