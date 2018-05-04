@@ -1,6 +1,7 @@
 /* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { submitDispute } from './../actions/actions';
 
 
 const Confirmation = props => {
@@ -75,6 +76,12 @@ const TransactionList = props => {
 
 const DisputeConfirmation = props => {
 
+    const handdleSubmitt = ()=> {
+
+        // props.submitDispute();
+        props.jumpToStep(6);
+    }
+
     return (
     <div className="DisputeConfirmation">
        <div className="row" >
@@ -94,7 +101,7 @@ const DisputeConfirmation = props => {
        </div>
        <div className="row">
           <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
-          <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
+          <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => handdleSubmitt()} >Submit</button>
        </div>
     </div>
     );
@@ -106,6 +113,13 @@ const mapStateToProps = state => {
         transactionDisputeReasonAnswers: state.transactionDisputeReasonAnswers,
         creditCardQAs: state.creditCardQAs,
         extraInfos: state.extraInfos
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        submitDispute: () => {
+            dispatch(submitDispute());
+        }
     }
 }
 

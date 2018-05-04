@@ -8,6 +8,8 @@ import { ADD_CREDIT_CARD_QUESTION_ANSWER } from '../actions/actions';
 import { GET_ADDITIONAL_QUESTIONS, SET_ADDITIONAL_QUESTIONS_ANSWER } from '../actions/actions';
 import { SET_EXTRA_INFO } from '../actions/actions';
 import stepper from '../stepper/state/reducer';
+import { SUBMIT_DISPUTE } from '../actions/actions';
+
 
 
 //Transaction List Reducer
@@ -186,6 +188,26 @@ function extraInfos(state = "", action) {
     }
 }
 
+//Submit case reducer
+function submitDispute(state, action) {
+    switch (action.type) {
+        case SUBMIT_DISPUTE:
+            return action.payload;
+
+        default:
+            return state
+    }
+}
+
+function submitDisputes(state = "", action) {
+    switch (action.type) {
+        case SUBMIT_DISPUTE:
+            return submitDispute(undefined, action)
+        default:
+            return state
+    }
+}
+
 //Returning the reducers
 const transactionDisputeReducer = combineReducers({
     transactionLists,
@@ -198,6 +220,7 @@ const transactionDisputeReducer = combineReducers({
     additionalQuestionAnswers,
     extraInfos,
     stepper,
+    submitDisputes,
 });
 
 export default transactionDisputeReducer;

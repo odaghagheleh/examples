@@ -8,8 +8,10 @@ export const ADD_CREDIT_CARD_QUESTION_ANSWER = 'ADD_CREDIT_CARD_QUESTION_ANSWER 
 export const GET_ADDITIONAL_QUESTIONS = 'GET_ADDITIONAL_QUESTIONS ';
 export const SET_ADDITIONAL_QUESTIONS_ANSWER = 'SET_ADDITIONAL_QUESTIONS_ANSWER';
 export const SET_EXTRA_INFO = 'SET_EXTRA_INFO';
+export const SUBMIT_DISPUTE = 'SUBMIT_DISPUTE';
 
-const targetURL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
+const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
+const POST_START_CASE_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
 
 const expectedJson = {
     "type": "SUCCESS",
@@ -330,7 +332,7 @@ export function getAdditionalQuestions() {
 
         var payloadArray = [];
         request
-            .post(targetURL)
+            .post(GET_DYNAMIC_QUESTIONS_TARGET_URL)
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
             .auth('pamAdmin', 'redhatpam1!')
@@ -357,14 +359,6 @@ export function getAdditionalQuestions() {
 
     }
 
-
-
-
-
-
-
-    //payloadArray = processJson(response);
-
 }
 
 export function setAdditionalQuestionsAnswer(payload) {
@@ -382,6 +376,40 @@ export function setExtraInfo(payload) {
 }
 
 
+export function submitDispute() {
+    return function (dispatch) {
+
+        var payloadArray = [];
+        request
+            .post(POST_START_CASE_TARGET_URL)
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+            .auth('pamAdmin', 'redhatpam1!')
+            .send("[CHANGE_ME]")
+            .then( (res) => {
+                var tmp = {};
+                tmp.status = res.status;
+                tmp.body = res.body;
+                //    console.log(tmp.body);
+                payloadArray = tmp.body;
+                //console.log(payloadArray);                    
+                return dispatch({type: SUBMIT_DISPUTE, payload:payloadArray});
+
+
+            })
+            .catch((err)=> {
+                var tmp = {};
+
+                tmp.errorMessage = err.message;
+                tmp.errorResponse = err.response;
+                return dispatch({type: SUBMIT_DISPUTE, payload:{"":""}});;
+                // return (err.message);
+            });
+
+    }
+
+}
+//HELPERS
 function processJson(response) {
     //console.log(response);
     if (typeof response == "object") {
