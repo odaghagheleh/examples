@@ -13,7 +13,7 @@ import ExtraInfo from './ExtraInfo';
 import DisputeConfirmation from './DisputeConfirmation';
 import Confirmed from './Confirmed';
 import Stepper from '../stepper/Stepper';
-
+import ProgressBar from './ProgressBar';
 
 const MainForm = props => {
     const steps =
@@ -28,27 +28,23 @@ const MainForm = props => {
         ]
 
     return (
-        <div id="wrapper" class="gray-bg">
-            <div class="row border-bottom white-bg">
+        <div id="wrapper" className="gray-bg">
+            <div className="row border-bottom white-bg">
             </div>
-            <div class="wrapper wrapper-content">
+            <div className="wrapper wrapper-content">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="ibox float-e-margins">
                                 <div className="ibox-title bluetop">
                                     <h2>Dispute Credit Transaction</h2>
-                                    <div className="ibox-tools">
-                                        <a className="collapse-link">
-                                            <i className="fa fa-chevron-up"></i>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="ibox-content">
                                     <div className='example' className="row"  >
                                         <div className="col-lg-12">
                                             <div className='step-progress' id='main-contents'>
-                                                {/* <Stepper steps={steps} /> */}
+
+                                                <ProgressBar />
                                                 <StepZilla
                                                     steps={steps}
                                                     nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
@@ -57,6 +53,8 @@ const MainForm = props => {
                                                     prevBtnOnLastStep={false}
                                                     stepsNavigation={false}
                                                     showNavigation={false}
+                                                    showSteps={false}
+                                                    onStepChange={(step) => props.setCurrentStep(step)}
                                                 />
                                             </div>
                                         </div>

@@ -18,7 +18,7 @@ table.borderless td {
 html, body, #main-contents {
   /* position: absolute; */
   min-height: 500px !important;
-  
+
 }
 
 .stepZillLeftabt {
@@ -59,18 +59,240 @@ html, body, #main-contents {
   background-color: #fff;
   border: none !important;
 }
-.widget {
-  margin-top: 5%;
+.widget-monthly {
+  border-radius: 5px;
+  margin-top: 0px;
+  height: 271px;
 }
- .bluetop{
-  border-color: #1a7bb9;           
+.ibox .bluetop{
+  border-color: #1a7bb9;
   border-width: 5px 0 0;
- }
- .monthyIncome{
-   background-image: url(./monthyIncomebg.png);
-   background-repeat: no-repeat;
-   background-size: 100% 100%;
- }
- .monthlyincomeinline{
-   margin-top: -5%;
- }
+}
+.monthyIncome{
+  background-image: url(./monthyIncomebg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.monthlyincomeinline{
+  margin-top: -5%;
+}
+
+/* decision app  */
+.DecisionQuestionApp__question {
+  font-family: Open Sans;
+  font-weight: 100;
+  font-size: 24px;
+  margin: 0px 0 25px 15px;
+}
+
+.DecisionQuestionApp__step {
+  font-family: Open Sans;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 15px 13px;
+}
+
+.DecisionQuestionApp__select {
+  margin: 0 0 15px 13px;
+}
+
+.DecisionQuestionApp__spacer {
+  margin: 0 0 15px 13px;
+}
+.DecisionQuestionApp__select--width {
+  width: 710px !important;
+}
+
+select option {
+  color: #676A6C;
+  font-size: 14px;
+  background: #fff;
+}
+
+select option:first-child{
+  color: #ded6d6;
+}
+
+/* select option:last-child{
+  color: black;
+  font-weight: bold;
+} */
+
+select:required:invalid {
+  color: gray;
+}
+
+.DecisionQuestionApp__cancel-credit {
+  font-size:16px ;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 12px 0 28px 0;
+}
+
+.DecisionQuestionApp__select .form-control, .single-line {
+  border: 1px solid #e5e6e7 !important;
+}
+
+.btn {
+  font-family: Open Sans !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.btn-primary[disabled] {
+  background-color: #D8D8D8 !important;
+  border-color: #D8D8D8 !important;
+}
+
+.DecisionQuestionApp__custom-buttons {
+  padding: .5em 2em .5em 2em !important;
+  border-radius: 1px !important;
+  font-size: 14px !important;
+  margin-right: 20px !important;
+}
+
+ol.order-list {
+  list-style-type: none;
+  list-style-type: decimal;
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  counter-reset: li-counter;
+}
+ol.order-list > li{
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 2.5em;
+  min-height: 3em;
+}
+ol.order-list > li:before {
+  position: absolute;
+  top: 0;
+  left: -1em;
+  width: 2em;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  background: #00659C;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  padding: 9px;
+  text-align: center;
+}
+
+.DisputeConfirmation__list{
+  font-size: 16;
+  font-weight:500;
+}
+.DisputeConfirmation__list-small{
+  font-size: 14;
+  font-weight:300;
+}
+
+.ProgressBar__name {
+  font-size: 14px;
+  fonr-weight: bold;
+}
+.ProgressBar {
+  text-align: center;
+  width:100%;
+
+}
+
+.ProgressBar  > div {
+  width: 242px;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  background: #00659C;
+  margin: 13px;
+  font-size: 37px;
+  height: 65px;
+  line-height: 65px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ProgressBar :after {
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+ol.ProgressBar {
+    padding: 0;
+    counter-reset: li-counter;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+ol.ProgressBar > li{
+  position: relative;
+  margin: 3px;
+  width: 280px;
+}
+
+.ProgressBar__list {
+  font-size: 16px;
+  font-weight: 500;
+  background: #00659c;
+  color: #fff;
+  height: 66px;
+  line-height: 66px;
+}
+.ProgressBar__list_green {
+  font-size: 16px;
+  font-weight: 500;
+  background: #6EC664;
+  color: #fff;
+  height: 66px;
+  line-height: 66px;
+}
+
+.ProgressBar__list_gray {
+  font-size: 16px;
+  font-weight: 500;
+  background: #D8D8D8;
+  color: #B6B8B9;
+  height: 66px;
+  line-height: 66px;
+}
+
+.big {
+  font-size: 37px;
+  position: absolute;
+  left: 18px;
+  font-weight: bold;
+}
+.smaller {
+  font-size: 14px !important;
+  font-weight: 600;
+  position: absolute;
+  top: 2px;
+  width: 216px;
+}
+
+.DisputeConfirmation__box {
+  border: 1px solid #c1c1c1;
+      border-radius: 2px;
+      padding: 15px 6px 0px 6px;
+      margin-right: 3px;
+}
+
+.DecisionQuestionApp__hr {
+  border-top: 1px solid #8c8b8b;
+  width: 37%;
+  margin: 10px 0 -23px -47px;
+}
+
+
+.DecisionQuestionApp__hr2 {
+  border-top: 1px solid #8c8b8b;
+  width: 111%;
+  margin: 10px 0 -23px -47px;
+}

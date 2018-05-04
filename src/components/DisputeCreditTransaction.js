@@ -17,22 +17,22 @@ function TransactionList(props) {
     );
     return (
 
-        <table className="table borderless " id="myTable" >
+        <table className="table borderless DecisionQuestionApp__table" id="myTable" >
             <tbody>
                 {rowsData}
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><hr width="100%" /></td>
                     <td></td>
+                    <td><hr className="DecisionQuestionApp__hr" /></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-                    <td>$ {rowSum}</td>
+                    <td><strong>Total:</strong></td>
+                    <td><strong>${rowSum}</strong></td>
                 </tr>
             </tbody>
         </table>
@@ -63,23 +63,21 @@ class DisputeCreditTransaction extends Component {
                 <div className="row" >
                     <br />
                     <div className="col-sm-12">
-                        <h3>Please confirm the following transactions in question</h3>
-                        <br />
-                        <p>Transaction selected:</p>
+                        <p className="DecisionQuestionApp__question">Please confirm the following transactions in question</p>
+                        <label className="DecisionQuestionApp__step">Transaction selected:</label>
                         <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-2">
-                        <button name="confirm" type="button" className="btn btn-primary btn-sm" onClick={this.confirmed} >Yes - This is correct</button>
-                    </div>
-                    <div className="col-sm-4">
-                        <button name="cancel" type="button" className="btn btn-default btn-sm" onClick={() => this.props.history.push('/')} >No -Cancel</button>
-                    </div>
+                <div className="DecisionQuestionApp__spacer">
+
+                        <button name="confirm" type="button" className="btn DecisionQuestionApp__custom-buttons btn-primary" onClick={this.confirmed} >Yes - This is correct</button>
+                        <button name="cancel" type="button" className="btn DecisionQuestionApp__custom-buttons btn-default " onClick={() => this.props.history.push('/')} >No - Cancel</button>
+                </div>
                 </div>
                 <div className="row">
                     {
-                        this.state.confirmCheck === true ? 
+                        this.state.confirmCheck === true ?
                         <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
                         Next</button>
                         :
@@ -87,7 +85,7 @@ class DisputeCreditTransaction extends Component {
                         Next</button>
                     }
 
-                    
+
                 </div>
             </div>
         );
@@ -102,4 +100,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(DisputeCreditTransaction);
-
