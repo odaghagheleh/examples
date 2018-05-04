@@ -1,4 +1,4 @@
-
+import request from "../../node_modules/superagent/superagent";
 export const GET_TRANSACTION_LIST = 'GET_TRANSACTION_LIST';
 export const GET_TRANSACTION_HISTORY = 'GET_TRANSACTION_HISTORY';
 export const ADD_DISPUTE = 'ADD_DISPUTE';
@@ -20,28 +20,13 @@ export function getTransactionHistory() {
         type: GET_TRANSACTION_HISTORY,
         payload: [
             {
-                "id": "1",
-                "recentActivity": "18/03/2018",
-                "type": "Payment",
-                "Description": "Simple",
-                "Amount": 24,
-                "Balance": 36,
-                "extraDescriptions": [{
-                    id: '1',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
                 "id": "2",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
-                "Amount": -24,
-                "Balance": 36,
+                "recentActivity": "03/18/2017",
+                "time":"12:23 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": +129.00,
+                "Balance": +129.00,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
@@ -53,11 +38,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "3",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
-                "Amount": 25,
-                "Balance": -36,
+                "recentActivity": "03/14/2017",
+                "time":"5:00 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -25.00,
+                "Balance": -25.00,
                 "extraDescriptions": [{
                     id: '3',
                     Transaction_Details: 'Transaction Code',
@@ -69,11 +55,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "4",
-                "recentActivity": "18/03/2018",
+                "recentActivity": "03/13/2017",
+                "time":"03:40 PM",
                 "type": "Charge",
-                "Description": "Good",
-                "Amount": -24,
-                "Balance": 36,
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -8.70,
+                "Balance": -8.70,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
@@ -85,11 +72,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "5",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
-                "Amount": 25,
-                "Balance": -36,
+                "recentActivity": "03/10/2017",
+                "time":"10:48 PM",
+                "type": "Charge",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -50.00,
+                "Balance": -50.00,
                 "extraDescriptions": [{
                     id: '3',
                     Transaction_Details: 'Transaction Code',
@@ -101,11 +89,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "6",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
-                "Amount": -24,
-                "Balance": 36,
+                "recentActivity": "03/08/2017",
+                "time":"12:23 PM",
+                "type": "Transfer",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -129.00,
+                "Balance": -129.00,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
@@ -117,11 +106,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "7",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
-                "Amount": 25,
-                "Balance": -36,
+                "recentActivity": "03/07/2017",
+                "time":"5:00 AM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -25.00,
+                "Balance": -25.00,
                 "extraDescriptions": [{
                     id: '3',
                     Transaction_Details: 'Transaction Code',
@@ -133,11 +123,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "8",
-                "recentActivity": "18/03/2018",
-                "type": "Charge",
-                "Description": "Good",
-                "Amount": -24,
-                "Balance": 36,
+                "recentActivity": "03/04/2017",
+                "time":"03:49 PM",
+                "type": "Payment",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -8.70,
+                "Balance": -8.70,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
@@ -149,11 +140,12 @@ export function getTransactionHistory() {
             },
             {
                 "id": "9",
-                "recentActivity": "18/03/2018",
-                "type": "Transfer",
-                "Description": "Bad",
-                "Amount": 25,
-                "Balance": -36,
+                "recentActivity": "03/03/2017",
+                "time":"12:00 AM",
+                "type": "Charge",
+                "Description": "Lorem Ipsum is simply ...",
+                "Amount": -50,
+                "Balance": -50,
                 "extraDescriptions": [{
                     id: '3',
                     Transaction_Details: 'Transaction Code',
@@ -223,48 +215,10 @@ export function addCreditCardQuestionAnswer(answers) {
 
 export function getAdditionalQuestions() {
     var payloadArray = [];
-    var response = {
-        "type" : "SUCCESS",
-        "msg" : "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
-        "result" : {
-          "execution-results" : {
-            "results" : [ {
-              "value" : 3,
-              "key" : "additional-info-fired"
-            }, {
-              "value" : [{"com.fsi.creditcarddisputecase.Cardholder":{
-        "stateCode" : "VA",
-        "age" : 35,
-        "status" : "GOLD",
-        "incidentCount" : 2,
-        "balanceRatio" : 0.2
-      }},{"com.fsi.creditcarddisputecase.AdditionalInformation":{
-        "questionId" : 1,
-        "answerValue" : null,
-        "questionType" : "boolean",
-        "questionPrompt" : "Were any charges related to online purchases?"
-      }},{"com.fsi.creditcarddisputecase.AdditionalInformation":{
-        "questionId" : 26,
-        "answerValue" : null,
-        "questionType" : "boolean",
-        "questionPrompt" : "Were any of these charges related to tobacco sales?"
-      }}],
-              "key" : "questions"
-            }, {
-              "value" : 3,
-              "key" : "cleanup-fired"
-            } ],
-            "facts" : [ {
-              "value" : {"org.drools.core.common.DefaultFactHandle":{
-        "external-form" : "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
-      }},
-              "key" : "cardholder"
-            } ]
-          }
-        }
-      };
-
-      payloadArray = processJson(response);
+    var response = responseFromRest();
+    console.log('testing');
+    myRest();
+    payloadArray = processJson(response);
     return {
         type: GET_ADDITIONAL_QUESTIONS,
         payload: payloadArray
@@ -285,27 +239,105 @@ export function setExtraInfo(payload) {
     };
 }
 
-function processJson (response) {
+function myRest() {
+    request
+            .post('https://httpbin.org/anything')
+            .set('Content-Type', 'application/json')
+            .auth('pamAdmin', 'redhatpam1!')
+            .send(" INput json here")
+            .then(function (res) {
+                var tmp = {};
+                tmp.status = res.status;
+                tmp.body = res.body;
+                console.log(tmp.body);
+            })
+            .catch(function (err) {
+                console.log("Failed");
+                console.log(err.message);
+                console.log(err.response);
+               // return (err.message);
+            });
+}
+function processJson(response) {
 
-      var finalResult = [];
-      var length = response.result["execution-results"].results.length;
-      var resultArray = response.result["execution-results"].results;
-        for(var i=0; i<length; i++) {
-            if(resultArray[i].key === 'questions') {
-                var anotherArray = resultArray[i].value;
-                for(var j=0; j < anotherArray.length; j++) {
-                    var oneMoreArray = Object.keys(anotherArray[j]);
-                    for(var k=0; k < oneMoreArray.length; k++) {
-                        if(oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
-                            var tmp = {};
-                            tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
-                            tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
-                            finalResult.push(tmp);
-                        }
+    var finalResult = [];
+    var length = response.result["execution-results"].results.length;
+    var resultArray = response.result["execution-results"].results;
+    for (var i = 0; i < length; i++) {
+        if (resultArray[i].key === 'questions') {
+            var anotherArray = resultArray[i].value;
+            for (var j = 0; j < anotherArray.length; j++) {
+                var oneMoreArray = Object.keys(anotherArray[j]);
+                for (var k = 0; k < oneMoreArray.length; k++) {
+                    if (oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
+                        var tmp = {};
+                        tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
+                        tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
+                        finalResult.push(tmp);
                     }
                 }
             }
         }
+    }
 
-        return finalResult;
+    return finalResult;
+}
+
+function responseFromRest() {
+    var mockOrNot = true;
+
+    if (mockOrNot == true) {
+        return ({
+            "type": "SUCCESS",
+            "msg": "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
+            "result": {
+                "execution-results": {
+                    "results": [{
+                        "value": 3,
+                        "key": "additional-info-fired"
+                    }, {
+                        "value": [{
+                            "com.fsi.creditcarddisputecase.Cardholder": {
+                                "stateCode": "VA",
+                                "age": 35,
+                                "status": "GOLD",
+                                "incidentCount": 2,
+                                "balanceRatio": 0.2
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 1,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any charges related to online purchases?"
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 26,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any of these charges related to tobacco sales?"
+                            }
+                        }],
+                        "key": "questions"
+                    }, {
+                        "value": 3,
+                        "key": "cleanup-fired"
+                    }],
+                    "facts": [{
+                        "value": {
+                            "org.drools.core.common.DefaultFactHandle": {
+                                "external-form": "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
+                            }
+                        },
+                        "key": "cardholder"
+                    }]
+                }
+            }
+        });
+    } else {
+
+        
+
+    }
 }
