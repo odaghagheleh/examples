@@ -12,6 +12,7 @@ import transactionDisputeReducer from './reducers/reducers';
 import MainForm from './components/MainForm'
 import thunkMiddleware from 'redux-thunk'
 
+//comment the below block before depoloy to server
 import jquery from 'jquery';
 import metismenu from 'metismenu';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,6 +21,9 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './../node_modules/font-awesome/css/font-awesome.css'
 import './../node_modules/animate.css/animate.min.css'
+////////////////////////////////////////////////////////
+
+
 import './styles/style.css'
 import './steps/css/main.css'
 import './css/cssoverride.css'

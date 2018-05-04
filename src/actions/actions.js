@@ -10,6 +10,12 @@ export const SET_ADDITIONAL_QUESTIONS_ANSWER = 'SET_ADDITIONAL_QUESTIONS_ANSWER'
 export const SET_EXTRA_INFO = 'SET_EXTRA_INFO';
 export const SUBMIT_DISPUTE = 'SUBMIT_DISPUTE';
 
+
+//Comment before deploying on the server
+// const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://'+window.location.host+'/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
+// const POST_START_CASE_TARGET_URL = 'http://'+window.location.host+'/fsi-credit-card-dispute-customer/api/kiebpm/startCase/credit-dispute-case_1.0-SNAPSHOT/CreditCardDisputeCase.FraudDispute';
+
+//Uncomment to run on local host
 const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
 const POST_START_CASE_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/startCase/credit-dispute-case_1.0-SNAPSHOT/CreditCardDisputeCase.FraudDispute';
 
@@ -343,6 +349,7 @@ export function addCreditCardQuestionAnswer(answers) {
 // }
 
 export function getAdditionalQuestions() {
+    console.log(window.location.host);
     return function (dispatch) {
 
         var payloadArray = [];
