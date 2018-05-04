@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { setTotalSteps, setCurrentStep, stepUp, stepDown } from '../actions/stepper';
+import { setTotalSteps, setCurrentStep, stepUp, stepDown } from './state/actions';
 
 
 class Stepper extends Component {

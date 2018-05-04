@@ -7,7 +7,7 @@ import { GET_DISPUTE_REASON_QUESTIONS, SET_DISPUTE_REASON_ANSWER } from '../acti
 import { ADD_CREDIT_CARD_QUESTION_ANSWER } from '../actions/actions';
 import { GET_ADDITIONAL_QUESTIONS, SET_ADDITIONAL_QUESTIONS_ANSWER } from '../actions/actions';
 import { SET_EXTRA_INFO } from '../actions/actions';
-import stepper from './stepper';
+import stepper from '../stepper/state/reducer';
 
 
 //Transaction List Reducer
