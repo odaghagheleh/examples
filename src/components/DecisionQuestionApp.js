@@ -14,7 +14,7 @@
         return (
         <div className="DecisionQuestionApp__select">
             <select id="sel" className=" DecisionQuestionApp__select--width form-control" value={props.selectValue} onChange={props.handleSelectAnswer} >
-                <option disabled selected value=''>Select an answer...</option>
+                <option disabled value=''>Select an answer...</option>
                 {selectItem}
             </select>
         </div>

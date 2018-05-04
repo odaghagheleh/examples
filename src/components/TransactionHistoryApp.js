@@ -67,7 +67,7 @@ const ProductTable = props => {
   }
   return (
     <BootstrapTable data={props.data}
-    
+
       options={options}
       bordered={false}
       search={true}
@@ -170,10 +170,10 @@ class TransactionHistoryApp extends Component {
 
   render() {
     return (
-      <div id="wrapper" class="gray-bg">
-        <div class="row border-bottom white-bg">
+      <div id="wrapper" className="gray-bg">
+        <div className="row border-bottom white-bg">
         </div>
-        <div class="wrapper wrapper-content">
+        <div className="wrapper wrapper-content">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">

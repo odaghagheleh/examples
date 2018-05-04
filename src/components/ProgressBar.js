@@ -6,12 +6,12 @@ let step1 = "ProgressBar__list_green"
 let step2 = "ProgressBar__list_gray"
 let step3 = "ProgressBar__list_gray"
 
-if (props.currentStep <= 1 ) {
+if (props.currentStep === 0 ) {
  step1 = "ProgressBar__list_green"
  step2 = "ProgressBar__list_gray"
  step3 = "ProgressBar__list_gray"
 }
-else if (props.currentStep === 2 || props.currentStep === 3 || props.currentStep === 4) {
+else if (props.currentStep != 0 &&  props.currentStep <= 4) {
   step1 = "ProgressBar__list"
   step2 = "ProgressBar__list_green"
   step3 = "ProgressBar__list_gray"
@@ -21,7 +21,7 @@ else if (props.currentStep === 5) {
   step2 =  "ProgressBar__list"
   step3 = "ProgressBar__list_green"
 }
-  console.log('TEST', step1 , step2 , step3);
+
 return (
 
 <ol className="ProgressBar">

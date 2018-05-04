@@ -14,22 +14,8 @@ const AdditionalQuestions = props => {
     const questions = propsQuestions.map((question) => {
         myQuestions.push(question.question);
         myIDs.push(question.id);
-
-        //props.increment();
-
-        return (
-            <div ></div>
-            // <div className="row" key={question.id} >
-            //     <div className="col-lg-3">
-            //         <p> {question.question} </p>
-            //     </div>
-            //     <div className="col-lg-4">
-            //         <input type="text" name="answer" onChange={(e) => props.handleAnswer(question.id, e)} value={currentValues[question.id]} />
-            //     </div>
-            //     <br />
-            // </div>
-        );
-    });
+    }
+  );
 
     function print(index) {
         if (index < 0) {
@@ -143,28 +129,11 @@ class AdditionalQuestionnaire extends Component {
                     <br />
                     <br />
                 </div>
-
-                {/* <div className="row">
-                    <div className="col-lg-12"> */}
                 <AdditionalQuestions jumpToStep={this.props.jumpToStep} increment={this.increment} decrement={this.decrement} counter={this.state.counter} questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
-                {/* </div>
-                </div> */}
-
-                {/* <div className="row"> */}
-                {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(2)} >Prev</button>
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >Next</button> */}
             </div>
-            // </div>
         );
     }
 }
-
-// function select(store) {
-//     return {
-//         additionalQuestions: store.additionalQuestions,
-//         additionalQuestionAnswers: store.additionalQuestionAnswers
-//     }
-// }
 
 const mapStateToProps = state => {
     return {

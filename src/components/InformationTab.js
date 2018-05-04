@@ -6,11 +6,11 @@ import React, { Component } from 'react';
 const InformationTab = (props) => {
 
     return (
-        <div class="ibox float-e-margins ">
-            <div class="ibox-title bluetop">
+        <div className="ibox float-e-margins ">
+            <div className="ibox-title bluetop">
                 <h2>Information</h2>
             </div>
-            <div class="ibox-content">
+            <div className="ibox-content">
                 <div className="row">
                     <div className="col-md-6">
                         <p><b>Customer Information</b></p>
