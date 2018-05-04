@@ -172,9 +172,12 @@ class TransactionHistoryApp extends Component {
     this.props.addDispute(selectedListtoStore);
   }
 
+  //befor Deploy please comment "wrapper",'row border-bottom white-bg'and wrapper wrapper-content' div. everthing should be in container div 
+
   render() {
     return (
-      <div id="wrapper" class="gray-bg">
+
+      <div id="wrapper" class="gray-bg"> 
         <div class="row border-bottom white-bg">
         </div>
         <div class="wrapper wrapper-content">

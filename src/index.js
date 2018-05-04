@@ -21,6 +21,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './../node_modules/font-awesome/css/font-awesome.css'
 import './../node_modules/animate.css/animate.min.css'
+//comment the top block before depoloy to server
 ////////////////////////////////////////////////////////
 
 
