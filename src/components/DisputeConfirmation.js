@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 
 const Confirmation = props => {
     const creditCardQAs = props.creditCardQAs;
-    // const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
-    //     "" :
-    //     creditCardQAs.creditCardwithCustomer;
 
     return (
         <div className="DisputeConfirmation">
@@ -45,8 +42,8 @@ const TransactionList = props => {
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>{dataItem.Amount}</td>
-            <td>{dataItem.Balance}</td>
+            <td>$ {dataItem.Amount}</td>
+            <td>$ {dataItem.Balance}</td>
             </tr>);
         }
     );
@@ -65,8 +62,8 @@ const TransactionList = props => {
           <td></td>
           <td></td>
           <td></td>
-          <td><strong>Total:</strong></td>
-          <td><strong>{rowSum}</strong></td>
+          <td className="DecisionQuestionApp__total">Total:</td>
+          <td className="DecisionQuestionApp__total">${rowSum}</td>
         </tr>
         </tbody>
       </table>
@@ -78,25 +75,27 @@ const DisputeConfirmation = props => {
     return (
     <div className="DisputeConfirmation">
        <div className="row" >
-          <div className="col-lg-7">
+        <div className="col-lg-7">
              <Confirmation
                 transactionDisputeReasonAnswers={props.transactionDisputeReasonAnswers}
                 creditCardQAs={props.creditCardQAs}
                 extraInfos={props.extraInfos}
-                />
-          </div>
-          <div className="col-lg-5">
+             />
+        </div>
+        <div className="col-lg-5">
              <div className="DisputeConfirmation__box">
                 <p>Transaction(s) in Dispute</p>
                 <TransactionList data={props.transactionDisputes} />
              </div>
-          </div>
-       </div>
-       <div className="row">
-          <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(4)} >Prev</button>
-          <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
-       </div>
-    </div>
+        </div>
+      </div>
+      <div className="col-lg-12"></div>
+      <div className="row">
+      <button name="prev" type="button" className="btn btn-primary pull-right stepZillLeftabt2" onClick={() => props.jumpToStep(4)} >&lt;</button>
+      <button name="next" type="button" className="btn btn-primary pull-right stepZillRightabt" onClick={() => props.jumpToStep(6)} >Submit</button>
+      </div>
+   </div>
+
     );
 }
 

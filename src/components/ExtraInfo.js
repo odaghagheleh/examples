@@ -24,7 +24,7 @@
                     <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                   <div className="col-lg-8">
                     <label className="DecisionQuestionApp__step">
-                        3. Is there anything else you'd like to tell us about this dispute?
+                        3. Is there anything else you&apos;d like to tell us about this dispute?
                     </label>
                         <ExtraInfoInput handleAnswer={(e) => props.setExtraInfo(e.target.value)} currentValue={props.extraInfos} />
                     </div>
@@ -33,11 +33,11 @@
                     <br />
                 </div>
                 <div className="row">
-                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(3)} >Prev</button>
+                    <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => props.jumpToStep(3)} >&lt;</button>
                     {props.extraInfos == "" ?
-                        <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                        <button name="next" disabled type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
                         :
-                        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                        <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
                     }
                 </div>
             </div>

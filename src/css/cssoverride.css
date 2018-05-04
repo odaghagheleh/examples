@@ -1,3 +1,11 @@
+html, body, #main-contents {
+  min-height: 500px !important;
+}
+
+table.borderless td {
+  border: none !important;
+}
+
 .lazur-bg{
   background-image: url("./patterns/6.png");
 }
@@ -11,26 +19,32 @@
   margin-bottom: 10px;
 }
 
-table.borderless td {
-  border: none !important;
-}
-
-html, body, #main-contents {
-  /* position: absolute; */
-  min-height: 500px !important;
-
-}
 
 .stepZillLeftabt {
   position: absolute;
-  left: 20px;
-  bottom: 0px;
+      right: 95px;
+      bottom: 0px;
+      color: #000 !important;
+      padding: 10px 8px 10px 8px !important;
+      background: #D8D8D8 !important;
+      border: 1px solid #D8D8D8 !important;
 }
 
 .stepZillRightabt {
   position: absolute;
-  right: 20px;
-  bottom: 0px;
+      right: 20px;
+      bottom: 0px;
+      padding: 10px 15px 10px 15px !important;
+}
+
+.stepZillLeftabt2 {
+    position: absolute;
+    right: 106px;
+    bottom: 0px;
+    color: #000 !important;
+    padding: 10px 8px 10px 8px !important;
+    background: #D8D8D8 !important;
+    border: 1px solid #D8D8D8 !important;
 }
 
 .neibourbt {
@@ -59,15 +73,18 @@ html, body, #main-contents {
   background-color: #fff;
   border: none !important;
 }
+
 .widget-monthly {
   border-radius: 5px;
   margin-top: 0px;
   height: 271px;
 }
+
 .ibox .bluetop{
   border-color: #1a7bb9;
   border-width: 5px 0 0;
 }
+
 .monthyIncome{
   background-image: url(./monthyIncomebg.png);
   background-repeat: no-repeat;
@@ -88,9 +105,9 @@ html, body, #main-contents {
 
 .DecisionQuestionApp__step {
   font-family: Open Sans;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
-  margin: 0 0 15px 13px;
+  margin: 0 0 15px 16px;
 }
 
 .DecisionQuestionApp__select {
@@ -98,7 +115,7 @@ html, body, #main-contents {
 }
 
 .DecisionQuestionApp__spacer {
-  margin: 0 0 15px 13px;
+  margin: 0 0 15px 16px;
 }
 .DecisionQuestionApp__select--width {
   width: 710px !important;
@@ -113,11 +130,6 @@ select option {
 select option:first-child{
   color: #ded6d6;
 }
-
-/* select option:last-child{
-  color: black;
-  font-weight: bold;
-} */
 
 select:required:invalid {
   color: gray;
@@ -149,47 +161,49 @@ select:required:invalid {
 .DecisionQuestionApp__custom-buttons {
   padding: .5em 2em .5em 2em !important;
   border-radius: 1px !important;
-  font-size: 14px !important;
-  margin-right: 20px !important;
+  font-size: 16px !important;
+  margin-right: 12px !important;
 }
 
 ol.order-list {
   list-style-type: none;
-  list-style-type: decimal;
   margin: 0;
   margin-left: 3em;
   padding: 0;
-  counter-reset: li-counter;
 }
+
 ol.order-list > li{
   position: relative;
   margin-bottom: 20px;
   padding-left: 2.5em;
-  min-height: 3em;
+  min-height: 4em;
 }
+
 ol.order-list > li:before {
   position: absolute;
-  top: 0;
-  left: -1em;
-  width: 2em;
-  font-size: 2em;
-  line-height: 1;
-  font-weight: bold;
-  color: #fff;
-  background: #00659C;
-  content: counter(li-counter);
-  counter-increment: li-counter;
-  padding: 9px;
-  text-align: center;
+      top: 0;
+      left: -1em;
+      width: 2em;
+      height: 2em;
+      font-size: 2em;
+      line-height: 1;
+      font-weight: bold;
+      color: #fff;
+      background: #00659C;
+      content: counter(li-counter);
+      counter-increment: li-counter;
+      padding: 14px;
+      text-align: center;
 }
 
 .DisputeConfirmation__list{
-  font-size: 16;
-  font-weight:500;
+  font-size: 16px;
+  font-weight:600;
 }
+
 .DisputeConfirmation__list-small{
-  font-size: 14;
-  font-weight:300;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .ProgressBar__name {
@@ -199,7 +213,6 @@ ol.order-list > li:before {
 .ProgressBar {
   text-align: center;
   width:100%;
-
 }
 
 .ProgressBar  > div {
@@ -223,12 +236,12 @@ ol.order-list > li:before {
 }
 
 ol.ProgressBar {
-    padding: 0;
-    counter-reset: li-counter;
-    display: -ms-flexbox;
-    display: flex;
-    list-style-type: none;
-    justify-content: center;
+  padding: 0;
+  counter-reset: li-counter;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
 }
 
 ol.ProgressBar > li{
@@ -269,6 +282,7 @@ ol.ProgressBar > li{
   left: 18px;
   font-weight: bold;
 }
+
 .smaller {
   font-size: 14px !important;
   font-weight: 600;
@@ -279,20 +293,78 @@ ol.ProgressBar > li{
 
 .DisputeConfirmation__box {
   border: 1px solid #c1c1c1;
-      border-radius: 2px;
-      padding: 15px 6px 0px 6px;
-      margin-right: 3px;
+  border-radius: 2px;
+  padding: 15px 6px 0px 6px;
+  margin-right: 3px;
+margin-bottom: 5em;
 }
 
 .DecisionQuestionApp__hr {
   border-top: 1px solid #8c8b8b;
-  width: 37%;
+  width: 53%;
   margin: 10px 0 -23px -47px;
 }
 
-
 .DecisionQuestionApp__hr2 {
-  border-top: 1px solid #8c8b8b;
-  width: 111%;
-  margin: 10px 0 -23px -47px;
+    border-top: 1px solid #8c8b8b;
+    width: 177%;
+    margin: 10px 0 -9px -33px;
+}
+
+.DecisionQuestionApp__total {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.DecisionQuestionApp__table {
+  margin: 0 0 0 37px;
+}
+
+.DecisionQuestionApp__quest-p {
+  font-size: 16px;
+  font-weight: 500;
+}
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 2.7rem;
+  line-height: 2.7rem;
+}
+.react-datepicker__day-name {
+  width: 2.7rem;
+  line-height: 2.7rem;
+  font-size: 15px;
+}
+
+.react-datepicker {
+  font-family: Open Sans;
+  font-size: 1rem;
+}
+
+.react-datepicker__day--keyboard-selected {
+  border-radius: 1px;
+  background-color: #18a689;
+  color: #fff;
+  font-weight: bold;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header {
+  margin-top: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.react-datepicker__header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  border-right-color: #18a689;
+}
+
+.DecisionQuestionApp__row {
+margin-top: 37px;
 }

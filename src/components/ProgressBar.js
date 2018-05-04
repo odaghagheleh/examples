@@ -21,6 +21,11 @@ else if (props.currentStep === 5) {
   step2 =  "ProgressBar__list"
   step3 = "ProgressBar__list_green"
 }
+else if (props.currentStep >= 6) {
+  step1 = "ProgressBar__list"
+  step2 =  "ProgressBar__list"
+  step3 = "ProgressBar__list"
+}
 
 return (
 

@@ -57,26 +57,26 @@
 
             if (currentAnswer != 'I did not authorize the transaction(s)' && currentAnswer !== '') {
                 return (
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
+                    <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
                         Next</button>
                 )
 
             } else if (currentAnswer == 'I did not authorize the transaction(s)') {
                 if (confirm === true) {
                     return (
-                        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(2)} >
+                        <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(2)} >
                             Next</button>
                     )
                 } else if (confirm === false) {
                     return (
-                        <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
+                        <button name="next" disabled type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
                             Next</button>
                     )
                 }
 
             } else {
                 return (
-                    <button name="next" disabled type="button" className="btn btn-default btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
+                    <button name="next" disabled type="button" className="btn btn-default  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >
                         Next</button>
                 )
             }
@@ -107,7 +107,7 @@
                         }
                     </div>
                     <div className="row">
-                        <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >Prev</button>
+                        <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >&lt;</button>
                         {this.buttonActive(this.state.confirmCheck, this.props.transactionDisputeReasonAnswers)}
                     </div>
                 </div>

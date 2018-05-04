@@ -70,7 +70,11 @@ const ProductTable = props => {
   }
   return (
     <BootstrapTable data={props.data}
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> b41f6a72676d33e6201ac8a14f8cb7a143110dbe
       options={options}
       bordered={false}
       search={true}

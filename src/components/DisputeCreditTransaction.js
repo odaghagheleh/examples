@@ -31,8 +31,8 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><strong>Total:</strong></td>
-                    <td><strong>${rowSum}</strong></td>
+                    <td className="DecisionQuestionApp__total">Total:</td>
+                    <td className="DecisionQuestionApp__total">${rowSum}</td>
                 </tr>
             </tbody>
         </table>
@@ -76,14 +76,12 @@ class DisputeCreditTransaction extends Component {
                 </div>
                 </div>
                 <div className="row">
-                    {
-                        this.state.confirmCheck === true ?
-                        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
+                    { this.state.confirmCheck === true ?
+                        <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
                         Next</button>
                         :
-                        <button name="next" disabled type="button" className="btn btn-default btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
-                        Next</button>
-                    }
+                        <button name="next" disabled type="button" className="btn btn-default  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(1)} >
+                        Next</button> }
 
 
                 </div>

@@ -29,10 +29,10 @@ const AdditionalQuestions = props => {
         return (
             <div className="row" key={myIDs[index]} >
             <div className="DecisionQuestionApp__spacer">
-                <div className="col-lg-3">
-                    <p> {myQuestions[index]} </p>
+                <div className="col-lg-5">
+                    <p className="DecisionQuestionApp__quest-p"> {myQuestions[index]} </p>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-5">
                     <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
                 </div>
                 </div>
@@ -63,8 +63,8 @@ const AdditionalQuestions = props => {
                 </div>
             </div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => goPrev()} >Prev</button>
-                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
+                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} >&lt;</button>
+                <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
             </div>
 
         </div>
