@@ -11,9 +11,9 @@ export const SET_EXTRA_INFO = 'SET_EXTRA_INFO';
 export const SUBMIT_DISPUTE = 'SUBMIT_DISPUTE';
 
 const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
-const POST_START_CASE_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
+const POST_START_CASE_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/startCase/credit-dispute-case_1.0-SNAPSHOT/CreditCardDisputeCase.FraudDispute';
 
-const expectedJson = {
+const MOCK_DYNAMIC_QUESTION = {
     "type": "SUCCESS",
     "msg": "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
     "result": {
@@ -62,7 +62,7 @@ const expectedJson = {
     }
 };
 
-const jsonINPUT = {
+const POST_DYNAMIC_QUESTION_PAYLOAD = {
     "lookup": null,
     "commands": [{
         "insert": {
@@ -105,6 +105,21 @@ const jsonINPUT = {
         }
     }]
 };
+const START_CASE_PAYLOAD={
+    "case-data" : { 
+      "totalFraudAmount" : 5,
+        "customerStatus" : "GOLD",
+        "customerAge" : 25,
+        "incidentCount" : 1
+    },
+    "case-user-assignments" : {
+        "owner" : "krisv",
+      "fraud-manager" : ""
+    },
+    "case-group-assignments" : {
+      "fraud-manager" : "IT"
+   }
+  };
 
 export function getTransactionList() {
     return {
@@ -318,14 +333,14 @@ export function addCreditCardQuestionAnswer(answers) {
     };
 }
 
-export function getAdditionalQuestionsAsync(payloadArray) {
-    payloadArray = processJson(expectedJson);
-    console.log(payloadArray);
-    return {
-        type: GET_ADDITIONAL_QUESTIONS,
-        payload: payloadArray
-    };
-}
+//uncomment to enable mock dynamic question
+// export function getAdditionalQuestions() {
+//     const payloadArray = processJson(MOCK_DYNAMIC_QUESTION);
+//     return {
+//         type: GET_ADDITIONAL_QUESTIONS,
+//         payload: payloadArray
+//     };
+// }
 
 export function getAdditionalQuestions() {
     return function (dispatch) {
@@ -336,7 +351,7 @@ export function getAdditionalQuestions() {
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
             .auth('pamAdmin', 'redhatpam1!')
-            .send(jsonINPUT)
+            .send(POST_DYNAMIC_QUESTION_PAYLOAD)
             .then( (res) => {
                 var tmp = {};
                 tmp.status = res.status;
@@ -385,7 +400,7 @@ export function submitDispute() {
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
             .auth('pamAdmin', 'redhatpam1!')
-            .send("[CHANGE_ME]")
+            .send(START_CASE_PAYLOAD)
             .then( (res) => {
                 var tmp = {};
                 tmp.status = res.status;
@@ -402,7 +417,7 @@ export function submitDispute() {
 
                 tmp.errorMessage = err.message;
                 tmp.errorResponse = err.response;
-                return dispatch({type: SUBMIT_DISPUTE, payload:{"":""}});;
+                return dispatch({type: SUBMIT_DISPUTE, payload:"FR-0000000012"});
                 // return (err.message);
             });
 

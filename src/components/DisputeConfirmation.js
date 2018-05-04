@@ -78,7 +78,7 @@ const DisputeConfirmation = props => {
 
     const handdleSubmitt = ()=> {
 
-        // props.submitDispute();
+        props.submitDispute();
         props.jumpToStep(6);
     }
 
@@ -123,4 +123,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps)(DisputeConfirmation);
+export default connect(mapStateToProps, mapDispatchToProps)(DisputeConfirmation);

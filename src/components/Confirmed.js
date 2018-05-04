@@ -6,7 +6,7 @@ import { setExtraInfo } from './../actions/actions';
 
 
 
-function FinalConfirmation(props) {
+const FinalConfirmation = (props) =>{
 
     return (
         <div>
@@ -19,7 +19,7 @@ function FinalConfirmation(props) {
             </div>
             <div className="row">
                 <div className="col-lg-12">
-                    <label>Your Dispute Request ID is: <b>FR-0000000012</b></label>
+                    <label>Your Dispute Request ID is: <b>{props.submitDisputesResult}</b></label>
                     <p>Thanks you for your submission. Your dispute request has been successfully logged. You can review your request at any time in your notification list in the menu bar. </p>
                     <p>You should recieve an email shortly indicating next steps.</p>
                     <p>If you want, you can use the ID Number to check or ask more information about the process of your request.</p>
@@ -35,11 +35,7 @@ function FinalConfirmation(props) {
 class Confirmed extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            result: {}
-        }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.restCallFetch = this.restCallFetch.bind(this);
     }
 
     handleSubmit(e) {
@@ -49,47 +45,17 @@ class Confirmed extends Component {
 
     render() {
         return (
-            
-            <FinalConfirmation handleSubmit={this.handleSubmit} />
-            // <div>
-            //                  <p> --------------------------- </p>
-            //                  <button name="get" type="button"    onClick={() => this.restCallFetch()} >Get</button>
-            //                  <pre> {JSON.stringify(this.state.result,null, 2)} </pre>
-            //                  </div>
-            
-            
+
+            <FinalConfirmation handleSubmit={this.handleSubmit}  submitDisputesResult={this.props.submitDisputesResult}/>
+
         );
     }
 
-    restCallFetch() {
-        var that = this;
-        request
-        .post('https://httpbin.org/anything')
-        .set('Content-Type', 'application/json')
-        .auth('pamAdmin', 'redhatpam1!')
-        .send({ "Hakuna":"Matata" })
-        .then(function(res) {
-            var tmp = {};
-            tmp.status = res.status;
-            tmp.body = res.body;
-            that.setState({
-                result:tmp
-            })
-        })
-        .catch(function(err) {
-            console.log("Failed");
-            console.log(err.message);
-            console.log(err.response);
-        });
-    }
-
-
 }
 
-function select(store) {
+const mapStateToProps = state => {
     return {
-        extraInfos: store.extraInfos
+        submitDisputesResult: state.submitDisputes
     }
 }
-
-export default connect(select)(Confirmed);
+export default connect(mapStateToProps)(Confirmed);
