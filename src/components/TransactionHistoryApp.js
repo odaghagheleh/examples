@@ -199,7 +199,7 @@ class TransactionHistoryApp extends Component {
               <div className="col-lg-12">
                 <div className="ibox float-e-margins">
                   <div className="ibox-title bluetop">
-                    <h2>Dispute Credit Transaction</h2>
+                    <h2>Transaction History</h2>
                   </div>
                   <div className="ibox-content" id="main-contents">
                     <div className="row">
