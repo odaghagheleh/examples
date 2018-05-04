@@ -118,7 +118,6 @@ class CreditCardQuestionnaire extends Component {
             
         }
     }
-
     handleUserAnswer(e) {
         const target = e.target;
         const name = target.name;
@@ -129,28 +128,32 @@ class CreditCardQuestionnaire extends Component {
             case "yes":
                 currentUserAnswer["creditCardwithCustomer"] = value;
                 this.setState({
-                    userAnswer: currentUserAnswer
+                    userAnswer: currentUserAnswer,
+                    confirmed: true
                 });
                 this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "no":
                 currentUserAnswer["creditCardwithCustomer"] = value;
                 this.setState({
-                    userAnswer: currentUserAnswer
+                    userAnswer: currentUserAnswer,
+                    confirmed: true
                 });
                 this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "missingDate":
                 currentUserAnswer["missingDate"] = value;
                 this.setState({
-                    userAnswer: currentUserAnswer
+                    userAnswer: currentUserAnswer,
+                    confirmed: true
                 });
                 this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
             case "lastUsedDate":
                 currentUserAnswer["lastUsedDate"] = value;
                 this.setState({
-                    userAnswer: currentUserAnswer
+                    userAnswer: currentUserAnswer,
+                    confirmed: true
                 });
                 this.props.addCreditCardQuestionAnswer(this.state.userAnswer);
                 break;
@@ -161,8 +164,19 @@ class CreditCardQuestionnaire extends Component {
     render() {
         return (
             <div>
-                <CreditCardQuestions handleUserAnswer={(e) => this.handleUserAnswer(e)} currentValues={this.props.creditCardQAs} />
-                <br />
+                <div>
+                    <CreditCardQuestions handleUserAnswer={(e) => this.handleUserAnswer(e)} currentValues={this.props.creditCardQAs} />
+                    <br />
+                </div>
+                <div className="row">
+                    <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >Prev</button>
+                    {
+                        this.state.confirmed == true ?
+                            <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(3)} >Next</button>
+                            :
+                            <button name="next" type="button" disabled className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(3)} >Next</button>
+                    }
+                </div>
             </div>
         );
     }

@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Promise from 'promise';

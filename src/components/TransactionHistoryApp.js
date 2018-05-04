@@ -1,4 +1,4 @@
-
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -65,10 +65,13 @@ const ProductTable = props => {
   const enumFormatter = (cell, row, enumObject) => {
     return enumObject[cell];
   }
+  const priceFormatter = (cell, row) => {
+    return `<i class='glyphicon glyphicon-usd'></i> ${cell}`;
+  }
   return (
     <BootstrapTable data={props.data}
-      tableHeaderClass='row-white-bg'
-      tableBodyClass='row-white-bg'
+      tableHeaderClass='row-white-bg text-center'
+      tableBodyClass='row-white-bg text-center'
       trClassName='row-hover'
       options={options}
       bordered={false}
@@ -79,17 +82,19 @@ const ProductTable = props => {
       striped hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
       <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
+      <TableHeaderColumn dataField='time'></TableHeaderColumn>
       <TableHeaderColumn dataField='type' filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
         filter={{ type: 'SelectFilter', options: qualityType }}>Type</TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
-      <TableHeaderColumn dataField='Amount' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
-      <TableHeaderColumn dataField='Balance' dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
+      <TableHeaderColumn dataField='Amount' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
+      <TableHeaderColumn dataField='Balance' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
     </BootstrapTable>
   );
 
 }
 
 const BSTable = props => {
+
   return (
     <BootstrapTable data={props.data}
       bordered={false}
@@ -168,58 +173,51 @@ class TransactionHistoryApp extends Component {
 
   render() {
     return (
-      <div id="wrapper">
-        <div class="white-bg">
-          <div class="row border-bottom white-bg">
-          </div>
-          <div class="wrapper wrapper-content">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <HelloBar />
-                </div>
+      <div id="wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+        </div>
+        <div class="wrapper wrapper-content">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <HelloBar />
               </div>
-              <div className="row">
-                <div className="col-lg-8">
-                  <InformationTab />
-                </div>
-                <div className="col-lg-4">
-                  <MonthlyIncome />
-                </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-8">
+                <InformationTab />
               </div>
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="ibox float-e-margins">
-                    <div className="ibox-title bluetop">
-                      <h2>Dispute Credit Transaction</h2>
-                      <div className="ibox-tools">
-                        <a className="collapse-link">
-                          <i className="fa fa-chevron-up"></i>
-                        </a>
+              <div className="col-lg-4">
+                <MonthlyIncome />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="ibox float-e-margins">
+                  <div className="ibox-title bluetop">
+                    <h2>Dispute Credit Transaction</h2>
+                    <div className="ibox-tools">
+                      <a className="collapse-link">
+                        <i className="fa fa-chevron-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="ibox-content" id="main-contents">
+                    <div className="row">
+                      <div className="col-md-12">
+                        {
+                          this.props.transactionDisputes.length > 0 ? <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                            : <button type="button" disabled className="btn btn-default btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                        }
                       </div>
                     </div>
-                    <div className="ibox-content" id="main-contents">
-                      <div className="row">
-                        <div className="col-sm-5 m-b-xs">
-                        </div>
-                        <div className="col-sm-4 m-b-xs">
-                        </div>
-                        <div className="col-sm-3">
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-sm-12">
-                          <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-sm-12">
-                          <ProductTable
-                            data={this.props.transactionHistories}
-                            handleCheckedTrans={this.handleCheckedTrans}
-                            handleCheckedAll={this.handleCheckedAll}
-                            transactionDisputes={this.props.transactionDisputes} />
-                        </div>
+                    <div className="row">
+                      <div className="col-md-12">
+                        <ProductTable
+                          data={this.props.transactionHistories}
+                          handleCheckedTrans={this.handleCheckedTrans}
+                          handleCheckedAll={this.handleCheckedAll}
+                          transactionDisputes={this.props.transactionDisputes} />
                       </div>
                     </div>
                   </div>
@@ -253,7 +251,12 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
+
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionHistoryApp);
+
+
 
 // let wrapperClass = "gray-bg " + props.location.pathname;
 {/* <div id="wrapper">

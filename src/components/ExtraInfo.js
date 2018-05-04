@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -8,9 +9,11 @@ const ExtraInfoInput = props => {
     return (
         <div>
             <textarea className="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} value={props.currentValue} ></textarea>
+            {console.log(props.currentValue)}
         </div>
     );
 }
+
 
 const ExtraInfo = props => {
 
@@ -22,7 +25,17 @@ const ExtraInfo = props => {
                     <label>3. Is there anything else you'd like to tell us about this dispute? </label>
                     <ExtraInfoInput handleAnswer={(e) => props.setExtraInfo(e.target.value)} currentValue={props.extraInfos} />
                 </div>
+                <div className="col-lg-2">
+                </div>
                 <br />
+            </div>
+            <div className="row">
+                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => props.jumpToStep(3)} >Prev</button>
+                {props.extraInfos == "" ?
+                    <button name="next" disabled type="button" className="btn btn-default btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                    :
+                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                }
             </div>
         </div>
     );

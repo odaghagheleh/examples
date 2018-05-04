@@ -1,4 +1,4 @@
-
+import request from "../../node_modules/superagent/superagent";
 export const GET_TRANSACTION_LIST = 'GET_TRANSACTION_LIST';
 export const GET_TRANSACTION_HISTORY = 'GET_TRANSACTION_HISTORY';
 export const ADD_DISPUTE = 'ADD_DISPUTE';
@@ -178,19 +178,36 @@ export function getDisputeReasonQuestions() {
         payload: [
             {
                 id: 1,
-                question: 'I cancelled ... '
+                question: 'I cancelled or returned merchandise or services but did not receive credit or full credit'
             },
             {
-                id: 1,
-                question: 'I recieved incorrect ...'
+                id: 2,
+                question: 'I recieved incorrect merchandise, or the quality of merchandise or service was unacceptable'
             },
             {
-                id: 1,
-                question: 'I was charged ...'
+                id: 3,
+                question: 'I was charged in an incorrect amount'
+            },
+            {
+                id: 4,
+                question: 'I was charged too many times'
+            },
+            {
+                id: 5,
+                question: 'I paid by alternate means'
+            },
+            {
+                id: 6,
+                question: 'I either did not receive, or did not receive the full value, of the merchandise or services on the invoices'
+            },
+            {
+                id: 7,
+                question: 'I did not authorize the transaction(s)'
             }
         ]
     };
 }
+
 export function setDisputeReasonAnswer(answer) {
     return {
         type: SET_DISPUTE_REASON_ANSWER,
@@ -205,14 +222,14 @@ export function addCreditCardQuestionAnswer(answers) {
 }
 
 export function getAdditionalQuestions() {
+    var payloadArray = [];
+    var response = responseFromRest();
+    console.log('testing');
+    myRest();
+    payloadArray = processJson(response);
     return {
         type: GET_ADDITIONAL_QUESTIONS,
-        payload: [
-            { id: "1", question: "What is your name?" },
-            { id: "2", question: "What is you lastname?" },
-            { id: "3", question: "What is your age?" },
-            { id: "4", question: "What is your address?" }
-        ]
+        payload: payloadArray
     };
 }
 
@@ -228,4 +245,107 @@ export function setExtraInfo(payload) {
         type: SET_EXTRA_INFO,
         payload: payload
     };
+}
+
+function myRest() {
+    request
+            .post('https://httpbin.org/anything')
+            .set('Content-Type', 'application/json')
+            .auth('pamAdmin', 'redhatpam1!')
+            .send(" INput json here")
+            .then(function (res) {
+                var tmp = {};
+                tmp.status = res.status;
+                tmp.body = res.body;
+                console.log(tmp.body);
+            })
+            .catch(function (err) {
+                console.log("Failed");
+                console.log(err.message);
+                console.log(err.response);
+               // return (err.message);
+            });
+}
+function processJson(response) {
+
+    var finalResult = [];
+    var length = response.result["execution-results"].results.length;
+    var resultArray = response.result["execution-results"].results;
+    for (var i = 0; i < length; i++) {
+        if (resultArray[i].key === 'questions') {
+            var anotherArray = resultArray[i].value;
+            for (var j = 0; j < anotherArray.length; j++) {
+                var oneMoreArray = Object.keys(anotherArray[j]);
+                for (var k = 0; k < oneMoreArray.length; k++) {
+                    if (oneMoreArray[k] === 'com.fsi.creditcarddisputecase.AdditionalInformation') {
+                        var tmp = {};
+                        tmp.id = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionId;
+                        tmp.question = anotherArray[j]['com.fsi.creditcarddisputecase.AdditionalInformation'].questionPrompt;
+                        finalResult.push(tmp);
+                    }
+                }
+            }
+        }
+    }
+
+    return finalResult;
+}
+
+function responseFromRest() {
+    var mockOrNot = true;
+
+    if (mockOrNot == true) {
+        return ({
+            "type": "SUCCESS",
+            "msg": "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
+            "result": {
+                "execution-results": {
+                    "results": [{
+                        "value": 3,
+                        "key": "additional-info-fired"
+                    }, {
+                        "value": [{
+                            "com.fsi.creditcarddisputecase.Cardholder": {
+                                "stateCode": "VA",
+                                "age": 35,
+                                "status": "GOLD",
+                                "incidentCount": 2,
+                                "balanceRatio": 0.2
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 1,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any charges related to online purchases?"
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 26,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any of these charges related to tobacco sales?"
+                            }
+                        }],
+                        "key": "questions"
+                    }, {
+                        "value": 3,
+                        "key": "cleanup-fired"
+                    }],
+                    "facts": [{
+                        "value": {
+                            "org.drools.core.common.DefaultFactHandle": {
+                                "external-form": "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
+                            }
+                        },
+                        "key": "cardholder"
+                    }]
+                }
+            }
+        });
+    } else {
+
+        
+
+    }
 }

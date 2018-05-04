@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 
 
@@ -8,7 +9,7 @@ const MonthlyIncome = (props) => {
     today = JSON.stringify(today);
     return (
 
-        <div class="widget lazur-bg no-padding">
+        <div class="widget lazur-bg no-padding monthyIncome">
             <div class="p-m">
                 <h1 class="m-xs">$ 210,660</h1>
 
