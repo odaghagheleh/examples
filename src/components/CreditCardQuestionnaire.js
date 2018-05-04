@@ -31,11 +31,11 @@ class CreditCardQuestions extends Component  {
         const {currentValues}  = this.props;
         const yesBt = currentValues.creditCardwithCustomer === "Yes" ?
             <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb active" onClick={this.props.handleUserAnswer} value="Yes" /> :
-            <input name="yes" type="button" className="btn btn-sm neibourb" onClick={this.props.handleUserAnswer} value="Yes" />;
+            <input name="yes" type="button" className="btn btn-sm btn-default neibourb" onClick={this.props.handleUserAnswer} value="Yes" />;
     
         const noBt = currentValues.creditCardwithCustomer === "No" ?
             <input name="no" type="button" className="btn btn-primary btn-sm neibourbt active" onClick={this.props.handleUserAnswer} value="No" /> :
-            <input name="no" type="button" className="btn btn-sm neibourbt" onClick={this.props.handleUserAnswer} value="No" />;    
+            <input name="no" type="button" className="btn btn-sm btn-default neibourbt" onClick={this.props.handleUserAnswer} value="No" />;    
 
             const showOrNot = () => {
                 if (currentValues.creditCardwithCustomer === "Yes") {
