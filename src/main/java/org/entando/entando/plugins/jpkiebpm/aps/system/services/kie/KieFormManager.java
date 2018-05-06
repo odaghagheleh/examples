@@ -1107,8 +1107,12 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
             headersMap.put(HEADER_KEY_CONTENT_TYPE, HEADER_VALUE_JSON);
             // perform query
             result = new KieRequestBuilder(client).setEndpoint(ep)
-                    .setHeaders(headersMap).setPayload(json).setDebug(config.getDebug()).doRequest();
+                                                 .setHeaders(headersMap)
+                                                 .setPayload(json)
+                                                 .setDebug(config.getDebug())
+                                                  .doRequest();
         } catch (Throwable t) {
+            logger.error("Failed to start case ",t);
             throw new ApsSystemException("Error starting case", t);
         }
         return result;

@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,7 +62,7 @@ public class KieFormController {
     public @ResponseBody
     Map<String, Object> runAdditionalInfoRules(@PathVariable String container, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
-        System.out.println("json = " + json);
+        logger.info("Run additional info rules request json {} ",json);
         String response = this.getKieFormService().runAdditionalInfoRules(json, container);
 
         JSONObject jsonObj = new JSONObject(response);
@@ -71,10 +72,12 @@ public class KieFormController {
     @RequestMapping(value = "/kiebpm/startCase/{container:.+}/{instance:.+}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> executeStartCase(@PathVariable String container, @PathVariable String instance, HttpServletRequest request) throws IOException {
         String json = IOUtils.toString(request.getInputStream());
-        System.out.println("json = " + json);
-        String response =  this.getKieFormService().executeStartCase(json, container, instance);
+        logger.info("Start case request json {}" ,json);
+        String caseId =  this.getKieFormService().executeStartCase(json, container, instance);
 
-        JSONObject jsonObj = new JSONObject(response);
+        Map<String, String> caseMap = new HashMap<>();
+        caseMap.put("caseId", caseId.replace("\"", ""));
+        JSONObject jsonObj = new JSONObject(caseMap);
         return jsonObj.toMap();
     }
 
