@@ -38,7 +38,7 @@ class CreditCardQuestions extends Component  {
             <input name="no" type="button" className="btn btn-sm btn-default neibourbt" onClick={this.props.handleUserAnswer} value="No" />;    
 
             const showOrNot = () => {
-                if (currentValues.creditCardwithCustomer === "Yes") {
+                if (currentValues.creditCardwithCustomer === "No") {
         
                     return (<div>
                         <div className="row">

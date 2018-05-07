@@ -66,7 +66,7 @@ const ProductTable = props => {
     return enumObject[cell];
   }
   const priceFormatter = (cell, row) => {
-    return `<i class='glyphicon glyphicon-usd'></i>${cell}`;
+    return `<i class='glyphicon glyphicon-usd'></i>${cell.toFixed(2)}`;
   }
   return (
     <BootstrapTable data={props.data}

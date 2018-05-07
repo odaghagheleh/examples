@@ -10,8 +10,8 @@ function TransactionList(props) {
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>$ {dataItem.Amount}</td>
-            <td>$ {dataItem.Balance}</td>
+            <td>$ {dataItem.Amount.toFixed(2)}</td>
+            <td>$ {dataItem.Balance.toFixed(2)}</td>
         </tr>);
     }
     );
@@ -32,7 +32,7 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td><strong>Total:</strong></td>
-                    <td><strong>${rowSum}</strong></td>
+                    <td><strong>${rowSum.toFixed(2)}</strong></td>
                 </tr>
             </tbody>
         </table>

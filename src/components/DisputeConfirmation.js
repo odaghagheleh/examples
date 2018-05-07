@@ -41,13 +41,13 @@ const TransactionList = props => {
 
     var rowSum = 0;
     const rowsData = props.data.map(function (dataItem) {
-        rowSum = rowSum + dataItem.Balance;
+        rowSum = (rowSum + dataItem.Balance);
         return (<tr key={dataItem.id}>
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>{dataItem.Amount}</td>
-            <td>{dataItem.Balance}</td>
+            <td>{dataItem.Amount.toFixed(2)}</td>
+            <td>{dataItem.Balance.toFixed(2)}</td>
             </tr>);
         }
     );
@@ -67,7 +67,7 @@ const TransactionList = props => {
           <td></td>
           <td></td>
           <td><strong>Total:</strong></td>
-          <td><strong>{rowSum}</strong></td>
+          <td><strong>{rowSum.toFixed(2)}</strong></td>
         </tr>
         </tbody>
       </table>

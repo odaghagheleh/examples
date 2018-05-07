@@ -35,20 +35,22 @@ const AdditionalQuestions = props => {
         if (index < 0) {
             index = 0;
             props.jumpToStep(2);
-        }else if (index > myQuestions.length -1 && index != 0) {
+        } else if (index > myQuestions.length - 1 && index != 0) {
             // when all the questions are done
 
             props.jumpToStep(4);
         }
         return (
             <div className="row" key={myIDs[index]} >
-            <div className="DecisionQuestionApp__spacer">
-                <div className="col-lg-3">
-                    <p> {myQuestions[index]} </p>
-                </div>
-                <div className="col-lg-4">
-                    <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} />
-                </div>
+                <div className="DecisionQuestionApp__spacer">
+                    <div className="col-lg-3">
+                        <p> {myQuestions[index]} </p>
+                    </div>
+                    <div className="col-lg-4">
+                        {/* <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} /> */}
+                        <label class="radio-inline"><input type="radio" name="optradio" />Yes</label>
+                        <label class="radio-inline"><input type="radio" name="optradio" />No</label>
+                    </div>
                 </div>
                 <br />
             </div>
@@ -136,7 +138,7 @@ class AdditionalQuestionnaire extends Component {
             <div>
                 <br />
                 <div className="row">
-                <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
+                    <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                     <div className="col-lg-12">
                         <label className="DecisionQuestionApp__step"> Additional Questions: </label>
                     </div>
