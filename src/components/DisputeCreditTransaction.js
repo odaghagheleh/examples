@@ -6,13 +6,12 @@ function TransactionList(props) {
 
     var rowSum = 0;
     const rowsData = props.data.map(function (dataItem) {
-        rowSum = rowSum + dataItem.Balance;
+        rowSum = rowSum + dataItem.Amount;
         return (<tr key={dataItem.id}>
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
             <td>{currencyFormatter.format(dataItem.Amount, { code: 'USD' })}</td>
-            <td>{currencyFormatter.format(dataItem.Balance, { code: 'USD' })}</td>
         </tr>);
     }
     );
@@ -25,11 +24,9 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td><hr className="DecisionQuestionApp__hr" /></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td><strong>Total:</strong></td>

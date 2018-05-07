@@ -82,10 +82,8 @@ const ProductTable = props => {
       striped hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
       <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn> 
-      <TableHeaderColumn dataField='time' ></TableHeaderColumn> 
-      <TableHeaderColumn dataField='type' headerAlign='left'
-      filterFormatted dataFormat={enumFormatter} formatExtraData={qualityType}
-        filter={{ type: 'SelectFilter', options: qualityType }}>
+
+      <TableHeaderColumn dataField='type' headerAlign='left'>
         Type
         </TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>

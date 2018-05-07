@@ -139,138 +139,138 @@ export function getTransactionHistory() {
         payload: [
             {
                 "id": "1",
-                "recentActivity": "03/18/2017",
+                "recentActivity": "03/18/2017 12:23 PM",
                 "time":"12:23 PM",
-                "type": "Payment",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": +129.00,
-                "Balance": +129.00,
+                "type": "Sale",
+                "Description": "Lowes 1452",
+                "Amount": 129.00,
+                "Balance": 193.20,
                 "extraDescriptions": [{
                     id: '1',
                     Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
+                    code: '6012ABC',
+                    where_you_Paid: 'In-person transaction, Tampa, FL',
+                    description: 'Hardware and household goods',
+                    balance: '$193.20'
                 }]
             },
             {
                 "id": "2",
-                "recentActivity": "03/14/2017",
+                "recentActivity": "03/14/2017 5:00 PM",
                 "time":"5:00 PM",
                 "type": "Payment",
-                "Description": "Lorem Ipsum is simply",
+                "Description": "Payment - Web",
                 "Amount": -25.00,
-                "Balance": -25.00,
+                "Balance": 64.20,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
+                    code: 'A012PMT',
+                    where_you_Paid: 'Payment - Online',
+                    description: '',
+                    balance: '64.20'
                 }]
             },
             {
                 "id": "3",
-                "recentActivity": "03/13/2017",
+                "recentActivity": "03/13/2017 3:40 PM",
                 "time":"03:40 PM",
-                "type": "Charge",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": -8.70,
-                "Balance": -8.70,
+                "type": "Sale",
+                "Description": "Jet.com",
+                "Amount": 10.50,
+                "Balance": 89.20,
                 "extraDescriptions": [{
                     id: '3',
                     Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
+                    code: '52362TRE',
+                    where_you_Paid: 'Online transaction',
+                    description: 'General retail',
+                    balance: '$89.20'
                 }]
             },
             {
                 "id": "4",
-                "recentActivity": "03/10/2017",
+                "recentActivity": "03/10/2017 10:48 PM",
                 "time":"10:48 PM",
-                "type": "Charge",
-                "Description": "Lorem Ipsum is simply",
+                "type": "Sale",
+                "Description": "Walmart 1445",
+                "Amount": 45.00,
+                "Balance": 78.70,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '1054TPX',
+                    where_you_Paid: 'In-person transaction, Oakland, CA',
+                    description: 'General retail',
+                    balance: '$78.70'
+                }]
+            },
+            {
+                "id": "5",
+                "recentActivity": "03/08/2017 12:23 PM",
+                "time":"12:23 PM",
+                "type": "Payment",
+                "Description": "Payment - Web",
+                "Amount": -50.00,
+                "Balance": 33.70,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0019DFT',
+                    where_you_Paid: 'Online payment',
+                    description: '',
+                    balance: '$33.70'
+                }]
+            },
+            {
+                "id": "6",
+                "recentActivity": "03/07/2017 5:00 AM",
+                "time":"5:00 AM",
+                "type": "Sale",
+                "Description": "Amazon.com",
+                "Amount": 25.00,
+                "Balance": 83.70,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0019XCD',
+                    where_you_Paid: 'Online transaction',
+                    description: 'Online retail',
+                    balance: '$83.70'
+                }]
+            },
+            {
+                "id": "7",
+                "recentActivity": "03/04/2017 3:49 PM",
+                "time":"03:49 PM",
+                "type": "Sale",
+                "Description": "Starbucks",
+                "Amount": 8.70,
+                "Balance": 58.70,
+                "extraDescriptions": [{
+                    id: '3',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0013FDE',
+                    where_you_Paid: 'In-person transaction, San Jose, CA',
+                    description: 'Food and Beverage',
+                    balance: '$58.70'
+                }]
+            },
+            {
+                "id": "8",
+                "recentActivity": "03/03/2017 11:45 AM",
+                "time":"12:00 AM",
+                "type": "Sale",
+                "Description": "Caffe Savona",
                 "Amount": 50.00,
                 "Balance": 50.00,
                 "extraDescriptions": [{
                     id: '2',
                     Transaction_Details: 'Transaction Code',
                     code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
-                "id": "5",
-                "recentActivity": "03/08/2017",
-                "time":"12:23 PM",
-                "type": "Transfer",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": -129.00,
-                "Balance": -129.00,
-                "extraDescriptions": [{
-                    id: '3',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
-                "id": "6",
-                "recentActivity": "03/07/2017",
-                "time":"5:00 AM",
-                "type": "Payment",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": -25.00,
-                "Balance": -25.00,
-                "extraDescriptions": [{
-                    id: '2',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
-                "id": "7",
-                "recentActivity": "03/04/2017",
-                "time":"03:49 PM",
-                "type": "Payment",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": -8.70,
-                "Balance": -8.70,
-                "extraDescriptions": [{
-                    id: '3',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
-                }]
-            },
-            {
-                "id": "8",
-                "recentActivity": "03/03/2017",
-                "time":"12:00 AM",
-                "type": "Charge",
-                "Description": "Lorem Ipsum is simply",
-                "Amount": -50.00,
-                "Balance": -50.00,
-                "extraDescriptions": [{
-                    id: '2',
-                    Transaction_Details: 'Transaction Code',
-                    code: '0012ABC',
-                    where_you_Paid: 'Where you paid',
-                    description: 'Description of Shop or other Seller',
-                    balance: '123eedd'
+                    where_you_Paid: 'In-person transaction, Mountain View, CA',
+                    description: 'Food and Beverage',
+                    balance: '$50.00'
                 }]
             }
         ]
