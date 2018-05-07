@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Greeting from './../components/Greating';
 
 const FinalConfirmation = (props) =>{
-
     return (
         <div>
             <br />
@@ -35,7 +34,6 @@ const FinalConfirmation = (props) =>{
            </div>
         </div>
     );
-
 }
 
 class Confirmed extends Component {
@@ -43,20 +41,15 @@ class Confirmed extends Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
     handleSubmit(e) {
         // e.preventDefault();
         this.props.history.push('/');
     }
-
     render() {
         return (
-
             <FinalConfirmation handleSubmit={this.handleSubmit}  submitDisputesResult={this.props.submitDisputesResult}/>
-
         );
     }
-
 }
 
 const mapStateToProps = state => {
