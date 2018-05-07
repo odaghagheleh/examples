@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import request from "../../node_modules/superagent/superagent";
 import { setExtraInfo } from './../actions/actions';
-
-
+import { Link } from 'react-router-dom';
+import Greeting from './../components/Greating';
 
 const FinalConfirmation = (props) =>{
 
@@ -27,6 +27,12 @@ const FinalConfirmation = (props) =>{
                 </div>
                 <br />
             </div>
+            <div className="row">
+              <Link
+               className="btn btn-primary DecisionQuestionApp__custom-buttons pull-right stepZillRightabt"
+               to="/">Home
+             </Link>
+           </div>
         </div>
     );
 
