@@ -27,7 +27,6 @@ const MainForm = props => {
             { name: 'SUBMIT', component: <Confirmed /> }
         ]
 
-  //befor Deploy please comment "wrapper",'row border-bottom white-bg'and wrapper wrapper-content' div. everthing should be in container div 
     return (
         <div id="wrapper" className="gray-bg">
             <div className="row border-bottom white-bg">

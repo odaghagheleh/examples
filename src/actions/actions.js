@@ -415,7 +415,7 @@ export function submitDispute() {
                 //    console.log(tmp.body);
                 payloadArray = tmp.body;
                 //console.log(payloadArray);                    
-                return dispatch({type: SUBMIT_DISPUTE, payload:payloadArray});
+                return dispatch({type: SUBMIT_DISPUTE, payload:payloadArray.caseId});
 
 
             })

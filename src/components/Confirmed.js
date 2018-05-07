@@ -39,8 +39,8 @@ class Confirmed extends Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        // this.props.history.push('/');
+        // e.preventDefault();
+        this.props.history.push('/');
     }
 
     render() {
