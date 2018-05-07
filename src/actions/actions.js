@@ -194,7 +194,7 @@ export function getTransactionHistory() {
                 "time":"10:48 PM",
                 "type": "Charge",
                 "Description": "Lorem Ipsum is simply",
-                "Amount": -50.00,
+                "Amount": 50.00,
                 "Balance": 50.00,
                 "extraDescriptions": [{
                     id: '2',
