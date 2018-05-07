@@ -23,8 +23,10 @@
  */
 package org.entando.entando.plugins.jpkiebpm.aps.system.services.kie;
 
-import java.util.List;
 import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
+import org.json.JSONObject;
+
+import java.util.List;
 
 /**
  * @author E.Santoboni
@@ -36,5 +38,7 @@ public interface IKieFormService {
     public String executeStartCase(String json, String container, String instance);
 
     public List<KieProcessInstance> getAllProcessInstancesList();
+
+    public JSONObject getAllCases(String container);
 
 }

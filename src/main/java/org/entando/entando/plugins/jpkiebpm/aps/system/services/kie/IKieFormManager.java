@@ -349,4 +349,5 @@ public interface IKieFormManager {
 
     public String executeStartCase(String json, String container, String instance) throws ApsSystemException;
 
+    public JSONObject getAllCases(String container) throws ApsSystemException;
 }

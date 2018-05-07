@@ -23,14 +23,20 @@
  */
 package org.entando.entando.plugins.jpkiebpm.aps.system.services.kie;
 
+import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.List;
-import org.entando.entando.plugins.jpkiebpm.aps.system.services.kie.model.KieProcessInstance;
 
 /**
  * @author E.Santoboni
  */
 public class KieFormService implements IKieFormService {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private IKieFormManager kieFormManager;
 
@@ -59,6 +65,19 @@ public class KieFormService implements IKieFormService {
             return this.getKieFormManager().getAllProcessInstancesList(new HashMap<>());
         } catch (Exception e) {
             throw new RuntimeException("Error invoking getAllProcessInstancesList", e);
+        }
+    }
+
+
+    @Override
+    public JSONObject getAllCases(String containerId) {
+
+        try {
+            this.getKieFormManager().loadFirstConfigurations();
+            return this.getKieFormManager().getAllCases(containerId);
+        }catch (Exception e) {
+            logger.error("failed to fetch cases ",e);
+            throw new RuntimeException("Error invoking getAllCases", e);
         }
     }
 

@@ -1118,4 +1118,33 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
         return result;
     }
 
+    public JSONObject getAllCases(String containerId) throws ApsSystemException {
+        HashMap headersMap = new HashMap();
+        String result = null;
+        JSONObject json = null;
+        try {
+            if (null == config) {
+                config = this.loadFirstConfigurations();
+            }
+            if (!config.getActive() || StringUtils.isBlank(containerId)) {
+                return null;
+            }
+
+            Endpoint t = ((Endpoint)KieEndpointDictionary.create().get("API_ADMIN_GET_CASES"));
+            headersMap.put("Accept", "application/json");
+            KieClient client = getCurrentClient();
+            result = (new KieRequestBuilder(client)).setEndpoint(t).setHeaders(headersMap).setDebug(this.config.getDebug().booleanValue()).doRequest();
+            if(!result.isEmpty()) {
+                json = new JSONObject(result);
+                logger.debug("received successful message: ", result);
+            } else {
+                logger.debug("received empty case definitions message: ");
+            }
+
+            return json;
+        } catch (Throwable t) {
+            logger.error("Failed to fetch cases ",t);
+            throw new ApsSystemException("Error getting the cases definitions", t);
+        }
+    }
 }
