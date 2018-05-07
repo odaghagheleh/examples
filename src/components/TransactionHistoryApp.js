@@ -10,6 +10,8 @@ import HelloBar from './HelloBar';
 import InformationTab from './InformationTab';
 import MonthlyIncome from './MonthlyIncome';
 
+import currencyFormatter from 'currency-formatter';
+
 const SelectBar = props => {
 
   const transactionList = props.transactionList;
@@ -66,7 +68,7 @@ const ProductTable = props => {
     return enumObject[cell];
   }
   const priceFormatter = (cell, row) => {
-    return `<i class='glyphicon glyphicon-usd'></i>${cell.toFixed(2)}`;
+    return <span>{currencyFormatter.format(cell, { code: 'USD' })}</span>;
   }
   return (
     <BootstrapTable data={props.data}

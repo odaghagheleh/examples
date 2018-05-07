@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import currencyFormatter from 'currency-formatter';
 
 function TransactionList(props) {
 
@@ -10,8 +11,8 @@ function TransactionList(props) {
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>$ {dataItem.Amount.toFixed(2)}</td>
-            <td>$ {dataItem.Balance.toFixed(2)}</td>
+            <td>{currencyFormatter.format(dataItem.Amount, { code: 'USD' })}</td>
+            <td>{currencyFormatter.format(dataItem.Balance, { code: 'USD' })}</td>
         </tr>);
     }
     );
@@ -32,7 +33,7 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td><strong>Total:</strong></td>
-                    <td><strong>${rowSum.toFixed(2)}</strong></td>
+                    <td><strong>{currencyFormatter.format(rowSum, { code: 'USD' })}</strong></td>
                 </tr>
             </tbody>
         </table>
