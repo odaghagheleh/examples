@@ -19,7 +19,7 @@ export function getWorkList() {
                 "id": "2",
                 "task": "042",
                 "customerName": "Alanna Searle",
-                "typeOfDispute": "Credit Not recieved",
+                "typeOfDispute": "Credit Not received",
             },
             {
                 "id": "3",
@@ -93,7 +93,7 @@ export function getTasks() {
                 "id": "3",
                 "task": "023",
                 "lastUpload": "4 Jun, 2016",
-                "typeOfIssues": "Full value not recieved",
+                "typeOfIssues": "Full value not received",
                 "lastChecked": "2 days ago",
                 "status": "",
                 "extraDescriptions": [{
@@ -108,7 +108,7 @@ export function getTasks() {
                 "id": "4",
                 "task": "108",
                 "lastUpload": "4 Jun, 2016",
-                "typeOfIssues": "Merchandise not recieved",
+                "typeOfIssues": "Merchandise not received",
                 "lastChecked": "2 days ago",
                 "status": "",
                 "extraDescriptions": [{
@@ -123,7 +123,7 @@ export function getTasks() {
                 "id": "5",
                 "task": "016",
                 "lastUpload": "4 Jun, 2016",
-                "typeOfIssues": "Full value not recieved",
+                "typeOfIssues": "Full value not received",
                 "lastChecked": "2 days ago",
                 "status": "",
                 "extraDescriptions": [{

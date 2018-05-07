@@ -17,6 +17,7 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './../node_modules/font-awesome/css/font-awesome.css'
 import './../node_modules/animate.css/animate.min.css'
 import './styles/style.css'
+
 import './steps/css/main.css'
 import './css/cssoverride.css'
 import './css/yilicss.css'
