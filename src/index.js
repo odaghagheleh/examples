@@ -23,8 +23,6 @@ import './styles/style.css'
 import './steps/css/main.css'
 import './css/cssoverride.css'
 
-
-
 let store = createStore(transactionDisputeReducer);
 
 ReactDOM.render(
@@ -37,4 +35,3 @@ ReactDOM.render(
     </Provider>
     , document.getElementById('fsi-demo-customer'));
 registerServiceWorker();
-

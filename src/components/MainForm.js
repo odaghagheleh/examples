@@ -59,7 +59,6 @@ const MainForm = props => {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -67,7 +66,6 @@ const MainForm = props => {
                 </div>
             </div>
         </div>
-
     )
 }
 
