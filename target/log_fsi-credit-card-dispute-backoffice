@@ -1,10 +1,9 @@
-2018-05-07 10:26:28.693 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page homepage
-2018-05-07 10:26:28.693 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page landing
-2018-05-07 10:26:28.715 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page landing
-2018-05-07 10:26:35.181 - INFO  -  org.entando.entando.apsadmin.system.resource.EntandoPluginLabelListener - EntandoPluginLabelListener summary: 11 plugin detected (0 under development)
-2018-05-07 10:30:21.281 - INFO  -  com.agiletec.apsadmin.common.DispatchAction - User - admin logged
-2018-05-07 10:30:23.655 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
-2018-05-07 10:30:23.666 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
-2018-05-07 10:31:05.395 - WARN  -  com.agiletec.apsadmin.portal.PagePreviewAction - Invalid lang 'null' detected. Defaulting to 'en'
-2018-05-07 10:31:05.466 - WARN  -  com.agiletec.apsadmin.portal.ScreenSize - Invalid or null size detected. Defaulting to 600x800
-2018-05-07 10:31:43.850 - INFO  -  org.entando.entando.aps.system.XmlWebApplicationContext - Closing Root WebApplicationContext: startup date [Mon May 07 10:26:19 AEST 2018]; root of context hierarchy
+2018-05-07 15:20:59.986 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page homepage
+2018-05-07 15:20:59.986 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page landing
+2018-05-07 15:21:00.001 - WARN  -  com.agiletec.aps.system.services.page.PageDAO - The position read from the database exceeds the numer of frames defined in the model of the page landing
+2018-05-07 15:21:06.327 - INFO  -  org.entando.entando.apsadmin.system.resource.EntandoPluginLabelListener - EntandoPluginLabelListener summary: 11 plugin detected (0 under development)
+2018-05-07 15:24:58.712 - ERROR -  org.entando.entando.aps.servlet.PreviewControllerServlet - Error: final status = SYS_ERROR - request: /preview - path: /en/landing
+2018-05-07 15:25:08.520 - INFO  -  com.agiletec.apsadmin.common.DispatchAction - User - admin logged
+2018-05-07 15:25:10.626 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
+2018-05-07 15:25:10.637 - ERROR -  com.agiletec.plugins.jacms.aps.system.services.content.ContentDAO - Error loading contents status. If you are runing Entando backed by Apache Derby it's a known issue
+2018-05-07 15:27:37.304 - INFO  -  org.entando.entando.aps.system.XmlWebApplicationContext - Closing Root WebApplicationContext: startup date [Mon May 07 15:20:53 AEST 2018]; root of context hierarchy

@@ -18,7 +18,7 @@
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>logFilePrefix</Arg>
-        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/target/log_fsi-credit-card-dispute-backoffice</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/log_fsi-credit-card-dispute-backoffice</Arg>
         <Arg type="boolean">false</Arg>
     </New>
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
@@ -74,21 +74,21 @@
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>resourceDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/src/main/webapp/resources</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/src/main/webapp/resources</Arg>
         <Arg type="boolean">false</Arg>
     </New>
 
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>protectedResourceDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/src/main/webapp/protected</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/src/main/webapp/protected</Arg>
         <Arg type="boolean">false</Arg>
     </New>
 
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>indexDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/target/temp/indexdir</Arg>
+        <Arg type="java.lang.String">/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/temp/indexdir</Arg>
         <Arg type="boolean">false</Arg>
     </New>
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
@@ -102,7 +102,7 @@
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
                 <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
-                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/target/derby/production/fsi-credit-card-dispute-backofficePort;create=true</Set>
+                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/derby/production/fsi-credit-card-dispute-backofficePort;create=true</Set>
                 <Set name="username">agile</Set>
                 <Set name="password">agile</Set>
             </New>
@@ -114,7 +114,7 @@
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
                 <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
-                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-backoffice/target/derby/production/fsi-credit-card-dispute-backofficeServ;create=true</Set>
+                <Set name="url">jdbc:derby:/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/derby/production/fsi-credit-card-dispute-backofficeServ;create=true</Set>
                 <Set name="username">agile</Set>
                 <Set name="password">agile</Set>
             </New>
