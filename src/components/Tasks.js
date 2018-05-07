@@ -168,9 +168,9 @@ class Tasks extends Component {
     render() {
         return (
 
-            <div id="wrapper">
-                <div class="gray-bg">
+            <div id="wrapper" class="gray-bg">
 
+                <div >
                     <div class="row border-bottom white-bg">
                         <NavigationBar />
                     </div>
