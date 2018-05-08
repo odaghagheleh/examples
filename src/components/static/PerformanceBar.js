@@ -11,7 +11,7 @@ const PerformanceBar= (props)=>{
         </div>
         <div class="ibox-content">
           <Progress color="info" value="90" />
-          <p>Well Done! You completed 2360 task. You have 140 tasks to complete your activities.</p>
+          <p>Well Done! You have completed 2360 tasks. You have 140 open tasks.</p>
         </div>
       </div>
 

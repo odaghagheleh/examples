@@ -51,7 +51,26 @@ html, body, #main-contents{
 
 }
 .rankingImage{
-  background-image: url(./../img/icon.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+.rankingImage-martin{
+  background-image: url(./../img/martins.png);
+}
+
+.rankingImage-bob{
+  background-image: url(./../img/bobj.png);
+}
+
+.rankingImage-mike{
+  background-image: url(./../img/mikeg.png);
+}
+
+.rankingImage-seth{
+  background-image: url(./../img/sethh.png);
+}
+
+.rankingImage-tim{
+  background-image: url(./../img/timw.png);
+  }

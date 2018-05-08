@@ -13,7 +13,7 @@ const NavigationBar = (props) => {
                 </span>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="tab">
                     <button class="tablinks">Dashboard</button>
                     <button class="tablinks">Customers</button>

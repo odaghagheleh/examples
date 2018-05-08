@@ -88,18 +88,19 @@ width: 10px;
 height: 10px;
 margin: 5px;
 border: 1px solid rgba(0, 0, 0, .2);
+
 }
 
 .green {
-background: #44ff63;
+background: #6EC664;
 }
 
 .red {
-background: #e71313;
+background: #D0021B;
 }
 
 .orange {
-background: #f7cb07;
+background: #F5A623;
 }
 
 .icon {
@@ -121,7 +122,7 @@ background: #f7cb07;
 }
 
 .navigationBar {
-    background-color: rgb(28, 159, 202);
+    background-color: #022234;
     color: #ffffff;
 }
 
@@ -196,31 +197,62 @@ background: #f7cb07;
 }
 
 /* Add some padding inside the card container */
-.ranking_container {
+
+.ranking_container_first {
     padding: 10px 16px;
-    border-spacing: 5px; 
+    border-spacing: 5px;
     border-bottom: groove;
     border-color: white;
-    background: linear-gradient(to bottom, #19aa89 0%, #ccffcc 100%);
+    background: #27AE60;
     align-items: center;
-    
+    color: white;
+
 }
 
-.ranking_container_grey {
+.ranking_container_gray {
     padding: 10px 16px;
-    border-spacing: 5px; 
+    border-spacing: 5px;
     border-bottom: groove;
     border-color: white;
-    background: linear-gradient(to bottom, #999999 54%, #ffffff 99%);
+    background: #BDBDBD;
     align-items: center;
-    
+    color: white;
+
 }
+
+.ranking_container {
+     padding: 10px 16px;
+     border-spacing: 5px;
+     border-bottom: groove;
+     border-color: white;
+     background: #6FCF97;
+     align-items: center;
+     color: white;
+
+ }
 
 .ranking_container h1,h2,h3 {
     display: inline;
 }
 
-.ranking_container_grey h1,h2,h3 {
+.ranking_container_first h1,h2,h3 {
     display: inline;
 }
 
+
+.ranking_container_gray h1,h2,h3 {
+    display: inline;
+}
+
+.chart-title {
+    text-align: center;
+}
+
+.chart-legend {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.donutChart {
+    margin-top: 15px;
+}

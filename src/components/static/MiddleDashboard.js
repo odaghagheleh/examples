@@ -30,28 +30,33 @@ const MiddleDashboard = (props) => {
 
             var text = chart.config.data.text,
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
-                textY = height / 1.75;
+                textY = height / 2;
 
             ctx.fillText(text, textX, textY);
-        }
+        },
+
+
     });
+
+    const chart = { chart: {width: 10}};
 
     const leftDonut = {
         labels: [
-            'Rejected', 'Approved'
+            'Approved', ''
         ],
         datasets: [{
-            data: [10, 90],
+            data: [60, 40],
             backgroundColor: [
-                'rgb(202, 15, 15)',
-                '#19aa89'
+                '#6EC664',
+                '#979797'
             ],
             hoverBackgroundColor: [
-                '#FF6384',
-                '#2de6bc'
+                '#27AE60',
+                '#979797'
             ]
         }],
-        text: "90%"
+        text: "60%",
+
     };
 
 
@@ -61,10 +66,11 @@ const MiddleDashboard = (props) => {
             'Rejected'
         ],
         datasets: [{
-            data: [75, 25],
+            data: [25, 75],
             backgroundColor: [
-                '#19aa89',
-                'rgb(202, 15, 15)'
+                '#D0021B',
+                '#979797'
+
             ],
             hoverBackgroundColor: [
                 '#2de6bc',
@@ -80,17 +86,17 @@ const MiddleDashboard = (props) => {
             'Waiting to Review'
         ],
         datasets: [{
-            data: [75, 25],
+            data: [15, 85],
             backgroundColor: [
-                '#19aa89',
-                'rgb(202, 15, 15)'
+                '#F5A623',
+                '#979797'
             ],
             hoverBackgroundColor: [
                 '#2de6bc',
                 '#FF6384'
             ]
         }],
-        text: "25%"
+        text: "15%"
     };
 
 
@@ -118,35 +124,50 @@ const MiddleDashboard = (props) => {
 
                 <div className="MiddleDashboardBody">
                     <div className="row">
-                        <div className="col-md-4">
-                            <h3>Approved Request</h3>
-                            <hr />
+                        <div className="col-md-4 chart-title">
+                            <h3>Approved Requests</h3>
+
                             <div className="donutChart">
-                                <Doughnut data={leftDonut} width="100" height="85" />
+                                <Doughnut data={leftDonut} width="100" height="85"  options={{
+                                                                       cutoutPercentage: 75, legend: false
+                                                            }}/>
                             </div>
-                            <div class="colorSquare red"></div>
-                            <p> Rejected. 1800 <br />
-                                total. 2500 </p>
+
+                        <div className = "chart-legend">
+            <div class="colorSquare green"></div>
+                            <p> Approved 1416 <br />
+                                Total 2360 </p>
+        </div>
                         </div>
-                        <div className="col-md-4">
-                            <h3>Rejected Request</h3>
-                            <hr />
+                        <div className="col-md-4 chart-title">
+                            <h3>Rejected Requests</h3>
+
                             <div className="donutChart">
-                                <Doughnut data={middleDonut} width="100" height="85" />
+                                <Doughnut data={middleDonut} width="100" height="85" options={{
+        cutoutPercentage: 75, legend: false, rotation:  Math.PI
+    }}/>
                             </div>
-                            <div class="colorSquare red"></div>
-                            <p> Rejected. 350 <br />
-                                total. 2500 </p>
+
+        <div className = "chart-legend">
+            <div class="colorSquare red"></div>
+                            <p> Rejected 590 <br />
+                                Total 2360 </p>
+        </div>
                         </div>
-                        <div className="col-md-4">
-                            <h3>Waiting to Review</h3>
-                            <hr />
+                        <div className="col-md-4 chart-title">
+                            <h3>Pending Review</h3>
+
                             <div className="donutChart">
-                                <Doughnut data={rightDonut} width="100" height="85" />
+                                <Doughnut data={rightDonut} width="100" height="85" options={{
+                                                                                        cutoutPercentage: 75, legend: false, rotation:  .7*Math.PI
+                                                                                    }}/>
                             </div>
-                            <div class="colorSquare red"></div>
-                            <p> Waiting to Review. 350 <br />
-                                total. 2500 </p>
+
+                            <div className = "chart-legend">
+            <div class="colorSquare orange"></div>
+                                <p> Pending 354 <br />
+                                    Total 2500 </p>
+                            </div>
                         </div>
                     </div>
                 </div>
