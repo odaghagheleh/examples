@@ -6,11 +6,11 @@ import React, { Component } from 'react';
 
 const HelloBar = (props) => {
 
-    var today = new Date();
-    today = JSON.stringify(today);
+    // var today = new Date();
+    // today = JSON.stringify(today);
     return (
-        <div class="ibox float-e-margins">
-            <div class="ibox-title bluetop">
+        <div className="ibox float-e-margins">
+            <div className="ibox-title bluetop">
                 <div className='row'>
                     <div className='col-md-6'>
                         <h2> Hi Kevin!</h2>
@@ -18,11 +18,11 @@ const HelloBar = (props) => {
                     <div className='col-md-2'>
                     </div>
                     <div className='col-md-4'>
-                        <p>Your last access, {today}</p>
+                        <p>Your last access, Friday 20 October 2017 at 5:00pm</p>
                     </div>
                 </div>
             </div>
-            <div class="ibox-content">
+            <div className="ibox-content">
                 <p>Customer Account Number <br />
                     <b>ABCD-0001</b>
                 </p>

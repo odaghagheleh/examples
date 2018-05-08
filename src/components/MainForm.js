@@ -47,8 +47,8 @@ const MainForm = props => {
                                                 <ProgressBar />
                                                 <StepZilla
                                                     steps={steps}
-                                                    nextButtonCls="btn btn-prev btn-primary btn-sm pull-right stepZillNextabt"
-                                                    backButtonCls="btn btn-next btn-primary btn-sm pull-left stepZillRightabt"
+                                                    nextButtonCls="btn btn-prev btn-primary  pull-right stepZillNextabt"
+                                                    backButtonCls="btn btn-next btn-primary  pull-left stepZillRightabt"
                                                     nextTextOnFinalActionStep="Submit"
                                                     prevBtnOnLastStep={false}
                                                     stepsNavigation={false}
@@ -59,7 +59,6 @@ const MainForm = props => {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -67,7 +66,6 @@ const MainForm = props => {
                 </div>
             </div>
         </div>
-
     )
 }
 

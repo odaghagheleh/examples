@@ -79,8 +79,8 @@ const AdditionalQuestions = props => {
                 </div>
             </div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => goPrev()} >Prev</button>
-                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
+                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} >&lt;</button>
+                <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
             </div>
 
         </div>
@@ -140,33 +140,16 @@ class AdditionalQuestionnaire extends Component {
                 <div className="row">
                     <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                     <div className="col-lg-12">
-                        <label className="DecisionQuestionApp__step"> Additional Questions: </label>
+                        <label className="DecisionQuestionApp__step"><b> Additional Questions: </b></label>
                     </div>
                     <br />
                     <br />
                 </div>
-
-                {/* <div className="row">
-                    <div className="col-lg-12"> */}
                 <AdditionalQuestions jumpToStep={this.props.jumpToStep} increment={this.increment} decrement={this.decrement} counter={this.state.counter} questions={this.props.additionalQuestions} handleAnswer={this.handleAnswer} currentValues={this.props.additionalQuestionAnswers} />
-                {/* </div>
-                </div> */}
-
-                {/* <div className="row"> */}
-                {/* <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(2)} >Prev</button>
-                    <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(4)} >Next</button> */}
             </div>
-            // </div>
         );
     }
 }
-
-// function select(store) {
-//     return {
-//         additionalQuestions: store.additionalQuestions,
-//         additionalQuestionAnswers: store.additionalQuestionAnswers
-//     }
-// }
 
 const mapStateToProps = state => {
     return {

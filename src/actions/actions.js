@@ -15,7 +15,7 @@ export const SUBMIT_DISPUTE = 'SUBMIT_DISPUTE';
 // const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://'+window.location.host+'/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
 // const POST_START_CASE_TARGET_URL = 'http://'+window.location.host+'/fsi-credit-card-dispute-customer/api/kiebpm/startCase/credit-dispute-case_1.0-SNAPSHOT/CreditCardDisputeCase.FraudDispute';
 
-//Uncomment to run on local host
+// //Uncomment to run on local host
 const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
 const POST_START_CASE_TARGET_URL = 'http://localhost:8181/fsi-credit-card-dispute-customer/api/kiebpm/startCase/credit-dispute-case_1.0-SNAPSHOT/CreditCardDisputeCase.FraudDispute';
 
@@ -271,6 +271,23 @@ export function getTransactionHistory() {
                     where_you_Paid: 'In-person transaction, Mountain View, CA',
                     description: 'Food and Beverage',
                     balance: '$50.00'
+                }]
+            },
+            {
+                "id": "9",
+                "recentActivity": "03/08/2017 11:00 AM",
+                "time":"11:00 AM",
+                "type": "Sale",
+                "Description": "Caffe Savona",
+                "Amount": 500.00,
+                "Balance": 500.00,
+                "extraDescriptions": [{
+                    id: '2',
+                    Transaction_Details: 'Transaction Code',
+                    code: '0012ABC',
+                    where_you_Paid: 'In-person transaction, Mountain View, CA',
+                    description: 'Food and Beverage',
+                    balance: '$500.00'
                 }]
             }
         ]
