@@ -119,8 +119,8 @@ const START_CASE_PAYLOAD={
         "incidentCount" : 1
     },
     "case-user-assignments" : {
-        "owner" : "krisv",
-      "fraud-manager" : ""
+        "owner" : "pamAdmin",
+      "fraud-manager" : "pamAdmin"
     },
     "case-group-assignments" : {
       "fraud-manager" : "IT"
