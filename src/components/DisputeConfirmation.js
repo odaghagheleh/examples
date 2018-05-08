@@ -7,9 +7,6 @@ import currencyFormatter from 'currency-formatter';
 
 const Confirmation = props => {
     const creditCardQAs = props.creditCardQAs;
-    // const creditCardwithCustomer = creditCardQAs.creditCardwithCustomer == undefined ?
-    //     "" :
-    //     creditCardQAs.creditCardwithCustomer;
 
     return (
         <div className="DisputeConfirmation">
@@ -65,9 +62,8 @@ const TransactionList = props => {
                 <tr>
                     <td></td>
                     <td></td>
-                    <td><strong>Total:</strong></td>
-                    <td><strong>{currencyFormatter.format(rowSum, { code: 'USD' })}</strong></td>
-                </tr>
+                    <td className="DecisionQuestionApp__total">Total:</td>
+                    <td className="DecisionQuestionApp__total">${rowSum}</td></tr>
             </tbody>
         </table>
     );
@@ -98,6 +94,7 @@ const DisputeConfirmation = props => {
                     </div>
                 </div>
             </div>
+            <div className="col-lg-12"></div>
             <div className="row">
                 <button name="prev" type="button" className="btn btn-sm pull-right stepZillLeftabt_onsubmit_bt" onClick={() => props.jumpToStep(4)} ><i class="fa fa-chevron-left"></i></button>
                 <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => handdleSubmitt()} >Submit</button>

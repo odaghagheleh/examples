@@ -36,7 +36,7 @@ class Stepper extends Component {
             <div className="footer-buttons">
                 {currentStep === 0 ? null : (
                     <button
-                      className="btn btn-next btn-primary btn-sm pull-left"
+                      className="btn btn-next btn-primary  pull-left"
                       onClick={gotoPrevStep}
                       disabled={currentStep <= 0}
                     >
@@ -44,7 +44,7 @@ class Stepper extends Component {
                     </button>
                 )}
                 <button
-                    className="btn btn-prev btn-primary btn-sm pull-right"
+                    className="btn btn-prev btn-primary  pull-right"
                     onClick={isLastStep ? () => alert() : gotoNextStep}
                     disabled={currentStep >= steps.length}
                 >

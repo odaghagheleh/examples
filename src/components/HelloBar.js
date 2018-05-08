@@ -9,8 +9,8 @@ const HelloBar = (props) => {
     // var today = new Date();
     // today = JSON.stringify(today);
     return (
-        <div class="ibox float-e-margins">
-            <div class="ibox-title bluetop">
+        <div className="ibox float-e-margins">
+            <div className="ibox-title bluetop">
                 <div className='row'>
                     <div className='col-md-6'>
                         <h2> Hi Kevin!</h2>
@@ -22,7 +22,7 @@ const HelloBar = (props) => {
                     </div>
                 </div>
             </div>
-            <div class="ibox-content">
+            <div className="ibox-content">
                 <p>Customer Account Number <br />
                     <b>ABCD-0001</b>
                 </p>

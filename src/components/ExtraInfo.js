@@ -35,9 +35,9 @@
                 <div className="row">
                     <button name="prev" type="button" className="btn btn-sm pull-right stepZillLeftabt" onClick={() => props.jumpToStep(1)} ><i class="fa fa-chevron-left"></i></button>
                     {props.extraInfos == "" ?
-                        <button name="next" disabled type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                        <button name="next" disabled type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
                         :
-                        <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
+                        <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => props.jumpToStep(5)} >Next</button>
                     }
                 </div>
             </div>
