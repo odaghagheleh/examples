@@ -1130,7 +1130,52 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
                 return null;
             }
 
-            Endpoint t = ((Endpoint)KieEndpointDictionary.create().get("API_ADMIN_GET_CASES"));
+            Endpoint t = ((Endpoint)KieEndpointDictionary.create().get(KieBpmSystemConstants.API_GET_CASES_LIST)).resolveParams(containerId);
+            headersMap.put("Accept", "application/json");
+            KieClient client = getCurrentClient();
+            result = (new KieRequestBuilder(client)).setEndpoint(t).setHeaders(headersMap).setDebug(this.config.getDebug().booleanValue()).doRequest();
+
+            if(!result.isEmpty()) {
+                json = new JSONObject(result);
+                logger.debug("received successful message: ", result);
+
+                List<Map<String,Object>> cases = (List<Map<String,Object>>)json.toMap().get("instances");
+
+                List<Map<String, Object>> updatedCases = new ArrayList<>();
+                for(Map<String, Object> caseMap : cases) {
+
+                    String caseId = (String)caseMap.get("case-id");
+                    JSONObject details = getCaseDetails(containerId, caseId);
+                    caseMap.put("case-details", details);
+                    updatedCases.add(caseMap);
+                }
+
+                json.put("instances", updatedCases);
+            } else {
+                logger.debug("received empty case definitions message: ");
+            }
+
+            return json;
+        } catch (Throwable t) {
+            logger.error("Failed to fetch cases ",t);
+            throw new ApsSystemException("Error getting the cases definitions", t);
+        }
+    }
+
+    public JSONObject getCaseDetails(String containerId, String caseId) throws ApsSystemException {
+
+        HashMap headersMap = new HashMap();
+        String result = null;
+        JSONObject json = null;
+        try {
+            if (null == config) {
+                config = this.loadFirstConfigurations();
+            }
+            if (!config.getActive() || StringUtils.isBlank(containerId)) {
+                return null;
+            }
+
+            Endpoint t = ((Endpoint)KieEndpointDictionary.create().get(KieBpmSystemConstants.API_GET_CASE_FILE)).resolveParams(containerId, caseId);
             headersMap.put("Accept", "application/json");
             KieClient client = getCurrentClient();
             result = (new KieRequestBuilder(client)).setEndpoint(t).setHeaders(headersMap).setDebug(this.config.getDebug().booleanValue()).doRequest();
@@ -1143,7 +1188,7 @@ public class KieFormManager extends AbstractService implements IKieFormManager {
 
             return json;
         } catch (Throwable t) {
-            logger.error("Failed to fetch cases ",t);
+            logger.error("Failed to fetch case details ",t);
             throw new ApsSystemException("Error getting the cases definitions", t);
         }
     }
