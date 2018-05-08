@@ -27,7 +27,7 @@ const InformationTab = (props) => {
                     </div>
                     <div className="col-md-6">
                         <p>Point of contact <br />
-                            <b>21 Forest View - London, 98104 Great Britain</b>
+                            <b>21 Forest View - San Francisco, 94016 USA</b>
                         </p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const InformationTab = (props) => {
                     </div>
                     <div className="col-md-6">
                         <p>Phone <br />
-                            <b>055 12394890</b>
+                            <b>555-123-9489</b>
                         </p>
                     </div>
                 </div>

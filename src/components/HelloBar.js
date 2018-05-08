@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 
 const HelloBar = (props) => {
 
-    var today = new Date();
-    today = JSON.stringify(today);
+    // var today = new Date();
+    // today = JSON.stringify(today);
     return (
         <div className="ibox float-e-margins">
             <div className="ibox-title bluetop">
@@ -18,7 +18,7 @@ const HelloBar = (props) => {
                     <div className='col-md-2'>
                     </div>
                     <div className='col-md-4'>
-                        <p>Your last access, {today}</p>
+                        <p>Your last access, Friday 20 October 2017 at 5:00pm</p>
                     </div>
                 </div>
             </div>
