@@ -1,13 +1,17 @@
 import { combineReducers } from 'redux';
-
-import { GET_TRANSACTION_LIST } from '../actions/actions';
-import { GET_TRANSACTION_HISTORY } from '../actions/actions';
-import { ADD_DISPUTE } from '../actions/actions';
-import { GET_DISPUTE_REASON_QUESTIONS, SET_DISPUTE_REASON_ANSWER } from '../actions/actions';
-import { ADD_CREDIT_CARD_QUESTION_ANSWER } from '../actions/actions';
-import { GET_ADDITIONAL_QUESTIONS, SET_ADDITIONAL_QUESTIONS_ANSWER } from '../actions/actions';
-import { SET_EXTRA_INFO } from '../actions/actions';
 import stepper from '../stepper/state/reducer';
+import {
+GET_TRANSACTION_LIST,
+GET_NOTIFICATION_HISTORY,
+GET_TRANSACTION_HISTORY,
+ADD_DISPUTE,
+GET_DISPUTE_REASON_QUESTIONS,
+SET_DISPUTE_REASON_ANSWER,
+ADD_CREDIT_CARD_QUESTION_ANSWER,
+GET_ADDITIONAL_QUESTIONS,
+SET_ADDITIONAL_QUESTIONS_ANSWER,
+SET_EXTRA_INFO,
+ } from '../actions/actions';
 
 
 //Transaction List Reducer
@@ -29,6 +33,28 @@ function transactionLists(state = [], action) {
             return state
     }
 }
+
+function NotificationList(state = [], action) {
+    switch (action.type) {
+        case GET_TRANSACTION_HISTORY:
+            return action.payload;
+
+        default:
+            return state
+    }
+}
+
+function notificationLists(state = [], action) {
+    switch (action.type) {
+        case GET_NOTIFICATION_HISTORY:
+            return action.payload;
+
+        default:
+            return state
+    }
+}
+
+
 //Transaction History Reducer
 function transactionHistory(state, action) {
     switch (action.type) {
@@ -189,6 +215,7 @@ function extraInfos(state = "", action) {
 //Returning the reducers
 const transactionDisputeReducer = combineReducers({
     transactionLists,
+    notificationLists,
     transactionHistories,
     transactionDisputes,
     transactionDisputeReasonQuestions,

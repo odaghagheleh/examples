@@ -290,6 +290,9 @@ ol.ProgressBar > li{
   top: 2px;
   width: 216px;
 }
+.HelloBar__position{
+  display: inline-flex;
+}
 
 .DisputeConfirmation__box {
   border: 1px solid #c1c1c1;
@@ -367,4 +370,55 @@ margin-bottom: 5em;
 
 .DecisionQuestionApp__row {
 margin-top: 37px;
+}
+
+.NotificationBarTest_notify {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 48px 0 -12px;
+  display: inline;
+
+}
+
+.NotificationBarTest__date {
+      font-family: Open Sans;
+      font-size: 1em;
+      font-weight: 300;
+      margin: 0px;
+}
+
+.NotificationBarTest__type {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  margin: 3px 0 0 0;
+  /* margin-top: 3px; */
+  font-weight: 500;
+}
+
+.NotificationBarTest__status {
+  font-family: Open Sans;
+    font-size: 1.2em;
+    margin: 2px 0 0 0;
+    font-weight: 300;
+}
+
+.NotificationBarTest__wrapper {
+  background: #f9f9f9;
+  padding: 6px;
+  border-top: 1px solid #e7eaec;
+  margin: 0px 0 0px 0;
+}
+
+.NotificationBarTest__position {
+  margin: 15px 0 0 0;
+}
+
+#notify .fa-ellipsis-v:before {
+    content: "\f0a2";
+    font-size: 22px;
+}
+
+.HelloBar__access{
+    margin: 17px 0 0 103px;
 }

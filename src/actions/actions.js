@@ -8,6 +8,197 @@ export const ADD_CREDIT_CARD_QUESTION_ANSWER = 'ADD_CREDIT_CARD_QUESTION_ANSWER 
 export const GET_ADDITIONAL_QUESTIONS = 'GET_ADDITIONAL_QUESTIONS ';
 export const SET_ADDITIONAL_QUESTIONS_ANSWER = 'SET_ADDITIONAL_QUESTIONS_ANSWER';
 export const SET_EXTRA_INFO = 'SET_EXTRA_INFO';
+export const GET_NOTIFICATION_HISTORY = 'GET_NOTIFICATION_HISTORY';
+
+export function getNotificationList() {
+    return {
+        type: GET_NOTIFICATION_HISTORY,
+        payload: [
+            {
+           "case-id": "FR-0000000052",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 2,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 232
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525611129169,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000049",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 432
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525316833590,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000048",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 123
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525260638509,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000046",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 3,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 554
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525228816193,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000045",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 3245
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525214554305,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000044",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 2,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 2342
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525214507048,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000043",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 654
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525213972215,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       }
+        ]
+    };
+}
 
 export function getTransactionList() {
     return {
@@ -15,6 +206,7 @@ export function getTransactionList() {
         payload: ["Transaction1", "Transaction2", "Transaction3"]
     };
 }
+
 export function getTransactionHistory() {
     return {
         type: GET_TRANSACTION_HISTORY,
@@ -337,7 +529,7 @@ function responseFromRest() {
         });
     } else {
 
-        
+
 
     }
 }
