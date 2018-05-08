@@ -79,7 +79,7 @@ const AdditionalQuestions = props => {
                 </div>
             </div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-primary btn-sm pull-left stepZillLeftabt" onClick={() => goPrev()} >Prev</button>
+                <button name="prev" type="button" className="btn btn-sm pull-right stepZillLeftabt" onClick={() => goPrev()} ><i class="fa fa-chevron-left"></i></button>
                 <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
             </div>
 
@@ -140,7 +140,7 @@ class AdditionalQuestionnaire extends Component {
                 <div className="row">
                     <p className="DecisionQuestionApp__question">Let us ask a few questions</p>
                     <div className="col-lg-12">
-                        <label className="DecisionQuestionApp__step"> Additional Questions: </label>
+                        <label className="DecisionQuestionApp__step"><b> Additional Questions: </b></label>
                     </div>
                     <br />
                     <br />

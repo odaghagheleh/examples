@@ -21,10 +21,17 @@ html, body, #main-contents {
 
 }
 
+.stepZillLeftabt_onsubmit_bt {
+  position: absolute;
+  right: 97px;
+  bottom: 0px;
+  background-color: #eee;
+}
 .stepZillLeftabt {
   position: absolute;
-  left: 20px;
+  right: 80px;
   bottom: 0px;
+  background-color: #eee;
 }
 
 .stepZillRightabt {
@@ -286,8 +293,8 @@ ol.ProgressBar > li{
 
 .DecisionQuestionApp__hr {
   border-top: 1px solid #8c8b8b;
-  width: 37%;
-  margin: 10px 0 -23px -47px;
+  width: 100%;
+  margin: 10px 0 -23px -20px;
 }
 
 
@@ -295,5 +302,20 @@ ol.ProgressBar > li{
   border-top: 1px solid #8c8b8b;
   width: 111%;
   margin: 10px 0 -23px -47px;
+}
+.td-column-white{
+  background-color: #fff;
+}
+.td-column-grey{
+
+  background-color: #f9f9f9;
+}
+.tableheader th {
+  border-bottom: none !important;
+}
+.disabled-grey{
+  background-color: #dcdbdc !important;
+  border-color:  #dcdbdc !important;
+  color: #464545!important;
 }
 

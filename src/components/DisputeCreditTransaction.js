@@ -62,7 +62,7 @@ class DisputeCreditTransaction extends Component {
                     <br />
                     <div className="col-sm-12">
                         <p className="DecisionQuestionApp__question">Please confirm the following transactions in question</p>
-                        <label className="DecisionQuestionApp__step">Transaction selected:</label>
+                        <label className="DecisionQuestionApp__step"><b>Transaction selected:</b></label>
                         <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
                     </div>
                 </div>

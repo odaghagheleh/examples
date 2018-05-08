@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { addDispute, getTransactionList, getTransactionHistory } from './../actions/actions';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 
 import HelloBar from './HelloBar';
 import InformationTab from './InformationTab';
@@ -12,20 +12,7 @@ import MonthlyIncome from './MonthlyIncome';
 
 import currencyFormatter from 'currency-formatter';
 
-const SelectBar = props => {
 
-  const transactionList = props.transactionList;
-  const selectItem = transactionList.map((transactionItem) =>
-    <option key={transactionItem} value={transactionItem}>{transactionItem}</option>
-  )
-  return (
-
-    <select className="input-sm form-control input-s-sm inline">
-      {selectItem}
-    </select>
-
-  );
-}
 
 const ProductTable = props => {
 
@@ -48,6 +35,18 @@ const ProductTable = props => {
 
   const selected = props.transactionDisputes.map((item) => item.id);
 
+  const createDisputeButton = (onClick) => {
+    return (
+      <InsertButton
+        btnText='Dispute'
+        btnContextual={props.transactionDisputes.length > 0 ? 'btn btn-primary btn-md': 'btn btn-primary btn-md disabled disabled-grey'}
+        className='btn btn-primary btn-md'
+        btnGlyphicon=''
+        onClick={() => props.transactionDisputes.length > 0 ? props.handleDisputebr(): false} />
+    );
+  }
+
+
   const selectRowProp = {
     mode: 'checkbox',
     clickToSelect: true,
@@ -62,7 +61,8 @@ const ProductTable = props => {
     Transfer: 'Transfer'
   };
   const options = {
-    sizePerPage: 5
+    sizePerPage: 5,
+    insertBtn: createDisputeButton
   }
   const enumFormatter = (cell, row, enumObject) => {
     return enumObject[cell];
@@ -70,25 +70,31 @@ const ProductTable = props => {
   const priceFormatter = (cell, row) => {
     return <span>{currencyFormatter.format(cell, { code: 'USD' })}</span>;
   }
+  const rowClassNameFormat = (row, rowIdx) => {
+
+    return rowIdx % 2 === 0 ? 'td-column-grey' : 'td-column-white';
+  }
   return (
     <BootstrapTable data={props.data}
-  
+      insertRow
       options={options}
       bordered={false}
       search={true}
       selectRow={selectRowProp}
       expandableRow={(row) => { return 'true' }}
       expandComponent={(row) => { return (<BSTable data={row.extraDescriptions} />) }}
-      striped hover pagination>
+      trClassName={rowClassNameFormat}
+      tableHeaderClass='tableheader'
+      hover pagination>
       <TableHeaderColumn isKey dataField='id' dataSort={true} hidden>ID</TableHeaderColumn>
-      <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn> 
+      <TableHeaderColumn dataField='recentActivity' dataSort={true}>Recent Activity</TableHeaderColumn>
 
-      <TableHeaderColumn dataField='type' headerAlign='left'>
+      <TableHeaderColumn dataField='type' dataSort={true} headerAlign='left'>
         Type
         </TableHeaderColumn>
       <TableHeaderColumn dataField='Description' dataSort={true}>Description</TableHeaderColumn>
-      <TableHeaderColumn dataField='Amount' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
-      <TableHeaderColumn dataField='Balance' dataFormat={ priceFormatter } dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
+      <TableHeaderColumn dataField='Amount' dataFormat={priceFormatter} dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Amount</TableHeaderColumn>
+      <TableHeaderColumn dataField='Balance' dataFormat={priceFormatter} dataSort={true} tdStyle={(f) => f > 0 ? { color: '#00dd24' } : { color: 'red' }}>Balance</TableHeaderColumn>
     </BootstrapTable>
   );
 
@@ -118,6 +124,7 @@ class TransactionHistoryApp extends Component {
     super(props);
     this.handleCheckedTrans = this.handleCheckedTrans.bind(this);
     this.handleCheckedAll = this.handleCheckedAll.bind(this);
+    this.handleDisputebr = this.handleDisputebr.bind(this);
     this.state = {
       transactionSelectValue: {}
     };
@@ -151,8 +158,6 @@ class TransactionHistoryApp extends Component {
 
   handleCheckedTrans(rowValue, checked) {
     var selectedValueArray = this.state.transactionSelectValue;
-
-    console.log(rowValue);
     const value = JSON.parse(rowValue);
     var selectedListtoStore = []
 
@@ -171,13 +176,15 @@ class TransactionHistoryApp extends Component {
 
     this.props.addDispute(selectedListtoStore);
   }
-
+  handleDisputebr(){
+    this.props.history.push('/MainForm');
+  }
   //befor Deploy please comment "wrapper",'row border-bottom white-bg'and wrapper wrapper-content' div. everthing should be in container div 
 
   render() {
     return (
 
-      <div id="wrapper" class="gray-bg"> 
+      <div id="wrapper" class="gray-bg">
         <div class="row border-bottom white-bg">
         </div>
         <div class="wrapper wrapper-content">
@@ -204,10 +211,10 @@ class TransactionHistoryApp extends Component {
                   <div className="ibox-content" id="main-contents">
                     <div className="row">
                       <div className="col-md-12">
-                        {
+                        {/*
                           this.props.transactionDisputes.length > 0 ? <button type="button" className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-                            : <button type="button" disabled className="btn btn-default btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
-                        }
+                            : <button type="button" disabled className="btn btn-primary btn-md" onClick={() => this.props.history.push('/MainForm')} >Dispute</button>
+                          */}
                       </div>
                     </div>
                     <div className="row">
@@ -216,7 +223,8 @@ class TransactionHistoryApp extends Component {
                           data={this.props.transactionHistories}
                           handleCheckedTrans={this.handleCheckedTrans}
                           handleCheckedAll={this.handleCheckedAll}
-                          transactionDisputes={this.props.transactionDisputes} />
+                          transactionDisputes={this.props.transactionDisputes}
+                          handleDisputebr={this.handleDisputebr} />
                       </div>
                     </div>
                   </div>
