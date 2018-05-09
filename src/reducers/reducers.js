@@ -11,6 +11,7 @@ ADD_CREDIT_CARD_QUESTION_ANSWER,
 GET_ADDITIONAL_QUESTIONS,
 SET_ADDITIONAL_QUESTIONS_ANSWER,
 SET_EXTRA_INFO,
+SUBMIT_DISPUTE,
  } from '../actions/actions';
 
 
@@ -212,6 +213,26 @@ function extraInfos(state = "", action) {
     }
 }
 
+//Submit case reducer
+function submitDispute(state, action) {
+    switch (action.type) {
+        case SUBMIT_DISPUTE:
+            return action.payload;
+
+        default:
+            return state
+    }
+}
+
+function submitDisputes(state = "", action) {
+    switch (action.type) {
+        case SUBMIT_DISPUTE:
+            return submitDispute(undefined, action)
+        default:
+            return state
+    }
+}
+
 //Returning the reducers
 const transactionDisputeReducer = combineReducers({
     transactionLists,
@@ -225,6 +246,7 @@ const transactionDisputeReducer = combineReducers({
     additionalQuestionAnswers,
     extraInfos,
     stepper,
+    submitDisputes,
 });
 
 export default transactionDisputeReducer;

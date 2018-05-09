@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import currencyFormatter from 'currency-formatter';
 
 function TransactionList(props) {
 
     var rowSum = 0;
     const rowsData = props.data.map(function (dataItem) {
-        rowSum = rowSum + dataItem.Balance;
+        rowSum = rowSum + dataItem.Amount;
         return (<tr key={dataItem.id}>
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
-            <td>$ {dataItem.Amount}</td>
-            <td>$ {dataItem.Balance}</td>
+            <td>{currencyFormatter.format(dataItem.Amount, { code: 'USD' })}</td>
         </tr>);
     }
     );
@@ -24,11 +24,9 @@ function TransactionList(props) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td><hr className="DecisionQuestionApp__hr" /></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td className="DecisionQuestionApp__total">Total:</td>
@@ -64,7 +62,7 @@ class DisputeCreditTransaction extends Component {
                     <br />
                     <div className="col-sm-12">
                         <p className="DecisionQuestionApp__question">Please confirm the following transactions in question</p>
-                        <label className="DecisionQuestionApp__step">Transaction selected:</label>
+                        <label className="DecisionQuestionApp__step"><b>Transaction selected:</b></label>
                         <TransactionList data={this.props.transactionDisputes} handleConfirmbt={this.handleConfirmbt} />
                     </div>
                 </div>
