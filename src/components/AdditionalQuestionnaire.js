@@ -79,7 +79,7 @@ const AdditionalQuestions = props => {
                 </div>
             </div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} >&lt;</button>
+                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} ><i className="fa fa-chevron-left"></i></button>
                 <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
             </div>
 

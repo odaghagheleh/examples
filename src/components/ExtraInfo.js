@@ -8,7 +8,6 @@
         return (
             <div className="DecisionQuestionApp__spacer">
                 <textarea className="form-control" rows="3" name="usertext" placeholder="Type here..." onChange={props.handleAnswer} value={props.currentValue} ></textarea>
-                {console.log(props.currentValue)}
             </div>
         );
     }
@@ -19,7 +18,6 @@
             <div>
                 <br />
                 <div className="row">
-                    {/* <p className="DecisionQuestionApp__question">Let us ask a few questions</p> */}
                   <div className="col-lg-8">
                     <label className="DecisionQuestionApp__step">
                         <b>3. Is there anything else you&aposd like to tell us about this dispute?</b>

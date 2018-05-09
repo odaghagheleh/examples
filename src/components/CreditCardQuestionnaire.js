@@ -168,7 +168,7 @@ class CreditCardQuestionnaire extends Component {
                     <br />
                 </div>
                 <div className="row">
-                    <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >&lt;</button>
+                    <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} ><i className="fa fa-chevron-left"></i></button>
                     {
                         this.state.confirmed == true ?
                             <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(3)} >Next</button>
