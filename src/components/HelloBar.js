@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { getNotifcationHistory } from './../actions/actions';
-import   NotificationBarTest   from './../components/NotificationBarTest';
+import   NotificationPopUp   from './../components/NotificationPopUp';
 
 const HelloBar = (props) => {
 
@@ -13,7 +13,7 @@ const HelloBar = (props) => {
             <div className="ibox-title bluetop">
                 <div className='row'>
                     <div className='col-md-6'>
-                        <h2> Hi Kevin!<span className="HelloBar__position"><NotificationBarTest /></span></h2>
+                        <h2> Hi Kevin!<span className="HelloBar__position"><NotificationPopUp /></span></h2>
                     </div>
                     <div className='col-md-2'>
                     </div>

@@ -6,7 +6,7 @@ import { getNotificationList } from './../actions/actions';
 import {  DropdownKebab, MenuItem } from 'patternfly-react';
 
 
-class NotificationBarTest extends Component {
+class NotificationPopUp extends Component {
   componentWillMount() {
     this.props.onWillMount();
     this.props.getNotificationList();
@@ -16,7 +16,6 @@ class NotificationBarTest extends Component {
     return this.props.notificationLists.map((notificationList) => {
       const date = new Date(parseInt(notificationList['case-started-at']));
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      console.log('test', notificationList['case-status']);
 
      let status;
         if (notificationList['case-status'] === 1 ) {
@@ -31,7 +30,7 @@ class NotificationBarTest extends Component {
         <div className="NotificationBarTest__wrapper" key={notificationList['case-id']}>
         <div className="row">
         <div className="col-lg-2">
-         <i class="fa fa-2x fa-credit-card-alt NotificationBarTest__position" aria-hidden="true"></i>
+         <i className="fa fa-2x fa-credit-card-alt NotificationBarTest__position" aria-hidden="true"></i>
          </div>
          <div className="col-lg-10">
           <p className="NotificationBarTest__date">{date.toLocaleDateString('en-US', options)}</p>
@@ -48,10 +47,10 @@ class NotificationBarTest extends Component {
 
   render() {
     return (
-      <div className="NotificationBarTest">
+      <div className="NotificationPopUp">
         <DropdownKebab id="notify">
           <MenuItem> <p className="NotificationBarTest_notify"> Customer notifications</p>
-          <i class="fa fa-times" aria-hidden="true"></i>
+          <i className="fa fa-times" aria-hidden="true"></i>
           </MenuItem>
           {this.renderNotifications()}
         </DropdownKebab>
@@ -60,7 +59,7 @@ class NotificationBarTest extends Component {
   }
 }
 
-// NotificationBarTest CONTAINER -- shouldn't be here
+// NotificationPopUp CONTAINER -- shouldn't be here
 const mapStateToProps = state => ({
   notificationLists: state.notificationLists,
 });
@@ -70,16 +69,16 @@ const mapDispatchToProps = dispatch => ({
     dispatch(getNotificationList());
   },
 });
-// NotificationBarTest CONTAINER -- shouldn't be here
+// NotificationPopUp CONTAINER -- shouldn't be here
 
-NotificationBarTest.propTypes = {
+NotificationPopUp.propTypes = {
   onWillMount: PropTypes.func,
   notificationLists: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-NotificationBarTest.defaultProps = {
+NotificationPopUp.defaultProps = {
   onWillMount: () => {},
   notificationLists: [],
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotificationBarTest);
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationPopUp);

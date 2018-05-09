@@ -322,7 +322,7 @@ ol.ProgressBar > li{
 }
 
 .DecisionQuestionApp__table {
-  margin: 0 0 0 37px;
+  margin: 0 0 0 10px;
 }
 
 .DecisionQuestionApp__quest-p {
@@ -462,4 +462,3 @@ ol.ProgressBar > li{
   border-color:  #dcdbdc !important;
   color: #464545!important;
 }
-

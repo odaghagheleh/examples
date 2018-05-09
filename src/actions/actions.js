@@ -302,7 +302,7 @@ const POST_DYNAMIC_QUESTION_PAYLOAD = {
     }]
 };
 const START_CASE_PAYLOAD={
-    "case-data" : { 
+    "case-data" : {
       "totalFraudAmount" : 5,
         "customerStatus" : "GOLD",
         "customerAge" : 25,
@@ -337,7 +337,7 @@ export function getTransactionHistory() {
                 "Balance": 193.20,
                 "extraDescriptions": [{
                     id: '1',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '6012ABC',
                     where_you_Paid: 'In-person transaction, Tampa, FL',
                     description: 'Hardware and household goods',
@@ -354,11 +354,11 @@ export function getTransactionHistory() {
                 "Balance": 64.20,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: 'A012PMT',
                     where_you_Paid: 'Payment - Online',
-                    description: '',
-                    balance: '64.20'
+                    description: 'Online Transaction',
+                    balance: '$64.20'
                 }]
             },
             {
@@ -371,7 +371,7 @@ export function getTransactionHistory() {
                 "Balance": 89.20,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '52362TRE',
                     where_you_Paid: 'Online transaction',
                     description: 'General retail',
@@ -388,7 +388,7 @@ export function getTransactionHistory() {
                 "Balance": 78.70,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '1054TPX',
                     where_you_Paid: 'In-person transaction, Oakland, CA',
                     description: 'General retail',
@@ -405,10 +405,10 @@ export function getTransactionHistory() {
                 "Balance": 33.70,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0019DFT',
                     where_you_Paid: 'Online payment',
-                    description: '',
+                    description: 'Online Transaction',
                     balance: '$33.70'
                 }]
             },
@@ -422,7 +422,7 @@ export function getTransactionHistory() {
                 "Balance": 83.70,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0019XCD',
                     where_you_Paid: 'Online transaction',
                     description: 'Online retail',
@@ -439,7 +439,7 @@ export function getTransactionHistory() {
                 "Balance": 58.70,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0013FDE',
                     where_you_Paid: 'In-person transaction, San Jose, CA',
                     description: 'Food and Beverage',
@@ -456,7 +456,7 @@ export function getTransactionHistory() {
                 "Balance": 50.00,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0012ABC',
                     where_you_Paid: 'In-person transaction, Mountain View, CA',
                     description: 'Food and Beverage',
@@ -473,7 +473,7 @@ export function getTransactionHistory() {
                 "Balance": 500.00,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0012ABC',
                     where_you_Paid: 'In-person transaction, Mountain View, CA',
                     description: 'Food and Beverage',
@@ -564,7 +564,7 @@ export function getAdditionalQuestions() {
                 tmp.body = res.body;
                 //    console.log(tmp.body);
                 payloadArray = processJson(tmp.body);
-                //console.log(payloadArray);                    
+                //console.log(payloadArray);
                 return dispatch({type: GET_ADDITIONAL_QUESTIONS, payload:payloadArray});
 
 
@@ -613,7 +613,7 @@ export function submitDispute() {
                 tmp.body = res.body;
                 //    console.log(tmp.body);
                 payloadArray = tmp.body;
-                //console.log(payloadArray);                    
+                //console.log(payloadArray);
                 return dispatch({type: SUBMIT_DISPUTE, payload:payloadArray.caseId});
 
 
@@ -717,7 +717,7 @@ function responseFromRest() {
         });
     } else {
 
-        
+
 
     }
 }

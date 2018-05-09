@@ -96,8 +96,8 @@ const DisputeConfirmation = props => {
             </div>
             <div className="col-lg-12"></div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-sm pull-right stepZillLeftabt_onsubmit_bt" onClick={() => props.jumpToStep(4)} ><i class="fa fa-chevron-left"></i></button>
-                <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => handdleSubmitt()} >Submit</button>
+            <button name="next" type="button" className="btn btn-primary btn-sm pull-right stepZillRightabt" onClick={() => handdleSubmitt()} >Submit</button>
+                <button name="prev" type="button" className="btn btn-sm pull-right stepZillLeftabt2 stepZillLeftabt_onsubmit_bt" onClick={() => props.jumpToStep(4)} ><i className="fa fa-chevron-left"></i></button>
             </div>
         </div>
     );

@@ -48,8 +48,8 @@ const AdditionalQuestions = props => {
                     </div>
                     <div className="col-lg-4">
                         {/* <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} /> */}
-                        <label class="radio-inline"><input type="radio" name="optradio" />Yes</label>
-                        <label class="radio-inline"><input type="radio" name="optradio" />No</label>
+                        <label className="radio-inline"><input type="radio" name="optradio" />Yes</label>
+                        <label className="radio-inline"><input type="radio" name="optradio" />No</label>
                     </div>
                 </div>
                 <br />
