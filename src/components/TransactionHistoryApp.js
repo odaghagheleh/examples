@@ -193,10 +193,10 @@ class TransactionHistoryApp extends Component {
   //befor Deploy please comment "wrapper",'row border-bottom white-bg'and wrapper wrapper-content' div. everthing should be in container div
   render() {
     return (
-      <div id="wrapper" className="gray-bg">
-        <div className="row border-bottom white-bg">
-        </div>
-        <div className="wrapper wrapper-content">
+      //<div id="wrapper" className="gray-bg">
+      //  <div className="row border-bottom white-bg">
+      //  </div>
+      //  <div className="wrapper wrapper-content">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
@@ -233,8 +233,8 @@ class TransactionHistoryApp extends Component {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      //  </div>
+      //</div>
     );
   }
 }

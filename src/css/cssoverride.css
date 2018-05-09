@@ -304,16 +304,15 @@ ol.ProgressBar > li{
 
 .DecisionQuestionApp__hr {
   border-top: 1px solid #8c8b8b;
-  width: 53%;
+  width: 37%;
   margin: 10px 0 -23px -47px;
-  width: 100%;
-  margin: 10px 0 -23px -20px;
 }
+
 
 .DecisionQuestionApp__hr2 {
   border-top: 1px solid #8c8b8b;
-  width: 177%;
-  margin: 10px 0 -9px -33px;
+  width: 111%;
+  margin: 10px 0 -23px -47px;
 }
 
 .DecisionQuestionApp__total {
