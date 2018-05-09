@@ -1815,3 +1815,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 #toast-container > div {
     opacity: 1 !important;
 }
+
+.navbar-default {
+    background-color: #002235 !important;
+    border-color: #002235 !important;
+    background-image: none !important;
+    min-height: 90px !important;
+}
