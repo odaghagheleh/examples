@@ -22,29 +22,29 @@ table.borderless td {
 
 .stepZillLeftabt {
   position: absolute;
-      right: 95px;
-      bottom: 0px;
-      color: #000 !important;
-      padding: 10px 8px 10px 8px !important;
-      background: #D8D8D8 !important;
-      border: 1px solid #D8D8D8 !important;
+  right: 95px;
+  bottom: 0px;
+  color: #000 !important;
+  padding: 10px 8px 10px 8px !important;
+  background: #D8D8D8 !important;
+  border: 1px solid #D8D8D8 !important;
 }
 
 .stepZillRightabt {
   position: absolute;
-      right: 20px;
-      bottom: 0px;
-      padding: 10px 15px 10px 15px !important;
+  right: 20px;
+  bottom: 0px;
+  padding: 10px 15px 10px 15px !important;
 }
 
 .stepZillLeftabt2 {
-    position: absolute;
-    right: 106px;
-    bottom: 0px;
-    color: #000 !important;
-    padding: 10px 8px 10px 8px !important;
-    background: #D8D8D8 !important;
-    border: 1px solid #D8D8D8 !important;
+  position: absolute;
+  right: 106px;
+  bottom: 0px;
+  color: #000 !important;
+  padding: 10px 8px 10px 8px !important;
+  background: #D8D8D8 !important;
+  border: 1px solid #D8D8D8 !important;
 }
 
 .neibourbt {
@@ -181,19 +181,19 @@ ol.order-list > li{
 
 ol.order-list > li:before {
   position: absolute;
-      top: 0;
-      left: -1em;
-      width: 2em;
-      height: 2em;
-      font-size: 2em;
-      line-height: 1;
-      font-weight: bold;
-      color: #fff;
-      background: #00659C;
-      content: counter(li-counter);
-      counter-increment: li-counter;
-      padding: 14px;
-      text-align: center;
+  top: 0;
+  left: -1em;
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  background: #00659C;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  padding: 14px;
+  text-align: center;
 }
 
 .DisputeConfirmation__list{
@@ -290,13 +290,16 @@ ol.ProgressBar > li{
   top: 2px;
   width: 216px;
 }
+.HelloBar__position{
+  display: inline-flex;
+}
 
 .DisputeConfirmation__box {
   border: 1px solid #c1c1c1;
   border-radius: 2px;
   padding: 15px 6px 0px 6px;
   margin-right: 3px;
-margin-bottom: 5em;
+  margin-bottom: 5em;
 }
 
 .DecisionQuestionApp__hr {
@@ -308,9 +311,9 @@ margin-bottom: 5em;
 }
 
 .DecisionQuestionApp__hr2 {
-    border-top: 1px solid #8c8b8b;
-    width: 177%;
-    margin: 10px 0 -9px -33px;
+  border-top: 1px solid #8c8b8b;
+  width: 177%;
+  margin: 10px 0 -9px -33px;
 }
 
 .DecisionQuestionApp__total {
@@ -319,7 +322,7 @@ margin-bottom: 5em;
 }
 
 .DecisionQuestionApp__table {
-  margin: 0 0 0 37px;
+  margin: 0 0 0 10px;
 }
 
 .DecisionQuestionApp__quest-p {
@@ -362,13 +365,102 @@ margin-bottom: 5em;
   border-bottom: 1px solid #ffffff;
 }
 
-.react-datepicker__navigation--previous,
-.react-datepicker__navigation--next {
+.react-datepicker__navigation--previous{
   border-right-color: #18a689;
 }
 
+.react-datepicker__navigation--next {
+  border-left-color: #18a689;
+}
+
 .DecisionQuestionApp__row {
-margin-top: 37px;
+  margin-top: 37px;
+}
+
+.NotificationBarTest_notify {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 48px 0 -12px;
+  display: inline;
+}
+
+.NotificationBarTest_notify:hover {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 48px 0 -12px;
+  display: inline;
+}
+
+.NotificationBarTest__date {
+  font-family: Open Sans;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0px;
+}
+
+.NotificationBarTest__type {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  margin: 3px 0 0 0;
+  font-weight: 500;
+}
+
+.NotificationBarTest__status {
+  font-family: Open Sans;
+  font-size: 1.2em;
+  margin: 2px 0 0 0;
+  font-weight: 300;
+}
+
+.NotificationBarTest__wrapper {
+  background: #f9f9f9;
+  padding: 6px;
+  border-top: 1px solid #e7eaec;
+  margin: 0px 0 0px 0;
+}
+
+.NotificationBarTest__position {
+  margin: 15px 0 0 0;
+}
+
+#notify .fa-ellipsis-v:before {
+  content: "\f0a2";
+  font-size: 22px;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: #676a6c !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #fff !important;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background-image: -o-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)) !important;;
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff', GradientType=0) !important;
+  background-repeat: repeat-x;
+}
+
+.HelloBar__access{
+  margin: 17px 0 0 92px;
+}
+.td-column-white{
+  background-color: #fff;
+}
+.td-column-grey{
+
+  background-color: #f9f9f9;
+}
+.tableheader th {
+  border-bottom: none !important;
+}
+.disabled-grey{
+  background-color: #dcdbdc !important;
+  border-color:  #dcdbdc !important;
+  color: #464545!important;
 }
 .td-column-white{
   background-color: #fff;

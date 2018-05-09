@@ -9,7 +9,197 @@ export const GET_ADDITIONAL_QUESTIONS = 'GET_ADDITIONAL_QUESTIONS ';
 export const SET_ADDITIONAL_QUESTIONS_ANSWER = 'SET_ADDITIONAL_QUESTIONS_ANSWER';
 export const SET_EXTRA_INFO = 'SET_EXTRA_INFO';
 export const SUBMIT_DISPUTE = 'SUBMIT_DISPUTE';
+export const GET_NOTIFICATION_HISTORY = 'GET_NOTIFICATION_HISTORY';
 
+export function getNotificationList() {
+    return {
+        type: GET_NOTIFICATION_HISTORY,
+        payload: [
+            {
+           "case-id": "FR-0000000052",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 2,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 232
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525611129169,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000049",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 432
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525316833590,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000048",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 123
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525260638509,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000046",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 3,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 554
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525228816193,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000045",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 3245
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525214554305,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000044",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 2,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 2342
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525214507048,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       },
+       {
+           "case-id": "FR-0000000043",
+           "case-description": "FraudDispute",
+           "case-owner": "krisv",
+           "case-status": 1,
+           "case-details": {
+               "customerStatus": "STANDARD",
+               "customerAge": 19,
+               "automated": false,
+               "incidentCount": 5,
+               "cardholderRiskRating": 5,
+               "disputeRiskRating": 5,
+               "totalFraudAmount": 654
+           },
+           "case-definition-id": "CreditCardDisputeCase.FraudDispute",
+           "container-id": "credit-dispute-case_1.0-SNAPSHOT",
+           "case-started-at": 1525213972215,
+           "case-completed-at": null,
+           "case-completion-msg": "",
+           "case-sla-compliance": 0,
+           "case-sla-due-date": null,
+           "case-file": null,
+           "case-milestones": null,
+           "case-stages": null,
+           "case-roles": null
+       }
+        ]
+    };
+}
 
 //Comment before deploying on the server
 // const GET_DYNAMIC_QUESTIONS_TARGET_URL = 'http://'+window.location.host+'/fsi-credit-card-dispute-customer/api/kiebpm/runAdditionalInfoRules/credit-dispute-decisions_1.0-SNAPSHOT';
@@ -112,7 +302,7 @@ const POST_DYNAMIC_QUESTION_PAYLOAD = {
     }]
 };
 const START_CASE_PAYLOAD={
-    "case-data" : { 
+    "case-data" : {
       "totalFraudAmount" : 5,
         "customerStatus" : "GOLD",
         "customerAge" : 25,
@@ -147,7 +337,7 @@ export function getTransactionHistory() {
                 "Balance": 193.20,
                 "extraDescriptions": [{
                     id: '1',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '6012ABC',
                     where_you_Paid: 'In-person transaction, Tampa, FL',
                     description: 'Hardware and household goods',
@@ -164,11 +354,11 @@ export function getTransactionHistory() {
                 "Balance": 64.20,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: 'A012PMT',
                     where_you_Paid: 'Payment - Online',
-                    description: '',
-                    balance: '64.20'
+                    description: 'Online Transaction',
+                    balance: '$64.20'
                 }]
             },
             {
@@ -181,7 +371,7 @@ export function getTransactionHistory() {
                 "Balance": 89.20,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '52362TRE',
                     where_you_Paid: 'Online transaction',
                     description: 'General retail',
@@ -198,7 +388,7 @@ export function getTransactionHistory() {
                 "Balance": 78.70,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '1054TPX',
                     where_you_Paid: 'In-person transaction, Oakland, CA',
                     description: 'General retail',
@@ -215,10 +405,10 @@ export function getTransactionHistory() {
                 "Balance": 33.70,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0019DFT',
                     where_you_Paid: 'Online payment',
-                    description: '',
+                    description: 'Online Transaction',
                     balance: '$33.70'
                 }]
             },
@@ -232,7 +422,7 @@ export function getTransactionHistory() {
                 "Balance": 83.70,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0019XCD',
                     where_you_Paid: 'Online transaction',
                     description: 'Online retail',
@@ -249,7 +439,7 @@ export function getTransactionHistory() {
                 "Balance": 58.70,
                 "extraDescriptions": [{
                     id: '3',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0013FDE',
                     where_you_Paid: 'In-person transaction, San Jose, CA',
                     description: 'Food and Beverage',
@@ -266,7 +456,7 @@ export function getTransactionHistory() {
                 "Balance": 50.00,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0012ABC',
                     where_you_Paid: 'In-person transaction, Mountain View, CA',
                     description: 'Food and Beverage',
@@ -283,7 +473,7 @@ export function getTransactionHistory() {
                 "Balance": 500.00,
                 "extraDescriptions": [{
                     id: '2',
-                    Transaction_Details: 'Transaction Code',
+                    Transaction_Details: 'Some details',
                     code: '0012ABC',
                     where_you_Paid: 'In-person transaction, Mountain View, CA',
                     description: 'Food and Beverage',
@@ -374,7 +564,7 @@ export function getAdditionalQuestions() {
                 tmp.body = res.body;
                 //    console.log(tmp.body);
                 payloadArray = processJson(tmp.body);
-                //console.log(payloadArray);                    
+                //console.log(payloadArray);
                 return dispatch({type: GET_ADDITIONAL_QUESTIONS, payload:payloadArray});
 
 
@@ -423,7 +613,7 @@ export function submitDispute() {
                 tmp.body = res.body;
                 //    console.log(tmp.body);
                 payloadArray = tmp.body;
-                //console.log(payloadArray);                    
+                //console.log(payloadArray);
                 return dispatch({type: SUBMIT_DISPUTE, payload:payloadArray.caseId});
 
 
@@ -469,7 +659,65 @@ function processJson(response) {
         console.log("No")
         return response;
     }
+
+    return finalResult;
 }
 
+function responseFromRest() {
+    var mockOrNot = true;
+
+    if (mockOrNot == true) {
+        return ({
+            "type": "SUCCESS",
+            "msg": "Container credit-dispute-decisions_1.0-SNAPSHOT successfully called.",
+            "result": {
+                "execution-results": {
+                    "results": [{
+                        "value": 3,
+                        "key": "additional-info-fired"
+                    }, {
+                        "value": [{
+                            "com.fsi.creditcarddisputecase.Cardholder": {
+                                "stateCode": "VA",
+                                "age": 35,
+                                "status": "GOLD",
+                                "incidentCount": 2,
+                                "balanceRatio": 0.2
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 1,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any charges related to online purchases?"
+                            }
+                        }, {
+                            "com.fsi.creditcarddisputecase.AdditionalInformation": {
+                                "questionId": 26,
+                                "answerValue": null,
+                                "questionType": "boolean",
+                                "questionPrompt": "Were any of these charges related to tobacco sales?"
+                            }
+                        }],
+                        "key": "questions"
+                    }, {
+                        "value": 3,
+                        "key": "cleanup-fired"
+                    }],
+                    "facts": [{
+                        "value": {
+                            "org.drools.core.common.DefaultFactHandle": {
+                                "external-form": "0:1:2037660233:2037660233:1:DEFAULT:NON_TRAIT:com.fsi.creditcarddisputecase.Cardholder"
+                            }
+                        },
+                        "key": "cardholder"
+                    }]
+                }
+            }
+        });
+    } else {
 
 
+
+    }
+}

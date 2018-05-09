@@ -3356,24 +3356,100 @@ padding: 8px;
 vertical-align: top;
 }
 
-.table > thead > tr > th:nth-child(4) {
-    width: 23% !important;
+.tableheader.table > thead > tr > th:nth-child(3) {
+  width: 17% !important;
 }
-.table > tbody > tr > td:nth-child(3) {
-  width: 24% !important;
+
+.tableheader.table > thead > tr > th:nth-child(4) {
+  width: 16% !important;
 }
-.table > tbody > tr > td:nth-child(4) {
-  width: 23% !important;
+
+.tableheader.table > thead > tr > th:nth-child(5) {
+  width: 25% !important;
 }
-.table > tbody > tr > td:nth-child(5) {
-  width: 19% !important;
+
+.tableheader.table > thead > tr > th:nth-child(6) {
+  width: 21% !important;
+}
+
+.td-column-white > td:nth-child(3) {
+  width: 17% !important;
+}
+
+.td-column-white > td:nth-child(4) {
+  width: 16% !important;
+}
+
+.td-column-white > td:nth-child(5) {
+  width: 25% !important;
+}
+
+.td-column-white > td:nth-child(6) {
+  width: 21% !important;
+}
+
+/* HEAD  */
+.extend-row-white-bg.table > thead > tr > th:nth-child(2) {
+  width: 21% !important;
+}
+
+.extend-row-white-bg.table > thead > tr > th:nth-child(3) {
+  width: 13% !important;
+}
+
+.extend-row-white-bg.table > thead > tr > th:nth-child(4) {
+  width: 29% !important;
+}
+
+.extend-row-white-bg.table > thead > tr > th:nth-child(5) {
+  width: 25% !important;
+}
+
+.extend-row-white-bg.table > thead > tr > th:nth-child(6) {
+  width: 21% !important;
+}
+
+/* BODY  */
+.extend-row-white-bg.table>tbody>tr>td:nth-child(2) {
+  width: 21% !important;
+}
+
+.extend-row-white-bg.table>tbody>tr>td:nth-child(3) {
+  width: 13% !important;
+}
+
+.extend-row-white-bg.table>tbody>tr>td:nth-child(4) {
+  width: 29% !important;
+}
+.extend-row-white-bg.table>tbody>tr>td:nth-child(5) {
+  width: 25% !important;
+}
+
+.extend-row-white-bg.table>tbody>tr>td:nth-child(6) {
+  width: 21% !important;
 }
 
 .DecisionQuestionApp__table > tbody > tr > td:nth-child(4) {
   width: 9% !important;
 }
 
+.DisputeConfirmation__box .table > tbody > tr > td:nth-child(4) {
+  width: 15% !important;
+}
 
+.DecisionQuestionApp__table.table > tbody > tr > td {
+  width: 15% !important;
+}
+
+.DecisionQuestionApp__table.table > tbody > tr > td:nth-child(4) {
+  width: 8% !important;
+}
+
+.extend-row-white-bg.table>thead>tr>th {
+ background: #1a7bb9;
+ color: #fff;
+ font-weight: bold;
+}
 
 .select-filter {
 width: 16% !important;

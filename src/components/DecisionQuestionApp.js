@@ -107,7 +107,7 @@
                         }
                     </div>
                     <div className="row">
-                        <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} >&lt;</button>
+                        <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(0)} ><i className="fa fa-chevron-left"></i></button>
                         {this.buttonActive(this.state.confirmCheck, this.props.transactionDisputeReasonAnswers)}
                     </div>
                 </div>

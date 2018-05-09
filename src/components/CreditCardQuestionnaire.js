@@ -25,13 +25,13 @@ class CreditCardQuestions extends Component  {
         };
         this.props.handleUserAnswer(e);
       }
-    
+
 
     render() {
         const { currentValues } = this.props;
         const yesBt = currentValues.creditCardwithCustomer === "Yes" ?
-            <input name="yes" type="button" className="btn btn-sm  btn-primary neibourb active" onClick={this.props.handleUserAnswer} value="Yes" /> :
-            <input name="yes" type="button" className="btn btn-sm btn-default neibourb" onClick={this.props.handleUserAnswer} value="Yes" />;
+            <input name="yes" type="button" className="btn btn-sm  btn-primary DecisionQuestionApp__custom-buttons neibourb active" onClick={this.props.handleUserAnswer} value="Yes" /> :
+            <input name="yes" type="button" className="btn btn-sm btn-default DecisionQuestionApp__custom-buttons neibourb" onClick={this.props.handleUserAnswer} value="Yes" />;
 
         const noBt = currentValues.creditCardwithCustomer === "No" ?
             <input name="no" type="button" className="btn btn-primary DecisionQuestionApp__custom-buttons btn-sm neibourbt active" onClick={this.props.handleUserAnswer} value="No" /> :
@@ -50,11 +50,10 @@ class CreditCardQuestions extends Component  {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-4">
+                        <div className="col-lg-5">
                             <p className="DecisionQuestionApp__spacer DecisionQuestionApp__quest-p">What date did you realize the card(s) were missing?</p>
                         </div>
-                        <div className="col-lg-4">
-                            {/* <i class="fa fa-calendar"></i> */}
+                        <div className="col-lg-5">
                             <DatePicker
                                 name="missingDate"
                                 selected={this.state.missingDate}
@@ -66,18 +65,16 @@ class CreditCardQuestions extends Component  {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-4">
+                        <div className="col-lg-5">
                             <p className="DecisionQuestionApp__spacer DecisionQuestionApp__quest-p">What date did you last use the card?</p>
                         </div>
-                        <div className="col-lg-4">
-                            {/* <i class="fa fa-calendar"></i> */}
+                        <div className="col-lg-5">
                             <DatePicker
                                 name="lastUsedDate"
                                 selected={this.state.lastUsedDate}
                                 onChange={(date) => this.handleChange('lastUsedDate', date)}
                                 disabledKeyboardNavigation
                                 placeholderText="Click to select a date"
-
                             />
                         </div>
                     </div>
@@ -171,7 +168,7 @@ class CreditCardQuestionnaire extends Component {
                     <br />
                 </div>
                 <div className="row">
-                    <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} >&lt;</button>
+                    <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => this.props.jumpToStep(1)} ><i className="fa fa-chevron-left"></i></button>
                     {
                         this.state.confirmed == true ?
                             <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => this.props.jumpToStep(3)} >Next</button>

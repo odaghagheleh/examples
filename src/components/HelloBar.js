@@ -1,24 +1,24 @@
-/* eslint no-unused-vars: 0, eqeqeq:0 */
 import React, { Component } from 'react';
 
-
-
+import { getNotifcationHistory } from './../actions/actions';
+import   NotificationPopUp   from './../components/NotificationPopUp';
 
 const HelloBar = (props) => {
 
-    // var today = new Date();
-    // today = JSON.stringify(today);
+    const date = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
     return (
         <div className="ibox float-e-margins">
             <div className="ibox-title bluetop">
                 <div className='row'>
                     <div className='col-md-6'>
-                        <h2> Hi Kevin!</h2>
+                        <h2> Hi Kevin!<span className="HelloBar__position"><NotificationPopUp /></span></h2>
                     </div>
                     <div className='col-md-2'>
                     </div>
                     <div className='col-md-4'>
-                        <p>Your last access, Friday 20 October 2017 at 5:00pm</p>
+                        <p className="HelloBar__access">Your last access <strong>{date.toLocaleDateString('en-US', options)}</strong></p>
                     </div>
                 </div>
             </div>

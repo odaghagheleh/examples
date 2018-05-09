@@ -48,8 +48,8 @@ const AdditionalQuestions = props => {
                     </div>
                     <div className="col-lg-4">
                         {/* <input type="text" name="answer" onChange={(e) => props.handleAnswer(myIDs[index], e)} value={currentValues[myIDs[index]]} /> */}
-                        <label class="radio-inline"><input type="radio" name="optradio" />Yes</label>
-                        <label class="radio-inline"><input type="radio" name="optradio" />No</label>
+                        <label className="radio-inline"><input type="radio" name="optradio" />Yes</label>
+                        <label className="radio-inline"><input type="radio" name="optradio" />No</label>
                     </div>
                 </div>
                 <br />
@@ -79,7 +79,7 @@ const AdditionalQuestions = props => {
                 </div>
             </div>
             <div className="row">
-                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} >&lt;</button>
+                <button name="prev" type="button" className="btn btn-primary  pull-left stepZillLeftabt" onClick={() => goPrev()} ><i className="fa fa-chevron-left"></i></button>
                 <button name="next" type="button" className="btn btn-primary  pull-right stepZillRightabt" onClick={() => goNext()} >Next</button>
             </div>
 

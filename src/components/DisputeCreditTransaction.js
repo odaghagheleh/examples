@@ -7,18 +7,26 @@ function TransactionList(props) {
     var rowSum = 0;
     const rowsData = props.data.map(function (dataItem) {
         rowSum = rowSum + dataItem.Amount;
-        return (<tr key={dataItem.id}>
+        return (
+          <tr key={dataItem.id}>
             <td>{dataItem.recentActivity}</td>
             <td>{dataItem.type}</td>
             <td>{dataItem.Description}</td>
             <td>{currencyFormatter.format(dataItem.Amount, { code: 'USD' })}</td>
-        </tr>);
+        </tr>
+      );
     }
     );
     return (
 
         <table className="table borderless DecisionQuestionApp__table" id="myTable" >
             <tbody>
+            <tr>
+                <td><strong>Date</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Amount</strong></td>
+            </tr>
                 {rowsData}
                 <tr>
                     <td></td>
@@ -29,8 +37,8 @@ function TransactionList(props) {
                 <tr>
                     <td></td>
                     <td></td>
-                    <td className="DecisionQuestionApp__total">Total:</td>
-                    <td className="DecisionQuestionApp__total">${rowSum}</td>
+                    <td></td>
+                    <td className="DecisionQuestionApp__total">Total:&nbsp;&nbsp;&nbsp;&nbsp;${rowSum}</td>
                 </tr>
             </tbody>
         </table>
