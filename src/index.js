@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import routes from './config/routes';
 
-import { createStore } from 'redux';
+import { createStore,compose, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk'
 import { Provider } from 'react-redux';
 import transactionDisputeReducer from './reducers/reducers';
 
@@ -24,7 +25,15 @@ import './css/yilicss.css'
 
 import App from './App';
 
-let store = createStore(transactionDisputeReducer);
+const composeParams = [applyMiddleware(thunkMiddleware)];
+if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+  composeParams.push(window.__REDUX_DEVTOOLS_EXTENSION__());
+}
+
+let store = createStore(
+  transactionDisputeReducer,
+   compose(...composeParams),
+  );
 
 ReactDOM.render(
     <Provider store={store} >
