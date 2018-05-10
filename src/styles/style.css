@@ -761,9 +761,16 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   box-shadow: none; }
 
 .btn-outline {
-  color: inherit;
-  background-color: transparent;
-  transition: all .5s; }
+      background-color: transparent;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      margin: 0 2px 0 2px;
+      width: 73px;
+      border-radius: 1px;
+      text-transform: uppercase;
+
+}
 
 .btn-rounded {
   border-radius: 50px; }

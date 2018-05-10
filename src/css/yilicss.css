@@ -69,7 +69,10 @@
 /* Create an active/current tablink class */
 
 .md_tabs button.active {
-    background-color: rgb(39, 166, 240);
+  background-color: rgb(39, 166, 240);
+      color: #fff;
+      font-weight: bold;
+
 }
 
 /* Style the tab content */
@@ -118,7 +121,7 @@ background: #F5A623;
     outline: none;
     padding: 10px 0px;
     font-size: 17px;
-    
+
 }
 
 .navigationBar {
@@ -199,20 +202,21 @@ background: #F5A623;
 /* Add some padding inside the card container */
 
 .ranking_container_first {
-    padding: 10px 16px;
-    border-spacing: 5px;
-    border-bottom: groove;
-    border-color: white;
-    background: #27AE60;
-    align-items: center;
-    color: white;
+  border-spacing: 5px;
+      /* border-bottom: groove; */
+      border-color: white;
+      background: #27AE60;
+      -ms-flex-align: center;
+      align-items: center;
+      color: white;
+      margin: 2px 0 2px 0;
 
 }
 
 .ranking_container_gray {
-    padding: 10px 16px;
+      margin: 0;
     border-spacing: 5px;
-    border-bottom: groove;
+  margin: 2px 0 2px 0;
     border-color: white;
     background: #BDBDBD;
     align-items: center;
@@ -221,15 +225,20 @@ background: #F5A623;
 }
 
 .ranking_container {
-     padding: 10px 16px;
+      margin: 0;
      border-spacing: 5px;
-     border-bottom: groove;
+    margin: 2px 0 2px 0;
      border-color: white;
      background: #6FCF97;
      align-items: center;
      color: white;
 
  }
+ .ranking_container_button {
+       margin: 0;
+
+
+  }
 
 .ranking_container h1,h2,h3 {
     display: inline;
@@ -245,7 +254,8 @@ background: #F5A623;
 }
 
 .chart-title {
-    text-align: center;
+  text-align: center;
+    margin: 41px 0 64px 0px;
 }
 
 .chart-legend {
