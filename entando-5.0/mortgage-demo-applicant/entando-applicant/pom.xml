@@ -12,13 +12,13 @@
     <repository>
       <id>entandorepo</id>
       <name>Entando Maven Mirror</name>
-      <url>http://repository.entando.org/repository/maven-public/</url>
+      <url>http://repository.entando.org/repository/maven-snapshots/</url>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
       <snapshots>
-        <enabled>false</enabled>
-        <updatePolicy>never</updatePolicy>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
       </snapshots>
     </repository>
   </repositories>
