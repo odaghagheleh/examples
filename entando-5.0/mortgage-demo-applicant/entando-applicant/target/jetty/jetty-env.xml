@@ -18,7 +18,7 @@
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>logFilePrefix</Arg>
-        <Arg type="java.lang.String">/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/target/log_entando-applicant</Arg>
+        <Arg type="java.lang.String">/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/target/log_entando-applicant</Arg>
         <Arg type="boolean">false</Arg>
     </New>
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
@@ -74,21 +74,21 @@
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>resourceDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/src/main/webapp/resources</Arg>
+        <Arg type="java.lang.String">/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/src/main/webapp/resources</Arg>
         <Arg type="boolean">false</Arg>
     </New>
 
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>protectedResourceDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/src/main/webapp/protected</Arg>
+        <Arg type="java.lang.String">/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/src/main/webapp/protected</Arg>
         <Arg type="boolean">false</Arg>
     </New>
 
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
         <Arg></Arg>
         <Arg>indexDiskRootFolder</Arg>
-        <Arg type="java.lang.String">/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/target/temp/indexdir</Arg>
+        <Arg type="java.lang.String">/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/target/temp/indexdir</Arg>
         <Arg type="boolean">false</Arg>
     </New>
     <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
@@ -102,7 +102,7 @@
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
                 <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
-                <Set name="url">jdbc:derby:/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/target/derby/production/entando-applicantPort;create=true</Set>
+                <Set name="url">jdbc:derby:/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/target/derby/production/entando-applicantPort;create=true</Set>
                 <Set name="username">agile</Set>
                 <Set name="password">agile</Set>
             </New>
@@ -114,7 +114,7 @@
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
                 <Set name="driverClassName">org.apache.derby.jdbc.EmbeddedDriver</Set>
-                <Set name="url">jdbc:derby:/projects/entando/examples/entando-4.3.2/mortgage-demo-applicant/entando-applicant/target/derby/production/entando-applicantServ;create=true</Set>
+                <Set name="url">jdbc:derby:/projects/entando/examples/entando-5.0/mortgage-demo-applicant/entando-applicant/target/derby/production/entando-applicantServ;create=true</Set>
                 <Set name="username">agile</Set>
                 <Set name="password">agile</Set>
             </New>

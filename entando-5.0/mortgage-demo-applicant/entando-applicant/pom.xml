@@ -8,6 +8,20 @@
     <version>1.0-SNAPSHOT</version>
     <name>entando-applicant</name>
     <url>http://maven.apache.org/</url>
+<repositories>
+    <repository>
+      <id>entandorepo</id>
+      <name>Entando Maven Mirror</name>
+      <url>http://repository.entando.org/repository/maven-public/</url>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
     <profiles>
         <profile>
             <id>production</id>
