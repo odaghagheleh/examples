@@ -206,3 +206,92 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="en">Search Form</property>
 <property key="it">Search Form</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-datatable-process-list','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Process list</property>
+<property key="it">PAM-Lista processi</property>
+</properties>','<config>
+	<parameter name="widgetInfoId">WidgetInfoID</parameter>
+	<action name="jpkiebpmBpmProcessDatatableWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-progress-status','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case progress status</property>
+<property key="it">PAM-Case stato del processo</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndMilestonesData">frontEndMilestonesData</parameter>
+	<action name="jpkiebpmBpmCaseProgressWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-instance-selector','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case instance selector</property>
+<property key="it">Selettore di istanza Case PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceSelectorWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-comments','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case comments</property>
+<property key="it">Commenti del caso PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceCommentsWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-details','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case details</property>
+<property key="it">Dettagli caso PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceDetailsWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-actions','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case actions</property>
+<property key="it">Azioni caso PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceActionsWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-roles','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case roles</property>
+<property key="it">Ruoli caso PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceRolesWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-chart','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case chart</property>
+<property key="it">PAM-Case chart</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceChartWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-process-diagram','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Process diagram</property>
+<property key="it">Diagramma di processo PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmProcessDiagramWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('bpm-case-file','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">PAM-Case file</property>
+<property key="it">File caso PAM</property>
+</properties>','<config>
+        <parameter name="channel">channel</parameter>
+	<parameter name="frontEndCaseData">frontEndCaseData</parameter>
+	<action name="jpkiebpmBpmCaseInstanceFileWidgetViewerConfig"/>
+</config>','jpkiebpm',NULL,NULL,1,NULL);
