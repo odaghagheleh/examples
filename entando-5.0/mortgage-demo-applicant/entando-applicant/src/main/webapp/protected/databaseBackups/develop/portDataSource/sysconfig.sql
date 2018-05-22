@@ -154,15 +154,24 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'imag
 ');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'index');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'jpkiebpm_config', 'KIE-BPM service configuration', '<?xml version="1.0" encoding="UTF-8"?>
-<kieBpmConfig>
-   <active>true</active>
-   <username>bpmsAdmin</username>
-   <password>bpmsuite1!</password>
-   <hostname>ansible.serv.run</hostname>
-   <schema>http</schema>
-   <port>8080</port>
-   <webapp>kie-server</webapp>
-</kieBpmConfig>
+<kiaBpmConfigFactory>
+   <kieBpmConfigeMap>
+      <entry>
+         <key>c2916181acd14071a9f2844a2dc0c5ff20180521T225803461</key>
+         <value>
+            <active>true</active>
+            <id>c2916181acd14071a9f2844a2dc0c5ff20180521T225803461</id>
+            <name>localBPM</name>
+            <username>bpmsAdmin</username>
+            <password>bpmsuite1!</password>
+            <hostname>ansible.serv.run</hostname>
+            <schema>http</schema>
+            <port>8080</port>
+            <webapp>kie-server</webapp>
+         </value>
+      </entry>
+   </kieBpmConfigeMap>
+</kiaBpmConfigFactory>
 ');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'entandoComponentsReport', 'The component installation report', '<?xml version="1.0" encoding="UTF-8"?>
 <reports status="INCOMPLETE">
