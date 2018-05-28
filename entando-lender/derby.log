@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+Wed Dec 06 13:43:35 UTC 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-0160-2c11-3ce4-0000147e0e90 
+on database directory /opt/entando/entando-lender/target/derby/production/entando-lenderPort  with class loader ClassRealm[plugin>org.mortbay.jetty:jetty-maven-plugin:7.6.16.v20140903, parent: sun.misc.Launcher$AppClassLoader@1b6d3586] 
+Loaded from file:/opt/entando/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_151-8u151-b12-1~deb9u1-b12
+user.dir=/opt/entando/entando-lender
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Dec 06 13:43:37 UTC 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance 40a68025-0160-2c11-3ce4-0000147e0e90 
+on database directory /opt/entando/entando-lender/target/derby/production/entando-lenderServ  with class loader ClassRealm[plugin>org.mortbay.jetty:jetty-maven-plugin:7.6.16.v20140903, parent: sun.misc.Launcher$AppClassLoader@1b6d3586] 
+Loaded from file:/opt/entando/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_151-8u151-b12-1~deb9u1-b12
+user.dir=/opt/entando/entando-lender
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
