@@ -1,0 +1,7 @@
+<project name="entando-lender" default="WAR-build" basedir=".">
+	<description>entando-lender - Build file</description>
+
+	<import file="buildProperties.xml"/>
+	<import file="buildTasks.xml"/>
+
+</project>
