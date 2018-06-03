@@ -1,4 +1,10 @@
-.DS_STORE
 *.iml
 .idea/
 **/overlays/*
+.classpath
+.settings
+.project
+.idea/
+*.iml
+derby.log
+.DS_STORE
