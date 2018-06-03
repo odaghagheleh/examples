@@ -1,7 +1,0 @@
-<project name="fsi-credit-card-dispute-customer" default="WAR-build" basedir=".">
-	<description>fsi-credit-card-dispute-customer - Build file</description>
-	
-	<import file="buildProperties.xml"/>
-	<import file="buildTasks.xml"/>
-	
-</project>
