@@ -1,0 +1,479 @@
+html, body, #main-contents {
+  min-height: 500px !important;
+}
+
+table.borderless td {
+  border: none !important;
+}
+
+.lazur-bg{
+  background-image: url("./patterns/6.png");
+}
+
+.progtrckr {
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.progtrckr li {
+  margin-bottom: 10px;
+}
+
+
+.stepZillLeftabt {
+  position: absolute;
+  right: 95px;
+  bottom: 0px;
+  color: #000 !important;
+  padding: 10px 8px 10px 8px !important;
+  background: #D8D8D8 !important;
+  border: 1px solid #D8D8D8 !important;
+}
+
+.stepZillRightabt {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  padding: 10px 15px 10px 15px !important;
+}
+
+.stepZillLeftabt2 {
+  position: absolute;
+  right: 106px;
+  bottom: 0px;
+  color: #000 !important;
+  padding: 10px 8px 10px 8px !important;
+  background: #D8D8D8 !important;
+  border: 1px solid #D8D8D8 !important;
+}
+
+.neibourbt {
+  margin-left: 5px;
+}
+
+.row-white-bg td {
+  background-color: #fff;
+}
+
+.row-hover :hover {
+  background-color: rgb(228, 228, 228);
+}
+
+.row-white-bg th {
+  background-color: #fff;
+  border: none !important;
+}
+
+.extend-row-white-bg td {
+  background-color: #fff;
+  border: none !important;
+}
+
+.extend-row-white-bg th {
+  background-color: #fff;
+  border: none !important;
+}
+
+.widget-monthly {
+  border-radius: 5px;
+  margin-top: 0px;
+  height: 271px;
+}
+
+.ibox .bluetop{
+  border-color: #1a7bb9;
+  border-width: 5px 0 0;
+}
+
+.monthyIncome{
+  background-image: url(./monthyIncomebg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.monthlyincomeinline{
+  margin-top: -5%;
+}
+
+/* decision app  */
+.DecisionQuestionApp__question {
+  font-family: Open Sans;
+  font-weight: 100;
+  font-size: 24px;
+  margin: 0px 0 25px 15px;
+}
+
+.DecisionQuestionApp__step {
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 15px 16px;
+}
+
+.DecisionQuestionApp__select {
+  margin: 0 0 15px 13px;
+}
+
+.DecisionQuestionApp__spacer {
+  margin: 0 0 15px 16px;
+}
+.DecisionQuestionApp__select--width {
+  width: 710px !important;
+}
+
+select option {
+  color: #676A6C;
+  font-size: 14px;
+  background: #fff;
+}
+
+select option:first-child{
+  color: #ded6d6;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+.DecisionQuestionApp__cancel-credit {
+  font-size:16px ;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 12px 0 28px 0;
+}
+
+.DecisionQuestionApp__select .form-control, .single-line {
+  border: 1px solid #e5e6e7 !important;
+}
+
+.btn {
+  font-family: Open Sans !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.btn-primary[disabled] {
+  background-color: #D8D8D8 !important;
+  border-color: #D8D8D8 !important;
+}
+
+.DecisionQuestionApp__custom-buttons {
+  padding: .5em 2em .5em 2em !important;
+  border-radius: 1px !important;
+  font-size: 16px !important;
+  margin-right: 12px !important;
+}
+
+ol.order-list {
+  list-style-type: none;
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+}
+
+ol.order-list > li{
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 2.5em;
+  min-height: 4em;
+}
+
+ol.order-list > li:before {
+  position: absolute;
+  top: 0;
+  left: -1em;
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+  background: #00659C;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  padding: 14px;
+  text-align: center;
+}
+
+.DisputeConfirmation__list{
+  font-size: 16px;
+  font-weight:600;
+}
+
+.DisputeConfirmation__list-small{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ProgressBar__name {
+  font-size: 14px;
+  fonr-weight: bold;
+}
+.ProgressBar {
+  text-align: center;
+  width:100%;
+}
+
+.ProgressBar  > div {
+  width: 242px;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  background: #00659C;
+  margin: 13px;
+  font-size: 37px;
+  height: 65px;
+  line-height: 65px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ProgressBar :after {
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+ol.ProgressBar {
+  padding: 0;
+  counter-reset: li-counter;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+ol.ProgressBar > li{
+  position: relative;
+  margin: 3px;
+  width: 280px;
+}
+
+.ProgressBar__list {
+  font-size: 16px;
+  font-weight: 500;
+  background: #00659c;
+  color: #fff;
+  height: 66px;
+  line-height: 66px;
+}
+.ProgressBar__list_green {
+  font-size: 16px;
+  font-weight: 500;
+  background: #6EC664;
+  color: #fff;
+  height: 66px;
+  line-height: 66px;
+}
+
+.ProgressBar__list_gray {
+  font-size: 16px;
+  font-weight: 500;
+  background: #D8D8D8;
+  color: #B6B8B9;
+  height: 66px;
+  line-height: 66px;
+}
+
+.big {
+  font-size: 37px;
+  position: absolute;
+  left: 18px;
+  font-weight: bold;
+}
+
+.smaller {
+  font-size: 14px !important;
+  font-weight: 600;
+  position: absolute;
+  top: 2px;
+  width: 216px;
+}
+.HelloBar__position{
+  display: inline-flex;
+}
+
+.DisputeConfirmation__box {
+  border: 1px solid #c1c1c1;
+  border-radius: 2px;
+  padding: 15px 6px 0px 6px;
+  margin-right: 3px;
+  margin-bottom: 5em;
+}
+
+.DecisionQuestionApp__hr {
+  border-top: 1px solid #8c8b8b;
+  width: 37%;
+  margin: 10px 0 -23px -47px;
+}
+
+
+.DecisionQuestionApp__hr2 {
+  border-top: 1px solid #8c8b8b;
+  width: 111%;
+  margin: 10px 0 -23px -47px;
+}
+
+.DecisionQuestionApp__total {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.DecisionQuestionApp__table {
+  margin: 0 0 0 10px;
+}
+
+.DecisionQuestionApp__quest-p {
+  font-size: 16px;
+  font-weight: 500;
+}
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 2.7rem;
+  line-height: 2.7rem;
+}
+.react-datepicker__day-name {
+  width: 2.7rem;
+  line-height: 2.7rem;
+  font-size: 15px;
+}
+
+.react-datepicker {
+  font-family: Open Sans;
+  font-size: 1rem;
+}
+
+.react-datepicker__day--keyboard-selected {
+  border-radius: 1px;
+  background-color: #18a689;
+  color: #fff;
+  font-weight: bold;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header {
+  margin-top: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.react-datepicker__header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.react-datepicker__navigation--previous{
+  border-right-color: #18a689;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: #18a689;
+}
+
+.DecisionQuestionApp__row {
+  margin-top: 37px;
+}
+
+.NotificationBarTest_notify {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 48px 0 -12px;
+  display: inline;
+}
+
+.NotificationBarTest_notify:hover {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 48px 0 -12px;
+  display: inline;
+}
+
+.NotificationBarTest__date {
+  font-family: Open Sans;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0px;
+}
+
+.NotificationBarTest__type {
+  font-family: Open Sans;
+  font-size: 1.3em;
+  margin: 3px 0 0 0;
+  font-weight: 500;
+}
+
+.NotificationBarTest__status {
+  font-family: Open Sans;
+  font-size: 1.2em;
+  margin: 2px 0 0 0;
+  font-weight: 300;
+}
+
+.NotificationBarTest__wrapper {
+  background: #f9f9f9;
+  padding: 6px;
+  border-top: 1px solid #e7eaec;
+  margin: 0px 0 0px 0;
+}
+
+.NotificationBarTest__position {
+  margin: 15px 0 0 0;
+}
+
+#notify .fa-ellipsis-v:before {
+  content: "\f0a2";
+  font-size: 22px;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: #676a6c !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #fff !important;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background-image: -o-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)) !important;;
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff', GradientType=0) !important;
+  background-repeat: repeat-x;
+}
+
+.HelloBar__access{
+  margin: 17px 0 0 92px;
+}
+.td-column-white{
+  background-color: #fff;
+}
+.td-column-grey{
+
+  background-color: #f9f9f9;
+}
+.tableheader th {
+  border-bottom: none !important;
+}
+.disabled-grey{
+  background-color: #dcdbdc !important;
+  border-color:  #dcdbdc !important;
+  color: #464545!important;
+}
+.td-column-white{
+  background-color: #fff;
+}
+.td-column-grey{
+
+  background-color: #f9f9f9;
+}
+.tableheader th {
+  border-bottom: none !important;
+}
+.disabled-grey{
+  background-color: #dcdbdc !important;
+  border-color:  #dcdbdc !important;
+  color: #464545!important;
+}
+
