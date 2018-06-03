@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+Mon May 07 15:20:57 AEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-0163-390b-b0f9-000041df32a0 
+on database directory /Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/derby/production/fsi-credit-card-dispute-backofficePort  with class loader ClassRealm[plugin>org.eclipse.jetty:jetty-maven-plugin:9.2.11.v20150529, parent: sun.misc.Launcher$AppClassLoader@55f96302] 
+Loaded from file:/Users/own_strong/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_141-b15
+user.dir=/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon May 07 15:20:59 AEST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance 2057c01b-0163-390b-b0f9-000041df32a0 
+on database directory /Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin/target/derby/production/fsi-credit-card-dispute-backofficeServ  with class loader ClassRealm[plugin>org.eclipse.jetty:jetty-maven-plugin:9.2.11.v20150529, parent: sun.misc.Launcher$AppClassLoader@55f96302] 
+Loaded from file:/Users/own_strong/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_141-b15
+user.dir=/Users/own_strong/Dev/Entando/FSIDemo/backend/fsi-credit-card-dispute-admin
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
