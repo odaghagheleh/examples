@@ -118,10 +118,10 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','jpkiebpm
 </kiaBpmConfigFactory>');
 INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoComponentsReport','The component installation report','<?xml version="1.0" encoding="UTF-8"?>
 <reports status="OK">
-	<creation>2018-04-25 12:39:17</creation>
-	<lastupdate>2018-04-27 15:46:52</lastupdate>
+	<creation>2018-06-04 14:08:14</creation>
+	<lastupdate>2018-06-04 14:08:16</lastupdate>
 	<components>
-		<component code="entandoCore" date="2018-04-25 12:39:17" status="OK">
+		<component code="entandoCore" date="2018-06-04 14:08:14" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="OK">
 					<table name="sysconfig" />
@@ -163,12 +163,12 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoC
 				</datasource>
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="OK" />
-				<datasource name="servDataSource" status="OK" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="jacms" date="2018-04-25 12:39:18" status="OK">
+		<component code="jacms" date="2018-06-04 14:08:15" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="OK">
 					<table name="contentmodels" />
@@ -185,23 +185,34 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoC
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="OK" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-less" date="2018-04-25 12:39:18" status="OK">
+		<component code="entando-misc-less" date="2018-06-04 14:08:15" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-admin-console" date="2018-04-25 12:39:18" status="OK">
+		<component code="jprestapi" date="2018-06-04 14:08:15" status="OK">
+			<schema status="OK">
+				<datasource name="portDataSource" status="NOT_AVAILABLE" />
+				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+			</schema>
+			<data status="OK">
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
+			</data>
+			<postProcess status="NOT_AVAILABLE" />
+		</component>
+		<component code="entando-admin-console" date="2018-06-04 14:08:15" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
 				<datasource name="servDataSource" status="OK">
@@ -209,45 +220,23 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoC
 				</datasource>
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="OK" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-portal-ui" date="2018-04-25 12:39:18" status="OK">
+		<component code="entando-portal-ui" date="2018-06-04 14:08:15" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="jpinfinispan" date="2018-04-25 12:39:18" status="OK">
-			<schema status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
-			</schema>
-			<data status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
-			</data>
-			<postProcess status="NOT_AVAILABLE" />
-		</component>
-		<component code="jprestapi" date="2018-04-27 15:46:52" status="OK">
-			<schema status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
-			</schema>
-			<data status="OK">
-				<datasource name="portDataSource" status="NOT_AVAILABLE" />
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
-			</data>
-			<postProcess status="NOT_AVAILABLE" />
-		</component>
-		<component code="jpkiebpm" date="2018-04-27 15:46:52" status="OK">
+		<component code="jpkiebpm" date="2018-06-04 14:08:15" status="OK">
 			<schema status="OK">
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
 				<datasource name="servDataSource" status="OK">
@@ -256,8 +245,30 @@ INSERT INTO sysconfig (version,item,descr,config) VALUES ('production','entandoC
 				</datasource>
 			</schema>
 			<data status="OK">
-				<datasource name="portDataSource" status="OK" />
-				<datasource name="servDataSource" status="OK" />
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
+			</data>
+			<postProcess status="NOT_AVAILABLE" />
+		</component>
+		<component code="entando-app-view-cms-default" date="2018-06-04 14:08:15" status="OK">
+			<schema status="OK">
+				<datasource name="portDataSource" status="NOT_AVAILABLE" />
+				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+			</schema>
+			<data status="OK">
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
+			</data>
+			<postProcess status="NOT_AVAILABLE" />
+		</component>
+		<component code="jpinfinispan" date="2018-06-04 14:08:15" status="OK">
+			<schema status="OK">
+				<datasource name="portDataSource" status="NOT_AVAILABLE" />
+				<datasource name="servDataSource" status="NOT_AVAILABLE" />
+			</schema>
+			<data status="OK">
+				<datasource name="portDataSource" status="RESTORE" />
+				<datasource name="servDataSource" status="RESTORE" />
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>

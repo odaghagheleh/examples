@@ -1816,3 +1816,44 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 #toast-container > div {
     opacity: 1 !important;
 }
+
+
+.rankingImage{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.rankingImage-martin{
+    background-image: url(./../img/martins.png);
+    height: 47px;
+    width: 47px;
+    margin-top: 15px;
+}
+
+.rankingImage-bob{
+    background-image: url(./../img/bobj.png);
+    height: 47px;
+    width: 47px;
+    margin-top: 15px;
+}
+
+.rankingImage-mike{
+    background-image: url(./../img/mikeg.png);
+    height: 47px;
+    width: 47px;
+    margin-top: 15px;
+}
+
+.rankingImage-seth{
+    background-image: url(../img/sethh.png);
+    height: 47px;
+    width: 47px;
+    margin-top: 15px;
+}
+
+.rankingImage-tim{
+    background-image: url(./../img/timw.png);
+    height: 47px;
+    width: 47px;
+    margin-top: 15px;
+}

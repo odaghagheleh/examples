@@ -59,6 +59,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('inspi
               <@c.import url="/WEB-INF/aps/jsp/models/inc/content_inline_editing.jsp" />
               <@c.import url="/WEB-INF/aps/jsp/models/inc/header-inclusions.jsp" />
               <@c.import url="/WEB-INF/aps/jsp/models/inc/flash_toast.jsp" />
+              <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body class="pace-done">
     <div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
