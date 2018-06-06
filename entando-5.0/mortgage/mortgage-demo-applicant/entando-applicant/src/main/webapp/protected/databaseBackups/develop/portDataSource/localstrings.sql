@@ -282,8 +282,8 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ESSF_SEARCH',
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ESSF_SEARCH', 'it', 'Cerca qualcosa ...');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'en', 'Copyright &copy; My Company YYYY');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'it', 'Copyright &copy; Mia Azienda AAAA');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'en', 'My Portal');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'it', 'Il Mio Portale');
+-- INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'en', 'My Portal');
+-- INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'it', 'Il Mio Portale');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('JPKIE_FORM_application', 'en', 'APPLICATION');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('JPKIE_FORM_application', 'it', 'APPLICATION');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('JPKIE_FORM_applicant', 'en', 'APPLICANT');

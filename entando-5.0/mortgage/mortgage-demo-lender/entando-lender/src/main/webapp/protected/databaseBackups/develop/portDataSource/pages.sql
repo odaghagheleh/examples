@@ -3,3 +3,4 @@ INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('login','service',6,'f
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('notfound','service',4,'free');
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('errorpage','service',5,'free');
 INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('homepage','homepage',-1,'free');
+INSERT INTO pages (code,parentcode,pos,groupcode) VALUES ('lender','homepage',6,'lender');

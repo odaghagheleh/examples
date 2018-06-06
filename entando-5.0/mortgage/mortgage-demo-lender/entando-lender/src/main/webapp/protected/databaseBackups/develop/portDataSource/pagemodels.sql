@@ -219,8 +219,9 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('entan
         <script src="<@wp.resourceURL />static/js/jquery.app.js"></script>
     </body>
 </html>');
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('entando-page-inspinia','Inspinia - BPM','<frames>
-    <frame pos="0">
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('entando-page-inspinia','Inspinia - BPM','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+	<frame pos="0">
 		<descr>Sidebar 1</descr>
 		<sketch x1="0" y1="0" x2="1" y2="0" />
 		<defaultWidget code="entando-language_choose_inspinia" />
@@ -327,7 +328,9 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('entan
 		<descr>Footer</descr>
 		<sketch x1="0" y1="8" x2="11" y2="8" />
 	</frame>
-</frames>',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <!DOCTYPE html>
 <html lang="en">
