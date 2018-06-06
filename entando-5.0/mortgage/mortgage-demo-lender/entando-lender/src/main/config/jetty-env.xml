@@ -5,6 +5,12 @@
 
 	<New class="org.eclipse.jetty.plus.jndi.EnvEntry">
 		<Arg></Arg>
+		<Arg>logActiveFileOutput</Arg>
+		<Arg type="java.lang.String">${profile.log.activeFileOutput}</Arg>
+		<Arg type="boolean">false</Arg>
+	</New>
+	<New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+		<Arg></Arg>
 		<Arg>logName</Arg>
 		<Arg type="java.lang.String">${profile.application.name}</Arg>
 		<Arg type="boolean">false</Arg>
@@ -96,6 +102,19 @@
 				<Set name="password">${profile.database.password}</Set>
 			</New>
 		</Arg>
+		<New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+			<Arg></Arg>
+			<Arg>portDataSourceClassName</Arg>
+			<Arg type="java.lang.String">${profile.portDataSourceClassName}</Arg>
+			<Arg type="boolean">false</Arg>
+		</New>
+
+		<New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+			<Arg></Arg>
+			<Arg>servDataSourceClassName</Arg>
+			<Arg type="java.lang.String">${profile.servDataSourceClassName}</Arg>
+			<Arg type="boolean">false</Arg>
+		</New>
 	</New>
 	
 	<New id="servDataSource" class="org.eclipse.jetty.plus.jndi.Resource">

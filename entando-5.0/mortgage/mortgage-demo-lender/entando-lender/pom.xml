@@ -114,8 +114,8 @@
 
         <skipDerby>true</skipDerby>
         <skipStandalone>true</skipStandalone>
-        <entando.version>4.3.2-SNAPSHOT</entando.version>
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <entando.version>5.0.0</entando.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
         <struts2.version>2.5.10.1</struts2.version>
         <cxf.version>2.7.14</cxf.version>
     </properties>
@@ -746,12 +746,14 @@
             <version>${entando.version}</version>
             <type>war</type>
         </dependency>
-        <dependency>
+       <!-- TODO put this back in when purple is released
+
+       <dependency>
             <groupId>org.entando.entando.bundles.pages</groupId>
             <artifactId>entando-page-purple</artifactId>
             <version>${entando.version}</version>
             <type>war</type>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-engine</artifactId>
@@ -858,6 +860,12 @@
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpkiebpm</artifactId>
+            <version>${entando.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.app-view</groupId>
+            <artifactId>entando-app-view-cms-default</artifactId>
             <version>${entando.version}</version>
             <type>war</type>
         </dependency>
